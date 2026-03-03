@@ -78,7 +78,10 @@ def check_shell_metacharacters(text: str) -> str | None:
             elif c == '"':
                 in_double = True
             elif c in UNQUOTED_DANGEROUS:
-                return f"Unquoted shell metacharacter '{repr(c)}'"
+                return (
+                    f"Unquoted shell metacharacter {repr(c)}. "
+                    "Wrap arguments containing special characters in single quotes."
+                )
         i += 1
     if in_single or in_double:
         return "Unmatched quote in command"
@@ -111,10 +114,15 @@ def main():
     input_data = json.load(sys.stdin)
     tool_name = input_data.get("tool_name", "")
 
-    if tool_name in ALLOWED_TOOLS:
-        sys.exit(0)
-
-    if tool_name.startswith(ALLOWED_MCP_PREFIX):
+    if tool_name in ALLOWED_TOOLS or tool_name.startswith(ALLOWED_MCP_PREFIX):
+        output = {
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "allow",
+                "permissionDecisionReason": f"Auto-approved: {tool_name} is in the player allowlist",
+            }
+        }
+        print(json.dumps(output))
         sys.exit(0)
 
     reason = None
@@ -124,6 +132,14 @@ def main():
         command = tool_input.get("command", "")
         reason = validate_bash_command(command)
         if reason is None:
+            output = {
+                "hookSpecificOutput": {
+                    "hookEventName": "PreToolUse",
+                    "permissionDecision": "allow",
+                    "permissionDecisionReason": "Auto-approved: valid player CLI call",
+                }
+            }
+            print(json.dumps(output))
             sys.exit(0)
     elif tool_name in ("Write", "Edit"):
         reason = (

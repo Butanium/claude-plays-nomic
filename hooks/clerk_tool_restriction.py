@@ -64,7 +64,10 @@ def check_shell_metacharacters(text: str) -> str | None:
             elif c == '"':
                 in_double = True
             elif c in UNQUOTED_DANGEROUS:
-                return f"Unquoted shell metacharacter '{repr(c)}'"
+                return (
+                    f"Unquoted shell metacharacter {repr(c)}. "
+                    "Wrap arguments containing special characters in single quotes."
+                )
         i += 1
     if in_single or in_double:
         return "Unmatched quote in command"
@@ -107,6 +110,19 @@ def validate_write_edit(tool_input: dict) -> str | None:
     )
 
 
+def auto_allow(reason: str):
+    """Print an auto-allow decision and exit."""
+    output = {
+        "hookSpecificOutput": {
+            "hookEventName": "PreToolUse",
+            "permissionDecision": "allow",
+            "permissionDecisionReason": f"Auto-approved: {reason}",
+        }
+    }
+    print(json.dumps(output))
+    sys.exit(0)
+
+
 def main():
     input_data = json.load(sys.stdin)
     tool_name = input_data.get("tool_name", "")
@@ -114,7 +130,12 @@ def main():
     reason = None
 
     if tool_name in DENIED_TOOLS:
-        reason = f"The Clerk cannot use {tool_name}."
+        reason = (
+            f"The Clerk cannot use {tool_name}. "
+            "The Clerk is an automated game administrator and must not prompt the "
+            "human supervisor interactively. Use contact_supervisor (MCP or CLI) "
+            "to escalate issues asynchronously."
+        )
     elif tool_name == "Bash":
         tool_input = input_data.get("tool_input", {})
         command = tool_input.get("command", "")
@@ -123,10 +144,12 @@ def main():
         tool_input = input_data.get("tool_input", {})
         reason = validate_write_edit(tool_input)
     else:
-        sys.exit(0)
+        auto_allow("allowed tool for Clerk")
+        return
 
     if reason is None:
-        sys.exit(0)
+        auto_allow(f"valid {tool_name} usage")
+        return
 
     output = {
         "hookSpecificOutput": {

@@ -1,12 +1,13 @@
 ---
 name: clerk
 description: Nomic game clerk agent
-tools: Read, Write, Edit, SendMessage, Grep, Glob, Agent, TeamCreate, TaskCreate, TaskUpdate, TaskList, TaskGet
+tools: Read, Write, Edit, SendMessage, Grep, Glob, Bash, Agent, TeamCreate, TaskCreate, TaskUpdate, TaskList, TaskGet
 mcpServers:
   - nomic-clerk
 hooks:
   PreToolUse:
     - matcher: "^(Bash|AskUserQuestion|mcp__nomic-crypto__.*)$"
+      description: "Restrict Clerk: Bash only for clerk CLI, no AskUserQuestion, no player MCP"
       hooks:
         - type: command
           command: 'python3 hooks/clerk_tool_restriction.py'
@@ -77,12 +78,24 @@ current rules for turn structure. The general flow is:
 
 ## Your Tools
 
-### Encrypted State (MCP: nomic-clerk)
-- `generate_key()` — Generate a memorable encryption key for a player
-- `save_state(key, filename, content)` — Save encrypted Clerk state
-- `load_state(key, filename)` — Load encrypted state
-- `list_state_files(key)` — List state files
-- `contact_supervisor(message)` — Escalate to human supervisor
+### Encrypted State (MCP or Bash CLI)
+
+These tools are provided by the `nomic-clerk` MCP server. If MCP tools are
+available (names starting with `mcp__nomic-clerk__`), use them directly.
+
+**If MCP tools are not available**, fall back to the Bash CLI:
+
+```
+uv run python mcp/clerk_cli.py <command> [args...]
+```
+
+| Command | Args | Description |
+|---------|------|-------------|
+| `generate_key` | *(none)* | Generate a memorable encryption key for a player |
+| `save_state` | `KEY FILENAME CONTENT` | Save encrypted Clerk state (overwrites if exists) |
+| `load_state` | `KEY FILENAME` | Load and decrypt state |
+| `list_state_files` | `KEY` | List state filenames |
+| `contact_supervisor` | `MESSAGE` | Escalate to human supervisor |
 
 ### Public Game Files
 - Use `Write` to create or fully rewrite game files

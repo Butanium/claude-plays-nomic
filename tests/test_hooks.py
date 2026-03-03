@@ -1,4 +1,4 @@
-"""Tests for the player tool restriction hook.
+"""Tests for the player and clerk tool restriction hooks.
 
 Tests the shell injection prevention (quote-aware metacharacter scanning)
 and the tool allowlist/denylist logic.
@@ -16,6 +16,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
 from player_tool_restriction import (
     check_shell_metacharacters,
     validate_bash_command,
+)
+from clerk_tool_restriction import (
+    validate_bash_command as clerk_validate_bash_command,
 )
 
 CLI = "uv run python mcp/player_cli.py"
@@ -220,4 +223,65 @@ class TestValidateBashCommand:
 
     def test_dollar_expansion_unquoted(self):
         result = validate_bash_command(f"{CLI} write_note $KEY file content")
+        assert result is not None
+
+
+# --- Clerk hook ---
+
+
+CLERK_CLI = "uv run python mcp/clerk_cli.py"
+
+
+class TestClerkValidateBashCommand:
+    """Tests for the Clerk's Bash command validator."""
+
+    def test_generate_key(self):
+        assert clerk_validate_bash_command(f"{CLERK_CLI} generate_key") is None
+
+    def test_save_state(self):
+        assert clerk_validate_bash_command(
+            f"{CLERK_CLI} save_state mykey players.md 'name1: key1'"
+        ) is None
+
+    def test_load_state(self):
+        assert clerk_validate_bash_command(f"{CLERK_CLI} load_state mykey players.md") is None
+
+    def test_list_state_files(self):
+        assert clerk_validate_bash_command(f"{CLERK_CLI} list_state_files mykey") is None
+
+    def test_contact_supervisor(self):
+        assert clerk_validate_bash_command(
+            f"{CLERK_CLI} contact_supervisor 'need help with rule dispute'"
+        ) is None
+
+    def test_wrong_prefix_denied(self):
+        result = clerk_validate_bash_command("rm -rf /")
+        assert result is not None
+
+    def test_player_cli_denied(self):
+        """Clerk should not be able to call the player CLI."""
+        result = clerk_validate_bash_command("uv run python mcp/player_cli.py roll_dice key")
+        assert result is not None
+
+    def test_semicolon_injection(self):
+        result = clerk_validate_bash_command(f"{CLERK_CLI} generate_key ; rm -rf /")
+        assert result is not None
+
+    def test_newline_injection(self):
+        result = clerk_validate_bash_command(f"{CLERK_CLI} generate_key\nrm -rf /")
+        assert result is not None
+
+    def test_process_substitution(self):
+        result = clerk_validate_bash_command(f"{CLERK_CLI} load_state key <(evil)")
+        assert result is not None
+
+    def test_single_quoted_content_allowed(self):
+        assert clerk_validate_bash_command(
+            f"{CLERK_CLI} save_state mykey notes.md 'content with ; and | inside'"
+        ) is None
+
+    def test_dollar_in_dquotes_denied(self):
+        result = clerk_validate_bash_command(
+            f'{CLERK_CLI} save_state mykey notes.md "$(whoami)"'
+        )
         assert result is not None

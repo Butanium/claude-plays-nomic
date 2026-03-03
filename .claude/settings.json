@@ -1,3 +1,5 @@
 {
-  "defaultMode": "dontAsk"
+  "permissions": {
+    "defaultMode": "dontAsk"
+  }
 }

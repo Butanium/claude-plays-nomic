@@ -3,11 +3,7 @@ name: player
 description: Nomic game player agent
 tools: Read, SendMessage, Grep, Glob
 mcpServers:
-  nomic-crypto:
-    type: stdio
-    command: uv
-    args: ["run", "python", "mcp/player_server.py"]
-    cwd: "/mnt/nw/home/c.dumas/claude-playground/nomic"
+  - nomic-crypto
 hooks:
   PreToolUse:
     - matcher: ".*"

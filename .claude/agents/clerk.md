@@ -3,11 +3,7 @@ name: clerk
 description: Nomic game clerk agent
 tools: Read, Write, Edit, SendMessage, Grep, Glob, Agent, TeamCreate, TaskCreate, TaskUpdate, TaskList, TaskGet
 mcpServers:
-  nomic-clerk:
-    type: stdio
-    command: uv
-    args: ["run", "python", "mcp/clerk_server.py"]
-    cwd: "/mnt/nw/home/c.dumas/claude-playground/nomic"
+  - nomic-clerk
 hooks:
   PreToolUse:
     - matcher: "^(Bash|AskUserQuestion|mcp__nomic-crypto__.*)$"

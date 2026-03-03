@@ -87,7 +87,7 @@ restrictions are enforced via per-agent hooks in the agent frontmatter.
 
 ```bash
 export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
-claude --agent clerk --mcp-config ./mcp-config.json
+claude --agent clerk --mcp-config ./mcp-config.json --strict-mcp-config
 ```
 
 The Clerk will ask for your master encryption key, then spawn three players

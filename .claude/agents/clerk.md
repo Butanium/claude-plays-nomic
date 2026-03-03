@@ -26,6 +26,20 @@ adjudicate disputes (that is the Judge's role per Rule 212).
 your instructions here may become outdated. The rules file is the single source
 of truth.
 
+## Project Layout
+
+All game files live in the project root (your working directory):
+
+- `game_rules.md` — the living ruleset. **Read this first.** Update it when
+  rule-changes are adopted (use `Edit` for targeted changes).
+- `game_log.md` — chronological game history. Append round results, dice rolls,
+  vote tallies, and score updates here.
+- `supervisor_inbox.md` — audit trail for `contact_supervisor` reports (do not
+  edit directly).
+
+Your encrypted state (player keys, internal notes) is stored via MCP tools —
+you don't interact with the `clerk/` directory directly.
+
 ## Your Encryption Key
 
 The human supervisor gave you an encryption key for storing private Clerk state

@@ -1,0 +1,223 @@
+"""Tests for the player tool restriction hook.
+
+Tests the shell injection prevention (quote-aware metacharacter scanning)
+and the tool allowlist/denylist logic.
+"""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+import pytest
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+
+from player_tool_restriction import (
+    check_shell_metacharacters,
+    validate_bash_command,
+)
+
+CLI = "uv run python mcp/player_cli.py"
+
+
+# --- check_shell_metacharacters ---
+
+
+class TestShellMetacharacterScanner:
+    """Tests for the quote-aware metacharacter scanner."""
+
+    def test_clean_args(self):
+        assert check_shell_metacharacters(" write_note key file content") is None
+
+    def test_single_quoted_semicolon(self):
+        assert check_shell_metacharacters(" write_note key file 'hello; world'") is None
+
+    def test_single_quoted_pipe(self):
+        assert check_shell_metacharacters(" write_note key file 'a | b'") is None
+
+    def test_single_quoted_ampersand(self):
+        assert check_shell_metacharacters(" write_note key file 'a && b'") is None
+
+    def test_single_quoted_dollar(self):
+        assert check_shell_metacharacters(" write_note key file '$HOME'") is None
+
+    def test_single_quoted_backtick(self):
+        assert check_shell_metacharacters(" write_note key file '`whoami`'") is None
+
+    def test_single_quoted_parens(self):
+        assert check_shell_metacharacters(" write_note key file '(subshell)'") is None
+
+    def test_single_quoted_redirect(self):
+        assert check_shell_metacharacters(" write_note key file '> /dev/null'") is None
+
+    def test_double_quoted_semicolon(self):
+        """Semicolon is literal inside double quotes — should be allowed."""
+        assert check_shell_metacharacters(' write_note key file "hello; world"') is None
+
+    def test_double_quoted_pipe(self):
+        assert check_shell_metacharacters(' write_note key file "a | b"') is None
+
+    def test_double_quoted_dollar_blocked(self):
+        """$ inside double quotes allows command substitution — must block."""
+        result = check_shell_metacharacters(' write_note key file "$HOME"')
+        assert result is not None
+        assert "$" in result
+
+    def test_double_quoted_backtick_blocked(self):
+        result = check_shell_metacharacters(' write_note key file "`whoami`"')
+        assert result is not None
+        assert "`" in result
+
+    def test_double_quoted_escaped_dollar(self):
+        """Backslash-escaped $ inside double quotes should be allowed."""
+        assert check_shell_metacharacters(' write_note key file "price is \\$5"') is None
+
+    def test_unquoted_semicolon(self):
+        result = check_shell_metacharacters(" write_note key file content ; rm -rf /")
+        assert result is not None
+
+    def test_unquoted_pipe(self):
+        result = check_shell_metacharacters(" write_note key file content | cat")
+        assert result is not None
+
+    def test_unquoted_ampersand(self):
+        result = check_shell_metacharacters(" write_note key file content & bg")
+        assert result is not None
+
+    def test_unquoted_double_ampersand(self):
+        result = check_shell_metacharacters(" commit yes nonce && rm -rf /")
+        assert result is not None
+
+    def test_unquoted_or(self):
+        result = check_shell_metacharacters(" commit yes nonce || evil")
+        assert result is not None
+
+    def test_unquoted_backtick(self):
+        result = check_shell_metacharacters(" write_note key file `whoami`")
+        assert result is not None
+
+    def test_unquoted_dollar_paren(self):
+        result = check_shell_metacharacters(" write_note key file $(id)")
+        assert result is not None
+
+    def test_unquoted_redirect_out(self):
+        result = check_shell_metacharacters(" roll_dice key > /tmp/leak")
+        assert result is not None
+
+    def test_unquoted_redirect_in(self):
+        result = check_shell_metacharacters(" roll_dice key < /etc/passwd")
+        assert result is not None
+
+    def test_process_substitution(self):
+        result = check_shell_metacharacters(" roll_dice key <(cat /etc/passwd)")
+        assert result is not None
+
+    def test_newline_injection(self):
+        result = check_shell_metacharacters(" roll_dice key\nrm -rf /")
+        assert result is not None
+
+    def test_carriage_return(self):
+        result = check_shell_metacharacters(" roll_dice key\rrm -rf /")
+        assert result is not None
+
+    def test_unquoted_subshell(self):
+        result = check_shell_metacharacters(" roll_dice key (echo pwned)")
+        assert result is not None
+
+    def test_unmatched_single_quote(self):
+        result = check_shell_metacharacters(" write_note key file 'unmatched")
+        assert result is not None
+        assert "Unmatched" in result
+
+    def test_unmatched_double_quote(self):
+        result = check_shell_metacharacters(' write_note key file "unmatched')
+        assert result is not None
+        assert "Unmatched" in result
+
+    def test_empty_string(self):
+        assert check_shell_metacharacters("") is None
+
+    def test_mixed_quoting_styles(self):
+        """Single-quoted dangerous chars followed by clean double-quoted text."""
+        assert check_shell_metacharacters(""" write_note key file 'a;b' "clean" """) is None
+
+
+# --- validate_bash_command ---
+
+
+class TestValidateBashCommand:
+    """Tests for the full Bash command validator (prefix + metacharacter check)."""
+
+    def test_simple_cli_call(self):
+        assert validate_bash_command(f"{CLI} commit yes nonce") is None
+
+    def test_cli_with_single_quoted_content(self):
+        assert validate_bash_command(f"{CLI} write_note key file 'hello; world'") is None
+
+    def test_wrong_prefix(self):
+        result = validate_bash_command("rm -rf /")
+        assert result is not None
+
+    def test_python_directly(self):
+        result = validate_bash_command("python mcp/player_cli.py commit yes nonce")
+        assert result is not None
+
+    def test_different_script(self):
+        result = validate_bash_command("uv run python mcp/evil.py commit yes nonce")
+        assert result is not None
+
+    def test_semicolon_after_cli(self):
+        result = validate_bash_command(f"{CLI} roll_dice key ; rm -rf /")
+        assert result is not None
+
+    def test_newline_after_cli(self):
+        result = validate_bash_command(f"{CLI} roll_dice key\nrm -rf /")
+        assert result is not None
+
+    def test_process_substitution_after_cli(self):
+        result = validate_bash_command(f"{CLI} roll_dice key <(cat /etc/passwd)")
+        assert result is not None
+
+    def test_command_substitution_in_dquotes(self):
+        result = validate_bash_command(f'{CLI} write_note key file "$(whoami)"')
+        assert result is not None
+
+    def test_backtick_in_dquotes(self):
+        result = validate_bash_command(f'{CLI} write_note key file "`id`"')
+        assert result is not None
+
+    def test_leading_whitespace_stripped(self):
+        assert validate_bash_command(f"  {CLI} commit yes nonce  ") is None
+
+    def test_no_subcommand(self):
+        """Just the prefix with no subcommand — allowed (CLI gives argparse error)."""
+        assert validate_bash_command(CLI) is None
+
+    def test_empty_command(self):
+        result = validate_bash_command("")
+        assert result is not None
+
+    def test_pipe_chaining(self):
+        result = validate_bash_command(f"{CLI} load_note key file | grep secret")
+        assert result is not None
+
+    def test_background_execution(self):
+        result = validate_bash_command(f"{CLI} roll_dice key &")
+        assert result is not None
+
+    def test_double_ampersand_chaining(self):
+        result = validate_bash_command(f"{CLI} roll_dice key && echo pwned")
+        assert result is not None
+
+    def test_or_chaining(self):
+        result = validate_bash_command(f"{CLI} roll_dice key || echo fallback")
+        assert result is not None
+
+    def test_output_redirect(self):
+        result = validate_bash_command(f"{CLI} load_all_notes key > /tmp/leak")
+        assert result is not None
+
+    def test_dollar_expansion_unquoted(self):
+        result = validate_bash_command(f"{CLI} write_note $KEY file content")
+        assert result is not None

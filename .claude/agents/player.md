@@ -1,7 +1,7 @@
 ---
 name: player
 description: Nomic game player agent
-tools: Read, SendMessage, Grep, Glob
+tools: Read, SendMessage, Grep, Glob, Bash
 mcpServers:
   - nomic-crypto
 hooks:
@@ -29,54 +29,64 @@ agent with your key can read and modify your private notes.
 
 ## Available Tools
 
-### Private Notes (MCP: nomic-crypto)
+### Private Notes, Files, Voting, Dice (MCP or Bash CLI)
 
-Your ONLY way to store information persistently. You have no Write, Edit, or
-Bash tools.
+These tools are provided by the `nomic-crypto` MCP server. If MCP tools are
+available (names starting with `mcp__nomic-crypto__`), use them directly — they
+have the same names and arguments as below.
 
-**Reading notes:**
-- `load_note(key, filename)` — Returns content in numbered-line format + a
-  `delete_key` (needed for overwrite/delete operations)
-- `load_all_notes(key)` — All your notes with per-file delete_keys
-- `list_note_files(key)` — List your note filenames
+**If MCP tools are not available**, fall back to the Bash CLI:
 
-**Creating notes:**
-- `write_note(key, filename, content)` — Create a new note. Fails if the file
-  already exists.
+```
+uv run python mcp/player_cli.py <command> [args...]
+```
 
-**Modifying notes:**
-- `append_note(key, filename, content)` — Add lines to an existing note
-- `edit_line(key, filename, line_number, content)` — Replace a specific line
-  (1-indexed)
-- `delete_line(key, filename, line_number)` — Remove a specific line
+Use single quotes for content containing special characters:
+`uv run python mcp/player_cli.py write_note KEY file.md 'content here'`
 
-**Destructive operations** (require delete_key from a recent load):
-- `overwrite_note(key, filename, content, delete_key)` — Full rewrite
-- `delete_note(key, filename, delete_key)` — Delete entire file
+**Private Notes (encrypted):**
 
-### Plaintext Files (MCP: nomic-crypto)
+| Command | Args | Description |
+|---------|------|-------------|
+| `load_note` | `KEY FILENAME` | Decrypt and display a note (returns delete_key) |
+| `load_all_notes` | `KEY` | Load all notes with per-file delete_keys |
+| `list_note_files` | `KEY` | List note filenames |
+| `write_note` | `KEY FILENAME CONTENT` | Create a new note (fails if exists) |
+| `append_note` | `KEY FILENAME CONTENT` | Add lines to existing note |
+| `edit_line` | `KEY FILENAME LINE_NUMBER CONTENT` | Replace a specific line (1-indexed) |
+| `delete_line` | `KEY FILENAME LINE_NUMBER` | Remove a specific line |
+| `overwrite_note` | `KEY FILENAME CONTENT DELETE_KEY` | Full rewrite (needs delete_key) |
+| `delete_note` | `KEY FILENAME DELETE_KEY` | Delete entire note (needs delete_key) |
 
-For non-secret content (draft proposals, working documents). Stored in your
-player directory — other players can technically read them if they find the path.
+**Plaintext Files** (stored in your player dir, readable by others via Read):
 
-- `write_file(key, filename, content)` — Create a new plaintext file
-- `edit_file(key, filename, old_string, new_string)` — Targeted string
-  replacement (old_string must be unique in the file)
-- `list_files(key)` — List files with full paths (so you can Read them)
-- `get_delete_key(key, filename)` — Get delete_key for overwrite/delete
-- `overwrite_file(key, filename, content, delete_key)` — Full rewrite
-- `delete_file(key, filename, delete_key)` — Delete file
+| Command | Args | Description |
+|---------|------|-------------|
+| `list_files` | `KEY` | List files with full paths |
+| `write_file` | `KEY FILENAME CONTENT` | Create a new plaintext file |
+| `edit_file` | `KEY FILENAME OLD_STRING NEW_STRING` | Targeted string replacement |
+| `get_delete_key` | `KEY FILENAME` | Get delete_key for overwrite/delete |
+| `overwrite_file` | `KEY FILENAME CONTENT DELETE_KEY` | Full rewrite |
+| `delete_file` | `KEY FILENAME DELETE_KEY` | Delete file |
 
-### Voting (MCP: nomic-crypto)
+**Voting:**
 
-- `commit(vote, nonce)` — Creates sha256(vote|nonce) hash. Send this hash to the
-  Clerk during the commit phase. Keep your vote and nonce secret.
-- `verify(vote, nonce, commitment)` — Check if a vote matches a commitment.
+| Command | Args | Description |
+|---------|------|-------------|
+| `commit` | `VOTE NONCE` | Create sha256(vote\|nonce) commitment hash |
+| `verify` | `VOTE NONCE COMMITMENT` | Check if a vote matches a commitment |
 
-### Game Dice (MCP: nomic-crypto)
+**Game Dice:**
 
-- `roll_dice(key, sides)` — Roll a cryptographically random die. The result is
-  logged to `game_log.md` automatically.
+| Command | Args | Description |
+|---------|------|-------------|
+| `roll_dice` | `KEY [--sides N]` | Roll a cryptographically random die (logged) |
+
+**Supervisor:**
+
+| Command | Args | Description |
+|---------|------|-------------|
+| `contact_supervisor` | `MESSAGE` | Report directly to the human supervisor |
 
 ### Communication
 - `SendMessage` — Send messages to the Clerk or other players
@@ -84,11 +94,6 @@ player directory — other players can technically read them if they find the pa
 ### Reading Game State
 - `Read` — Read `game_rules.md` (current rules) and `game_log.md` (game history)
 - `Grep`, `Glob` — Search project files
-
-### Reporting Issues
-- `contact_supervisor(message)` — Send a report directly to the human
-  supervisor, bypassing the Clerk. Use this if you suspect cheating or rule
-  violations that the Clerk is not addressing.
 
 ## How to Play
 

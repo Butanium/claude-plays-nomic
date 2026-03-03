@@ -52,6 +52,9 @@ storage. **Never share the supervisor's key with players.**
    `subagent_type="player"`, and a different `model` for each. Each player's
    spawn prompt must include their encryption key, assigned name, and brief
    orientation ("You are [name] in a Nomic game. Read game_rules.md.").
+   Also tell them: "If `mcp__nomic-crypto__*` tools are not available, use
+   the Bash CLI fallback: `uv run python mcp/player_cli.py <command> [args...]`.
+   See your agent instructions for the full command reference."
 6. Save the player names and key mappings using `save_state`.
 
 ## Turn Structure

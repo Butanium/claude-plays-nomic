@@ -259,10 +259,11 @@ class TestClerkValidateBashCommand:
         result = clerk_validate_bash_command("rm -rf /")
         assert result is not None
 
-    def test_player_cli_denied(self):
-        """Clerk should not be able to call the player CLI."""
-        result = clerk_validate_bash_command("uv run python mcp/player_cli.py roll_dice key")
-        assert result is not None
+    def test_player_cli_allowed(self):
+        """Clerk can call the player CLI (e.g. for vote verification)."""
+        assert clerk_validate_bash_command(
+            "uv run python mcp/player_cli.py verify yes nonce abc123"
+        ) is None
 
     def test_semicolon_injection(self):
         result = clerk_validate_bash_command(f"{CLERK_CLI} generate_key ; rm -rf /")

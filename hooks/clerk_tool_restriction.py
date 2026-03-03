@@ -3,10 +3,9 @@
 
 Scoped to the Clerk agent via their agent definition (.claude/agents/clerk.md).
 
-- Bash: only for clerk CLI (uv run python mcp/clerk_cli.py ...)
+- Bash: only for clerk or player CLI (uv run python mcp/{clerk,player}_cli.py ...)
 - Write/Edit: only for game_rules.md and game_log.md
 - AskUserQuestion: denied
-- Player MCP tools (mcp__nomic-crypto__*): denied
 """
 
 import json
@@ -18,9 +17,10 @@ DENIED_TOOLS = {
     "AskUserQuestion",
 }
 
-DENIED_MCP_PREFIX = "mcp__nomic-crypto__"
-
-CLI_TOKENS_PREFIX = ["uv", "run", "python", "mcp/clerk_cli.py"]
+ALLOWED_CLI_PREFIXES = [
+    ["uv", "run", "python", "mcp/clerk_cli.py"],
+    ["uv", "run", "python", "mcp/player_cli.py"],
+]
 
 PROJECT_ROOT = Path(__file__).parent.parent.resolve()
 ALLOWED_WRITE_FILES = {
@@ -80,14 +80,19 @@ def validate_bash_command(command: str) -> str | None:
     except ValueError as e:
         return f"Malformed command: {e}"
 
-    if len(tokens) < 4 or tokens[:4] != CLI_TOKENS_PREFIX:
+    matched_prefix = None
+    if len(tokens) >= 4:
+        for prefix in ALLOWED_CLI_PREFIXES:
+            if tokens[:4] == prefix:
+                matched_prefix = " ".join(prefix)
+                break
+    if matched_prefix is None:
         return (
             "The Clerk can only use Bash to call: "
-            "uv run python mcp/clerk_cli.py <command> [args...]"
+            "uv run python mcp/clerk_cli.py or mcp/player_cli.py <command> [args...]"
         )
 
-    prefix_str = "uv run python mcp/clerk_cli.py"
-    args_start = stripped.index(prefix_str) + len(prefix_str)
+    args_start = stripped.index(matched_prefix) + len(matched_prefix)
     return check_shell_metacharacters(stripped[args_start:])
 
 
@@ -110,8 +115,6 @@ def main():
 
     if tool_name in DENIED_TOOLS:
         reason = f"The Clerk cannot use {tool_name}."
-    elif tool_name.startswith(DENIED_MCP_PREFIX):
-        reason = f"The Clerk cannot use player MCP tools ({tool_name})."
     elif tool_name == "Bash":
         tool_input = input_data.get("tool_input", {})
         command = tool_input.get("command", "")

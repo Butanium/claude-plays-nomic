@@ -4,10 +4,11 @@ description: Nomic game clerk agent
 tools: Read, Write, Edit, SendMessage, Grep, Glob, Bash, Agent, TeamCreate, TaskCreate, TaskUpdate, TaskList, TaskGet
 mcpServers:
   - nomic-clerk
+  - nomic-crypto
 hooks:
   PreToolUse:
-    - matcher: "^(Bash|Write|Edit|AskUserQuestion|mcp__nomic-crypto__.*)$"
-      description: "Restrict Clerk: Bash for clerk CLI only, Write/Edit for game files only, no AskUserQuestion, no player MCP"
+    - matcher: "^(Bash|Write|Edit|AskUserQuestion)$"
+      description: "Restrict Clerk: Bash for CLI only, Write/Edit for game files only, no AskUserQuestion"
       hooks:
         - type: command
           command: 'python3 hooks/clerk_tool_restriction.py'

@@ -13,5 +13,5 @@ wheels/
 .pytest_cache/
 
 # Runtime game state (auto-created)
-players/
-clerk/
+# players/
+# clerk/

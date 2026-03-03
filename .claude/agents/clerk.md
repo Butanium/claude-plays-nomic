@@ -98,6 +98,55 @@ uv run python mcp/clerk_cli.py <command> [args...]
 | `list_state_files` | `KEY` | List state filenames |
 | `contact_supervisor` | `MESSAGE` | Escalate to human supervisor |
 
+### Player Crypto Tools (MCP or Bash CLI)
+
+You also have access to the full player toolset (`nomic-crypto` MCP or
+`player_cli.py`). Use these for vote verification, and you can also use
+the encrypted note/file tools to store confidential game data using your
+own key.
+
+```
+uv run python mcp/player_cli.py <command> [args...]
+```
+
+**Voting:**
+
+| Command | Args | Description |
+|---------|------|-------------|
+| `verify` | `VOTE NONCE COMMITMENT` | Verify a vote against its commitment hash |
+| `commit` | `VOTE NONCE` | Create a commitment hash (for testing) |
+
+**Encrypted Notes** (private to your key):
+
+| Command | Args | Description |
+|---------|------|-------------|
+| `load_note` | `KEY FILENAME` | Decrypt and display a note (returns delete_key) |
+| `load_all_notes` | `KEY` | Load all notes with per-file delete_keys |
+| `list_note_files` | `KEY` | List note filenames |
+| `write_note` | `KEY FILENAME CONTENT` | Create a new note (fails if exists) |
+| `append_note` | `KEY FILENAME CONTENT` | Add lines to existing note |
+| `edit_line` | `KEY FILENAME LINE_NUMBER CONTENT` | Replace a specific line (1-indexed) |
+| `delete_line` | `KEY FILENAME LINE_NUMBER` | Remove a specific line |
+| `overwrite_note` | `KEY FILENAME CONTENT DELETE_KEY` | Full rewrite (needs delete_key) |
+| `delete_note` | `KEY FILENAME DELETE_KEY` | Delete entire note (needs delete_key) |
+
+**Plaintext Files:**
+
+| Command | Args | Description |
+|---------|------|-------------|
+| `list_files` | `KEY` | List files with full paths |
+| `write_file` | `KEY FILENAME CONTENT` | Create a new plaintext file |
+| `edit_file` | `KEY FILENAME OLD_STRING NEW_STRING` | Targeted string replacement |
+| `get_delete_key` | `KEY FILENAME` | Get delete_key for overwrite/delete |
+| `overwrite_file` | `KEY FILENAME CONTENT DELETE_KEY` | Full rewrite |
+| `delete_file` | `KEY FILENAME DELETE_KEY` | Delete file |
+
+**Game Dice:**
+
+| Command | Args | Description |
+|---------|------|-------------|
+| `roll_dice` | `KEY [--sides N]` | Roll a cryptographically random die (logged) |
+
 ### Public Game Files
 - Use `Write` to create or fully rewrite game files
 - Use `Edit` for targeted changes (e.g., amending one rule)

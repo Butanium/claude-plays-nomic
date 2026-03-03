@@ -1,9 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "dontAsk",
-    "allow": [
-      "Bash(uv run python mcp/player_cli.py *)",
-      "Bash(uv run python mcp/clerk_cli.py *)"
-    ]
+    "defaultMode": "acceptEdits"
   }
 }

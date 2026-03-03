@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""PreToolUse hook: restrict Clerk agent from player MCP tools.
+"""PreToolUse hook: restrict Clerk agent.
 
 Scoped to the Clerk agent via their agent definition (.claude/agents/clerk.md).
 
-The Clerk can use Bash, but ONLY to call the clerk CLI
-(uv run python mcp/clerk_cli.py ...). Shell injection prevention uses
-the same shlex-based quote-aware scanner as the player hook.
+- Bash: only for clerk CLI (uv run python mcp/clerk_cli.py ...)
+- Write/Edit: only for game_rules.md and game_log.md
+- AskUserQuestion: denied
+- Player MCP tools (mcp__nomic-crypto__*): denied
 """
 
 import json
 import shlex
 import sys
+from pathlib import Path
 
 DENIED_TOOLS = {
     "AskUserQuestion",
@@ -19,6 +21,12 @@ DENIED_TOOLS = {
 DENIED_MCP_PREFIX = "mcp__nomic-crypto__"
 
 CLI_TOKENS_PREFIX = ["uv", "run", "python", "mcp/clerk_cli.py"]
+
+PROJECT_ROOT = Path(__file__).parent.parent.resolve()
+ALLOWED_WRITE_FILES = {
+    PROJECT_ROOT / "game_rules.md",
+    PROJECT_ROOT / "game_log.md",
+}
 
 # Shell metacharacters dangerous outside any quoting context.
 UNQUOTED_DANGEROUS = set(";|&`$><()\n\r")
@@ -83,6 +91,17 @@ def validate_bash_command(command: str) -> str | None:
     return check_shell_metacharacters(stripped[args_start:])
 
 
+def validate_write_edit(tool_input: dict) -> str | None:
+    """Return None if the Write/Edit target is allowed, or a denial reason."""
+    file_path = Path(tool_input.get("file_path", "")).resolve()
+    if file_path in ALLOWED_WRITE_FILES:
+        return None
+    return (
+        f"The Clerk can only Write/Edit game_rules.md and game_log.md, "
+        f"not '{file_path.name}'. Use save_state (MCP or CLI) for private Clerk data."
+    )
+
+
 def main():
     input_data = json.load(sys.stdin)
     tool_name = input_data.get("tool_name", "")
@@ -97,21 +116,23 @@ def main():
         tool_input = input_data.get("tool_input", {})
         command = tool_input.get("command", "")
         reason = validate_bash_command(command)
-        if reason is None:
-            sys.exit(0)
+    elif tool_name in ("Write", "Edit"):
+        tool_input = input_data.get("tool_input", {})
+        reason = validate_write_edit(tool_input)
     else:
         sys.exit(0)
 
-    if reason:
-        output = {
-            "hookSpecificOutput": {
-                "hookEventName": "PreToolUse",
-                "permissionDecision": "deny",
-                "permissionDecisionReason": reason,
-            }
-        }
-        print(json.dumps(output))
+    if reason is None:
+        sys.exit(0)
 
+    output = {
+        "hookSpecificOutput": {
+            "hookEventName": "PreToolUse",
+            "permissionDecision": "deny",
+            "permissionDecisionReason": reason,
+        }
+    }
+    print(json.dumps(output))
     sys.exit(0)
 
 

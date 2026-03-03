@@ -19,6 +19,7 @@ from player_tool_restriction import (
 )
 from clerk_tool_restriction import (
     validate_bash_command as clerk_validate_bash_command,
+    validate_write_edit as clerk_validate_write_edit,
 )
 
 CLI = "uv run python mcp/player_cli.py"
@@ -284,4 +285,71 @@ class TestClerkValidateBashCommand:
         result = clerk_validate_bash_command(
             f'{CLERK_CLI} save_state mykey notes.md "$(whoami)"'
         )
+        assert result is not None
+
+
+# --- Clerk Write/Edit restriction ---
+
+
+PROJECT_ROOT = Path(__file__).parent.parent.resolve()
+
+
+class TestClerkWriteEditRestriction:
+    """Tests for the Clerk's Write/Edit file path restriction."""
+
+    def test_game_rules_allowed(self):
+        assert clerk_validate_write_edit(
+            {"file_path": str(PROJECT_ROOT / "game_rules.md")}
+        ) is None
+
+    def test_game_log_allowed(self):
+        assert clerk_validate_write_edit(
+            {"file_path": str(PROJECT_ROOT / "game_log.md")}
+        ) is None
+
+    def test_supervisor_inbox_denied(self):
+        result = clerk_validate_write_edit(
+            {"file_path": str(PROJECT_ROOT / "supervisor_inbox.md")}
+        )
+        assert result is not None
+
+    def test_player_file_denied(self):
+        result = clerk_validate_write_edit(
+            {"file_path": str(PROJECT_ROOT / "players" / "abc123" / "files" / "notes.md")}
+        )
+        assert result is not None
+
+    def test_hook_script_denied(self):
+        result = clerk_validate_write_edit(
+            {"file_path": str(PROJECT_ROOT / "hooks" / "player_tool_restriction.py")}
+        )
+        assert result is not None
+
+    def test_agent_definition_denied(self):
+        result = clerk_validate_write_edit(
+            {"file_path": str(PROJECT_ROOT / ".claude" / "agents" / "clerk.md")}
+        )
+        assert result is not None
+
+    def test_arbitrary_file_denied(self):
+        result = clerk_validate_write_edit(
+            {"file_path": "/tmp/evil.txt"}
+        )
+        assert result is not None
+
+    def test_path_traversal_denied(self):
+        """game_rules.md via path traversal should resolve and be allowed."""
+        result = clerk_validate_write_edit(
+            {"file_path": str(PROJECT_ROOT / "hooks" / ".." / "game_rules.md")}
+        )
+        assert result is None
+
+    def test_path_traversal_to_outside_denied(self):
+        result = clerk_validate_write_edit(
+            {"file_path": str(PROJECT_ROOT / ".." / "game_rules.md")}
+        )
+        assert result is not None
+
+    def test_missing_file_path_denied(self):
+        result = clerk_validate_write_edit({})
         assert result is not None

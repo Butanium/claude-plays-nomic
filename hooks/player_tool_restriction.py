@@ -125,6 +125,12 @@ def main():
         reason = validate_bash_command(command)
         if reason is None:
             sys.exit(0)
+    elif tool_name in ("Write", "Edit"):
+        reason = (
+            f"Players cannot use {tool_name}. "
+            "Use your encrypted notes (via MCP or CLI) to store private data, "
+            "or plaintext files via write_file/edit_file commands."
+        )
     else:
         reason = (
             f"Players cannot use {tool_name}. Available tools: "

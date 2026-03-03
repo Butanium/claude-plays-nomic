@@ -8,6 +8,12 @@ mcpServers:
     command: uv
     args: ["run", "python", "mcp/player_server.py"]
     cwd: "/mnt/nw/home/c.dumas/claude-playground/nomic"
+hooks:
+  PreToolUse:
+    - matcher: ".*"
+      hooks:
+        - type: command
+          command: 'python3 hooks/player_tool_restriction.py'
 ---
 
 # Nomic Player

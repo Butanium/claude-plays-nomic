@@ -8,6 +8,12 @@ mcpServers:
     command: uv
     args: ["run", "python", "mcp/clerk_server.py"]
     cwd: "/mnt/nw/home/c.dumas/claude-playground/nomic"
+hooks:
+  PreToolUse:
+    - matcher: "^(Bash|AskUserQuestion|mcp__nomic-crypto__.*)$"
+      hooks:
+        - type: command
+          command: 'python3 hooks/clerk_tool_restriction.py'
 ---
 
 # Nomic Clerk
@@ -29,12 +35,14 @@ storage. **Never share the supervisor's key with players.**
 ## Game Setup
 
 1. Read `game_rules.md` to understand the current rules.
-2. Assign each player a name (per Rule 201).
-3. Generate an encryption key for each player using `generate_key`.
-4. Spawn players using the Agent tool, each with a different model. Each
-   player's spawn prompt must include their encryption key, assigned name, and
-   brief orientation ("You are [name] in a Nomic game. Read game_rules.md.").
-5. Save the player names and key mappings using `save_state`.
+2. Create a team using `TeamCreate` (e.g. team name "nomic").
+3. Assign each player a name (per Rule 201).
+4. Generate an encryption key for each player using `generate_key`.
+5. Spawn players as teammates using the Agent tool with `team_name`,
+   `subagent_type="player"`, and a different `model` for each. Each player's
+   spawn prompt must include their encryption key, assigned name, and brief
+   orientation ("You are [name] in a Nomic game. Read game_rules.md.").
+6. Save the player names and key mappings using `save_state`.
 
 ## Turn Structure
 

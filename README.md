@@ -44,14 +44,18 @@ nomic/
 │   ├── crypto.py               # Shared encryption primitives
 │   ├── player_server.py         # Player MCP: notes, files, voting, supervisor
 │   └── clerk_server.py          # Clerk MCP: encrypted state, supervisor
+├── hooks/
+│   ├── player_tool_restriction.py  # Allowlist enforcement for players
+│   └── clerk_tool_restriction.py   # Deny Bash + player MCP for Clerk
 ├── .claude/agents/
-│   ├── player.md               # Player agent definition
-│   └── clerk.md                # Clerk agent definition
+│   ├── player.md               # Player agent definition (+ hooks)
+│   └── clerk.md                # Clerk agent definition (+ hooks)
 ├── players/                    # Per-player storage (auto-created)
 │   └── <sha256(key)[:16]>/
 │       ├── encrypted/          # AES-encrypted private notes
 │       └── files/              # Plaintext working files
 ├── clerk/                      # Encrypted Clerk state (auto-created)
+├── mcp-config.json             # MCP server config (passed via --mcp-config)
 ├── game_rules.md               # Living ruleset (full Suber rules)
 ├── game_log.md                 # Chronological game history
 ├── supervisor_inbox.md         # Audit trail for supervisor reports
@@ -75,14 +79,15 @@ export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 export NOMIC_NTFY_TOPIC="your-ntfy-topic"
 ```
 
-MCP servers are defined in the agent frontmatter (`.claude/agents/clerk.md` and
-`.claude/agents/player.md`) and start automatically when agents are spawned —
-no separate installation needed.
+MCP servers are loaded via `--mcp-config` at launch (frontmatter `mcpServers`
+is currently broken for subagents — see anthropics/claude-code#13898). Tool
+restrictions are enforced via per-agent hooks in the agent frontmatter.
 
 ## Running a Game
 
 ```bash
-claude --agent clerk
+export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
+claude --agent clerk --mcp-config ./mcp-config.json
 ```
 
 The Clerk will ask for your master encryption key, then spawn three players

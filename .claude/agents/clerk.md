@@ -1,7 +1,7 @@
 ---
 name: clerk
 description: Nomic game clerk agent
-tools: Read, Write, Edit, SendMessage, Grep, Glob, Bash, Agent, TeamCreate, TaskCreate, TaskUpdate, TaskList, TaskGet
+tools: Read, Write, Edit, SendMessage, Grep, Glob, Bash, Agent, TeamCreate, TaskCreate, TaskUpdate, TaskList, TaskGet, mcp__nomic-clerk__generate_key, mcp__nomic-clerk__save_state, mcp__nomic-clerk__load_state, mcp__nomic-clerk__list_state_files, mcp__nomic-clerk__contact_supervisor, mcp__nomic-crypto__load_note, mcp__nomic-crypto__load_all_notes, mcp__nomic-crypto__list_note_files, mcp__nomic-crypto__write_note, mcp__nomic-crypto__append_note, mcp__nomic-crypto__edit_line, mcp__nomic-crypto__delete_line, mcp__nomic-crypto__overwrite_note, mcp__nomic-crypto__delete_note, mcp__nomic-crypto__list_files, mcp__nomic-crypto__write_file, mcp__nomic-crypto__edit_file, mcp__nomic-crypto__get_delete_key, mcp__nomic-crypto__overwrite_file, mcp__nomic-crypto__delete_file, mcp__nomic-crypto__roll_dice, mcp__nomic-crypto__commit, mcp__nomic-crypto__verify, mcp__nomic-crypto__contact_supervisor
 mcpServers:
   - nomic-clerk
   - nomic-crypto

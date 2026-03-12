@@ -39,6 +39,24 @@
             "command": "python3 hooks/debug_log_hook.py"
           }
         ]
+      },
+      {
+        "matcher": "^(Bash|Write|Edit|AskUserQuestion)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 hooks/clerk_tool_restriction.py"
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 hooks/player_tool_restriction.py"
+          }
+        ]
       }
     ]
   }

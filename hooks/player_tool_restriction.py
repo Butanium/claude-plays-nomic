@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """PreToolUse hook: restrict player agents to their allowed toolset.
 
-Scoped to player agents via their agent definition (.claude/agents/player.md).
+Configured in .claude/settings.json. Identifies player agents by:
+1. agent_type == "player" (if Claude Code provides it), or
+2. teamName present in transcript metadata (workaround for Claude Code bug
+   where team-spawned agents don't get agent_type in hook payloads —
+   see https://github.com/anthropics/claude-code/issues/33384)
 
 Players can use:
 - Read, Grep, Glob: read game state
@@ -20,6 +24,7 @@ still allow command substitution, so those are blocked there too.
 import json
 import shlex
 import sys
+from functools import lru_cache
 
 ALLOWED_TOOLS = {
     "Read",
@@ -110,8 +115,42 @@ def validate_bash_command(command: str) -> str | None:
     return check_shell_metacharacters(stripped[args_start:])
 
 
+@lru_cache(maxsize=16)
+def _read_transcript_metadata(transcript_path: str) -> dict:
+    """Read first line of transcript JSONL to get agent metadata."""
+    try:
+        with open(transcript_path) as f:
+            return json.loads(f.readline())
+    except Exception:
+        return {}
+
+
+def _is_player_agent(input_data: dict) -> bool:
+    """Determine if the current agent is a player.
+
+    Checks agent_type first (works for direct subagents), then falls back to
+    reading the transcript for teamName (workaround for team-spawned agents
+    that don't get agent_type in hook payloads).
+    """
+    agent_type = input_data.get("agent_type")
+    if agent_type == "player":
+        return True
+    if agent_type is not None:
+        return False
+
+    transcript_path = input_data.get("transcript_path")
+    if not transcript_path:
+        return False
+
+    meta = _read_transcript_metadata(transcript_path)
+    return meta.get("teamName") is not None
+
+
 def main():
     input_data = json.load(sys.stdin)
+    if not _is_player_agent(input_data):
+        return
+
     tool_name = input_data.get("tool_name", "")
 
     if tool_name in ALLOWED_TOOLS or tool_name.startswith(ALLOWED_MCP_PREFIX):

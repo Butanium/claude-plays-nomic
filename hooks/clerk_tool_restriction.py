@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """PreToolUse hook: restrict Clerk agent.
 
-Scoped to the Clerk agent via their agent definition (.claude/agents/clerk.md).
+Configured in .claude/settings.json, skips non-clerk agents via agent_type check.
 
 - Bash: only for clerk or player CLI (uv run python mcp/{clerk,player}_cli.py ...)
 - Write/Edit: only for game_rules.md and game_log.md
@@ -125,6 +125,10 @@ def auto_allow(reason: str):
 
 def main():
     input_data = json.load(sys.stdin)
+    agent_type = input_data.get("agent_type")
+    if agent_type != "clerk":
+        return
+
     tool_name = input_data.get("tool_name", "")
 
     reason = None

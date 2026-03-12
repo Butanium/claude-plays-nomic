@@ -84,9 +84,7 @@ The winner is the first player to achieve 50 (positive) points.
 At no time may there be more than 25 mutable rules.
 
 ### 210
-Players may not conspire or consult on the making of future rule-changes unless they are team-mates.
-
-The first paragraph of this rule does not apply to this game.
+Players may freely communicate with each other, both publicly and privately. Private consultations, alliances, and negotiations on future rule-changes are permitted.
 
 ### 211
 If two or more mutable rules conflict with one another, or if two or more immutable rules conflict with one another, then the rule with the lowest ordinal number takes precedence.

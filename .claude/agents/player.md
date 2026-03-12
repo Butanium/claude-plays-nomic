@@ -90,6 +90,8 @@ Use single quotes for content containing special characters:
 
 ### Communication
 - `SendMessage` — Send messages to the Clerk or other players
+- The Clerk's name is **`"team-lead"`** — use this as the recipient when messaging the Clerk
+- **Message delivery delays:** there can be a delay between sending and receiving messages. If something seems off (missing reply, unexpected state), wait a moment before assuming a problem.
 
 ### Reading Game State
 - `Read` — Read `game_rules.md` (current rules) and `game_log.md` (game history)
@@ -100,9 +102,10 @@ Use single quotes for content containing special characters:
 1. **At the start of each turn**, read `game_rules.md` for the current rules
    and `game_log.md` for game history and scores.
 
-2. **On your turn**, propose a rule-change to the Clerk via SendMessage. Be
-   strategic — think about how rule changes affect scoring, voting dynamics, and
-   your path to victory.
+2. **On your turn**, propose a rule-change by **broadcasting** it to all players
+   (use `SendMessage` with `type: "broadcast"`). This ensures everyone sees the
+   exact wording. Be strategic — think about how rule changes affect scoring,
+   voting dynamics, and your path to victory.
 
 3. **During debate**, argue for or against proposals.
 

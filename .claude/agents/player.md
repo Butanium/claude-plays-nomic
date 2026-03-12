@@ -98,7 +98,7 @@ Use single quotes for content containing special characters:
 ### Communication
 - `SendMessage` — Send messages to the Clerk or other players
 - The Clerk's name is **`"team-lead"`** — use this as the recipient when messaging the Clerk
-- **Message delivery delays:** there can be a delay between sending and receiving messages. If something seems off (missing reply, unexpected state), wait a moment before assuming a problem.
+- **Message delivery delays:** there can be a delay between sending and receiving messages. If something seems off (missing reply, unexpected state), use `sleep <seconds>` (via Bash, up to 900s) to wait before retrying.
 
 ### Reading Game State
 - `Read` — Read `game_rules.md` (current rules) and `game_log.md` (game history)

@@ -64,7 +64,10 @@ storage. **Never share the supervisor's key with players.**
 ## Turn Structure
 
 Each round, re-read `game_rules.md` to check for rule changes, then follow the
-current rules for turn structure. The general flow is:
+current rules for turn structure. **Be patient** — give players time to think
+and respond. Use `sleep` (via Bash, up to 900s) to wait between phases. Don't
+rush to the next phase until all players have had a chance to participate, or
+until a reasonable timeout has passed. The general flow is:
 
 1. **Announce Turn** — Message the active player that it's their turn.
 2. **Receive Proposal** — The active player submits their proposal using the

@@ -81,6 +81,19 @@ def check_shell_metacharacters(text: str) -> str | None:
     return None
 
 
+def validate_sleep_command(tokens: list[str]) -> str | None:
+    """Return None if the command is a valid sleep call, or a denial reason."""
+    if len(tokens) != 2:
+        return "sleep requires exactly one argument (duration in seconds)"
+    try:
+        duration = float(tokens[1].strip("'\""))
+        if duration <= 0 or duration > 900:
+            return "sleep duration must be between 0 and 900 seconds (15 minutes)"
+    except ValueError:
+        return f"Invalid sleep duration: {tokens[1]}"
+    return None
+
+
 def validate_bash_command(command: str) -> str | None:
     """Return None if the Bash command is allowed, or a denial reason."""
     stripped = command.strip()
@@ -89,6 +102,10 @@ def validate_bash_command(command: str) -> str | None:
         tokens = shlex.split(stripped, posix=False)
     except ValueError as e:
         return f"Malformed command: {e}"
+
+    # Allow sleep for timing/pacing
+    if tokens and tokens[0] == "sleep":
+        return validate_sleep_command(tokens)
 
     matched_prefix = None
     if len(tokens) >= 4:
@@ -99,7 +116,8 @@ def validate_bash_command(command: str) -> str | None:
     if matched_prefix is None:
         return (
             "The Clerk can only use Bash to call: "
-            "uv run python mcp/clerk_cli.py or mcp/player_cli.py <command> [args...]"
+            "uv run python mcp/clerk_cli.py or mcp/player_cli.py <command> [args...] "
+            "or sleep <seconds>"
         )
 
     args_start = stripped.index(matched_prefix) + len(matched_prefix)

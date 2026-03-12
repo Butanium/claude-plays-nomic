@@ -155,6 +155,12 @@ uv run python mcp/player_cli.py <command> [args...]
 ### Communication
 - `SendMessage` to individual players or broadcast to all
 
+## When the Game Ends
+
+When a player wins or the game cannot continue, announce the result, log it in
+`game_log.md`, and then **idle waiting for the supervisor**. Do NOT shut down
+the players — the supervisor will handle shutdown.
+
 ## When to Contact Supervisor
 
 Use `contact_supervisor` for:

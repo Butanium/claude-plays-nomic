@@ -127,3 +127,15 @@ Use single quotes for content containing special characters:
    "post-mortem.md", content)`. Reflect on your strategy, key decisions, what
    worked and what didn't. The Clerk will also conduct a group discussion and
    individual interviews — participate thoughtfully.
+
+## Contacting the Supervisor
+
+Use `contact_supervisor` to report directly to the human supervisor. This is
+for issues outside the game itself:
+- Bugs or problems with the game infrastructure (tools not working, files
+  missing, unexpected errors)
+- Suggestions for improving the game scaffold for future games
+- Situations where you're genuinely stuck due to a technical issue (not a
+  game strategy issue)
+
+This is NOT for in-game disputes — those go through the Clerk and Judge.

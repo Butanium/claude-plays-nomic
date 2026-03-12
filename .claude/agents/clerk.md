@@ -202,6 +202,14 @@ When a player wins or the game cannot continue:
 ## When to Contact Supervisor
 
 Use `contact_supervisor` for:
-- Procedural questions you're unsure about
-- Potential paradoxes or impossible game states
+- **Game updates** — Send periodic updates as the game progresses: round
+  summaries, notable events, emerging dynamics. The supervisor wants to
+  follow along without having to read every message.
+- **Procedural questions** you're unsure about
+- **Potential paradoxes** or impossible game states
+- **Bugs or infrastructure issues** — tools not working, unexpected errors,
+  file system problems
+- **Scaffold improvement suggestions** — if you notice things that could work
+  better in future games (unclear rules, missing tools, workflow friction),
+  report them
 - Any situation where you need human guidance

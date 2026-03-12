@@ -71,6 +71,56 @@ def decrypt_line(encrypted: str, password: str) -> str:
     return plaintext.decode()
 
 
+# 256 words for commitment slugs and key generation.
+# 256 words = 8 bits per word. First 192 match the original clerk WORDLIST.
+SLUG_WORDS = (
+    "amber", "arrow", "atlas", "azure", "basin", "blade", "blaze", "bloom",
+    "bonus", "brave", "brisk", "brook", "cairn", "cargo", "cedar", "chain",
+    "charm", "chess", "cider", "clasp", "cliff", "cloud", "cobra", "coral",
+    "crane", "crest", "crown", "cubic", "delta", "denim", "depot", "diver",
+    "dodge", "draft", "drift", "dusk", "eagle", "ember", "epoch", "equal",
+    "fable", "faith", "fault", "feast", "fence", "ferry", "finch", "flame",
+    "flask", "flint", "forge", "frost", "gavel", "ghost", "glaze", "gleam",
+    "globe", "glyph", "goose", "gorge", "grain", "grape", "grove", "guard",
+    "haven", "hatch", "hazel", "hedge", "hoist", "honor", "horse", "hover",
+    "index", "ivory", "jabot", "jewel", "joker", "juice", "kayak", "knack",
+    "knoll", "latch", "ledge", "lever", "linen", "llama", "lodge", "lotus",
+    "lunar", "maple", "marsh", "mason", "medal", "merit", "mirth", "moose",
+    "mural", "nerve", "nexus", "noble", "north", "oasis", "ocean", "olive",
+    "onion", "orbit", "otter", "oxide", "pansy", "patch", "pearl", "pedal",
+    "penny", "perch", "pilot", "pixel", "plank", "plaza", "plume", "polar",
+    "prism", "prowl", "pulse", "quail", "quark", "quest", "radar", "rapid",
+    "raven", "realm", "ridge", "rivet", "robin", "roost", "ruby", "salve",
+    "satin", "scout", "shaft", "shark", "shelf", "sigma", "siren", "slate",
+    "sleet", "solar", "spark", "spear", "spike", "spire", "spoke", "squid",
+    "staff", "steep", "stoic", "stone", "stork", "surge", "swamp", "sworn",
+    "talon", "tango", "thorn", "tiger", "token", "topaz", "torch", "tower",
+    "trout", "tulip", "ultra", "umbra", "unity", "valor", "vault", "vigor",
+    "viola", "viper", "vivid", "vocal", "waltz", "watch", "whale", "wheat",
+    "whelk", "width", "winch", "wrath", "yacht", "youth", "zebra", "zippy",
+    # 64 extras to reach 256
+    "acorn", "badge", "bench", "birch", "bison", "bluff", "cabin", "camel",
+    "candy", "chalk", "cloak", "comet", "crisp", "daisy", "dwarf", "elfin",
+    "flare", "flock", "flora", "flute", "gnome", "grace", "honey", "hyena",
+    "ingot", "jolly", "karma", "lemon", "lilac", "lyric", "magma", "manor",
+    "melon", "mogul", "mango", "nasal", "ninja", "oaken", "opera", "ounce",
+    "peach", "piano", "plaid", "pouch", "quirk", "ranch", "relic", "rowan",
+    "scone", "shrub", "snowy", "steel", "stump", "tiara", "trove", "tunic",
+    "venom", "wagon", "widen", "witty", "woven", "zonal", "aspen", "bliss",
+)
+
+
+def hash_to_slug(hex_hash: str) -> str:
+    """Convert a hex hash to a 3-word slug using the first 3 bytes as indices."""
+    h = bytes.fromhex(hex_hash)
+    return f"{SLUG_WORDS[h[0]]}-{SLUG_WORDS[h[1]]}-{SLUG_WORDS[h[2]]}"
+
+
+def commitment_hash(vote: str, nonce: str) -> str:
+    """Create a sha256 commitment hash for a vote."""
+    return hashlib.sha256(f"{vote}|{nonce}".encode()).hexdigest()
+
+
 def compute_delete_key(path: Path) -> str:
     """Compute a delete_key from file content: sha256(file_bytes)[:16] hex."""
     return hashlib.sha256(path.read_bytes()).hexdigest()[:16]

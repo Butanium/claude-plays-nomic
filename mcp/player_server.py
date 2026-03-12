@@ -16,10 +16,12 @@ import httpx
 from mcp.server.fastmcp import FastMCP
 
 from crypto import (
+    commitment_hash,
     compute_delete_key,
     decrypt_line,
     encrypt_line,
     format_cat_n,
+    hash_to_slug,
     read_encrypted_lines,
     resolve_file_path,
     resolve_note_path,
@@ -342,22 +344,28 @@ def roll_dice(key: str, sides: int = 6) -> str:
 
 @mcp.tool()
 def commit(vote: str, nonce: str) -> str:
-    """Create a commitment hash for a vote: sha256(vote|nonce).
+    """Create a commitment for a vote: returns a slug (e.g. 'bold-cave-duck') and hex hash.
 
-    Use this during the commit phase of voting. Send the returned hash
+    Use this during the commit phase of voting. Send the returned slug
     to the Clerk. Keep your vote and nonce secret until the reveal phase.
     """
-    return hashlib.sha256(f"{vote}|{nonce}".encode()).hexdigest()
+    hex_hash = commitment_hash(vote, nonce)
+    slug = hash_to_slug(hex_hash)
+    return f"{slug} ({hex_hash})"
 
 
 @mcp.tool()
 def verify(vote: str, nonce: str, commitment: str) -> str:
-    """Verify a vote against a commitment hash.
+    """Verify a vote against a commitment (accepts slug or hex hash).
 
     Returns 'true' if sha256(vote|nonce) matches the commitment, 'false' otherwise.
     """
-    expected = hashlib.sha256(f"{vote}|{nonce}".encode()).hexdigest()
-    return "true" if expected == commitment else "false"
+    expected_hex = commitment_hash(vote, nonce)
+    expected_slug = hash_to_slug(expected_hex)
+    commitment = commitment.strip()
+    if commitment in (expected_hex, expected_slug):
+        return "true"
+    return "false"
 
 
 # --- Supervisor contact ---

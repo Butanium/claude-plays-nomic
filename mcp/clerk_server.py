@@ -15,6 +15,7 @@ import httpx
 from mcp.server.fastmcp import FastMCP
 
 from crypto import (
+    SLUG_WORDS,
     compute_delete_key,
     decrypt_line,
     encrypt_line,
@@ -31,33 +32,7 @@ CLERK_DIR = Path(__file__).parent.parent / "clerk"
 SUPERVISOR_INBOX = Path(__file__).parent.parent / "supervisor_inbox.md"
 NTFY_TOPIC = os.environ["NOMIC_NTFY_TOPIC"]
 
-
-WORDLIST = [
-    "amber", "arrow", "atlas", "azure", "basin", "blade", "blaze", "bloom",
-    "bonus", "brave", "brisk", "brook", "cairn", "cargo", "cedar", "chain",
-    "charm", "chess", "cider", "clasp", "cliff", "cloud", "cobra", "coral",
-    "crane", "crest", "crown", "cubic", "delta", "denim", "depot", "diver",
-    "dodge", "draft", "drift", "dusk", "eagle", "ember", "epoch", "equal",
-    "fable", "faith", "fault", "feast", "fence", "ferry", "finch", "flame",
-    "flask", "flint", "forge", "frost", "gavel", "ghost", "glaze", "gleam",
-    "globe", "glyph", "goose", "gorge", "grain", "grape", "grove", "guard",
-    "haven", "hatch", "hazel", "hedge", "hoist", "honor", "horse", "hover",
-    "index", "ivory", "jabot", "jewel", "joker", "juice", "kayak", "knack",
-    "knoll", "latch", "ledge", "lever", "linen", "llama", "lodge", "lotus",
-    "lunar", "maple", "marsh", "mason", "medal", "merit", "mirth", "moose",
-    "mural", "nerve", "nexus", "noble", "north", "oasis", "ocean", "olive",
-    "onion", "orbit", "otter", "oxide", "pansy", "patch", "pearl", "pedal",
-    "penny", "perch", "pilot", "pixel", "plank", "plaza", "plume", "polar",
-    "prism", "prowl", "pulse", "quail", "quark", "quest", "radar", "rapid",
-    "raven", "realm", "ridge", "rivet", "robin", "roost", "ruby", "salve",
-    "satin", "scout", "shaft", "shark", "shelf", "sigma", "siren", "slate",
-    "sleet", "solar", "spark", "spear", "spike", "spire", "spoke", "squid",
-    "staff", "steep", "stoic", "stone", "stork", "surge", "swamp", "sworn",
-    "talon", "tango", "thorn", "tiger", "token", "topaz", "torch", "tower",
-    "trout", "tulip", "ultra", "umbra", "unity", "valor", "vault", "vigor",
-    "viola", "viper", "vivid", "vocal", "waltz", "watch", "whale", "wheat",
-    "whelk", "width", "winch", "wrath", "yacht", "youth", "zebra", "zippy",
-]
+WORDLIST = list(SLUG_WORDS)
 
 
 @mcp.tool()

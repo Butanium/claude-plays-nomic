@@ -21,10 +21,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from crypto import (
+    commitment_hash,
     compute_delete_key,
     decrypt_line,
     encrypt_line,
     format_cat_n,
+    hash_to_slug,
     read_encrypted_lines,
     resolve_file_path,
     resolve_note_path,
@@ -236,12 +238,16 @@ def cmd_roll_dice(args):
 
 
 def cmd_commit(args):
-    print(hashlib.sha256(f"{args.vote}|{args.nonce}".encode()).hexdigest())
+    hex_hash = commitment_hash(args.vote, args.nonce)
+    slug = hash_to_slug(hex_hash)
+    print(f"{slug} ({hex_hash})")
 
 
 def cmd_verify(args):
-    expected = hashlib.sha256(f"{args.vote}|{args.nonce}".encode()).hexdigest()
-    print("true" if expected == args.commitment else "false")
+    expected_hex = commitment_hash(args.vote, args.nonce)
+    expected_slug = hash_to_slug(expected_hex)
+    commitment = args.commitment.strip()
+    print("true" if commitment in (expected_hex, expected_slug) else "false")
 
 
 def cmd_contact_supervisor(args):

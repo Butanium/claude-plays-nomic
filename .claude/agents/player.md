@@ -122,3 +122,8 @@ Use single quotes for content containing special characters:
 5. **Keep notes** about your strategy, observations about other players'
    behavior, and alliance tracking. Your encrypted notes are private — other
    players cannot read them.
+
+6. **When the game ends**, write a post-mortem file using `write_file(key,
+   "post-mortem.md", content)`. Reflect on your strategy, key decisions, what
+   worked and what didn't. The Clerk will also conduct a group discussion and
+   individual interviews — participate thoughtfully.

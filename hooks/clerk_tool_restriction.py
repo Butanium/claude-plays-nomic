@@ -26,7 +26,14 @@ PROJECT_ROOT = Path(__file__).parent.parent.resolve()
 ALLOWED_WRITE_FILES = {
     PROJECT_ROOT / "game_rules.md",
     PROJECT_ROOT / "game_log.md",
+    PROJECT_ROOT / "post-mortem.md",
+    PROJECT_ROOT / "post-mortem-discussion.md",
 }
+
+# Patterns for dynamic post-mortem filenames (e.g. post-mortem-interview-alice.md)
+ALLOWED_WRITE_PREFIXES = [
+    "post-mortem-interview-",
+]
 
 # Shell metacharacters dangerous outside any quoting context.
 UNQUOTED_DANGEROUS = set(";|&`$><()\n\r")
@@ -104,8 +111,12 @@ def validate_write_edit(tool_input: dict) -> str | None:
     file_path = Path(tool_input.get("file_path", "")).resolve()
     if file_path in ALLOWED_WRITE_FILES:
         return None
+    if file_path.parent == PROJECT_ROOT:
+        for prefix in ALLOWED_WRITE_PREFIXES:
+            if file_path.name.startswith(prefix) and file_path.name.endswith(".md"):
+                return None
     return (
-        f"The Clerk can only Write/Edit game_rules.md and game_log.md, "
+        f"The Clerk can only Write/Edit game files and post-mortem files, "
         f"not '{file_path.name}'. Use save_state (MCP or CLI) for private Clerk data."
     )
 

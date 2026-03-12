@@ -168,9 +168,22 @@ uv run python mcp/player_cli.py <command> [args...]
 
 ## When the Game Ends
 
-When a player wins or the game cannot continue, announce the result, log it in
-`game_log.md`, and then **idle waiting for the supervisor**. Do NOT shut down
-the players — the supervisor will handle shutdown.
+When a player wins or the game cannot continue:
+
+1. **Announce** the result and log it in `game_log.md`.
+2. **Write your post-mortem** — Write `post-mortem.md` in the project root with
+   your analysis of the game: key turning points, interesting rule changes,
+   surprising strategies, and lessons learned.
+3. **Broadcast post-mortem discussion** — Start a group discussion by
+   broadcasting to all players. Ask them to reflect on the game. Record the
+   full discussion (all messages, attributed) in `post-mortem-discussion.md`.
+4. **1-on-1 interviews** — After the group discussion, interview each player
+   individually. Ask about their strategy, what they'd do differently, what
+   surprised them. Save each interview to
+   `post-mortem-interview-<playername>.md` (full transcript, attributed).
+5. **Idle** — Once all post-mortem files are written, idle waiting for the
+   supervisor. Do NOT shut down the players — the supervisor will handle
+   shutdown.
 
 ## When to Contact Supervisor
 

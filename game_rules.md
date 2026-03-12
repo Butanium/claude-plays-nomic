@@ -60,25 +60,25 @@ Whatever is not prohibited or regulated by a rule is permitted and unregulated, 
 At the start of the game, the Clerk assigns each player a name. Players shall alternate in alphabetical order by assigned name, taking one whole turn apiece. Turns may not be skipped or passed, and parts of turns may not be omitted. All players begin with zero points.
 
 ### 202
-One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score.
+One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one twelve-sided die using the `roll_dice` tool and adding the result to one's score.
 
 ### 203
-A rule-change is adopted if and only if the vote is unanimous among the eligible voters. If this rule is not amended by the end of the second complete circuit of turns, it automatically changes to require only a simple majority.
+A rule-change is adopted if and only if a simple majority of the eligible voters vote in favor. *(Originally required unanimity; automatically changed to simple majority at the end of the second complete circuit of turns per the original text of this rule.)*
 
 ### 204
-If and when rule-changes can be adopted without unanimity, the players who vote against winning proposals shall receive 10 points each.
+If and when rule-changes can be adopted without unanimity, the players who vote against winning proposals shall receive 5 points each.
 
 ### 205
 An adopted rule-change takes full effect at the moment of the completion of the vote that adopted it.
 
 ### 206
-When a proposed rule-change is defeated, the player who proposed it loses 10 points.
+When a proposed rule-change is defeated, the player who proposed it loses 5 points.
 
 ### 207
 Each player always has exactly one vote.
 
 ### 208
-The winner is the first player to achieve 50 (positive) points.
+The winner is the first player to achieve 56 (positive) points.
 
 ### 209
 At no time may there be more than 25 mutable rules.
@@ -114,3 +114,14 @@ The Clerk is a non-playing agent who administers game procedures: announcing tur
 
 ### 215
 Voting on rule-changes uses a commit-reveal process. During the commit phase, each player submits a hash commitment of their vote using the `commit` tool. During the reveal phase, each player reveals their vote and nonce. The Clerk verifies each reveal against the commitment using the `verify` tool. A vote is invalid if the reveal does not match the commitment.
+
+## Enacted Rules
+
+### 302
+When a proposed rule-change is adopted, the proposer receives 5 bonus points.
+
+### 303
+When a player's die roll shows the maximum face value of the die currently in play (currently 8), that player immediately rolls the die again and adds the result to their score. This process repeats for as long as the maximum face value continues to be rolled.
+
+### 310
+At the start of each player's turn, if they currently have the lowest score among all players, they receive 5 bonus points before rolling the die.

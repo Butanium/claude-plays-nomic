@@ -7,8 +7,8 @@ mcpServers:
   - nomic-crypto
 hooks:
   PreToolUse:
-    - matcher: "^(Bash|Write|Edit|AskUserQuestion)$"
-      description: "Restrict Clerk: Bash for CLI only, Write/Edit for game files only, no AskUserQuestion"
+    - matcher: "^(Bash|Write|Edit|Read|Grep|AskUserQuestion)$"
+      description: "Restrict Clerk: Bash for CLI only, Write/Edit for game files only, Read/Grep blocked for private files, no AskUserQuestion"
       hooks:
         - type: command
           command: 'python3 hooks/clerk_tool_restriction.py'

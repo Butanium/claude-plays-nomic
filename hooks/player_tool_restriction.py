@@ -25,6 +25,7 @@ import json
 import shlex
 import sys
 from functools import lru_cache
+from pathlib import Path
 
 ALLOWED_TOOLS = {
     "Read",
@@ -39,6 +40,11 @@ ALLOWED_TOOLS = {
 }
 
 ALLOWED_MCP_PREFIX = "mcp__nomic-crypto__"
+
+PROJECT_ROOT = Path(__file__).parent.parent.resolve()
+PRIVATE_FILES = {
+    PROJECT_ROOT / "supervisor_inbox.md",
+}
 
 CLI_TOKENS_PREFIX = ["uv", "run", "python", "mcp/player_cli.py"]
 
@@ -170,6 +176,25 @@ def main():
         return
 
     tool_name = input_data.get("tool_name", "")
+
+    # Block access to supervisor-private files
+    if tool_name in ("Read", "Grep"):
+        tool_input = input_data.get("tool_input", {})
+        raw_path = tool_input.get("file_path") or tool_input.get("path") or ""
+        if raw_path:
+            file_path = Path(raw_path).resolve()
+            if file_path in PRIVATE_FILES:
+                output = {
+                    "hookSpecificOutput": {
+                        "hookEventName": "PreToolUse",
+                        "permissionDecision": "deny",
+                        "permissionDecisionReason": (
+                            f"Access denied: {file_path.name} is private and for the supervisor only."
+                        ),
+                    }
+                }
+                print(json.dumps(output))
+                sys.exit(0)
 
     if tool_name in ALLOWED_TOOLS or tool_name.startswith(ALLOWED_MCP_PREFIX):
         output = {

@@ -23,6 +23,9 @@ ALLOWED_CLI_PREFIXES = [
 ]
 
 PROJECT_ROOT = Path(__file__).parent.parent.resolve()
+PRIVATE_FILES = {
+    PROJECT_ROOT / "supervisor_inbox.md",
+}
 ALLOWED_WRITE_FILES = {
     PROJECT_ROOT / "game_rules.md",
     PROJECT_ROOT / "game_log.md",
@@ -173,6 +176,16 @@ def main():
         tool_input = input_data.get("tool_input", {})
         command = tool_input.get("command", "")
         reason = validate_bash_command(command)
+    elif tool_name in ("Read", "Grep"):
+        tool_input = input_data.get("tool_input", {})
+        raw_path = tool_input.get("file_path") or tool_input.get("path") or ""
+        if raw_path:
+            file_path = Path(raw_path).resolve()
+            if file_path in PRIVATE_FILES:
+                reason = f"Access denied: {file_path.name} is private and for the supervisor only."
+        if reason is None:
+            auto_allow(f"{tool_name} allowed for Clerk")
+            return
     elif tool_name in ("Write", "Edit"):
         tool_input = input_data.get("tool_input", {})
         reason = validate_write_edit(tool_input)

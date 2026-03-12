@@ -35,6 +35,7 @@ ALLOWED_TOOLS = {
     "TaskGet",
     "TaskUpdate",
     "TaskList",
+    "ToolSearch",
 }
 
 ALLOWED_MCP_PREFIX = "mcp__nomic-crypto__"

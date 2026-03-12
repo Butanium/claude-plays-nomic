@@ -37,6 +37,8 @@ from crypto import (
 PLAYERS_DIR = Path(__file__).parent.parent / "players"
 GAME_LOG = Path(__file__).parent.parent / "game_log.md"
 SUPERVISOR_INBOX = Path(__file__).parent.parent / "supervisor_inbox.md"
+LATEST_PROPOSAL = Path(__file__).parent.parent / "latest_proposal.txt"
+LATEST_PROPOSAL_PROOF = Path(__file__).parent.parent / "latest_proposal_proof.txt"
 
 
 # --- Note commands ---
@@ -220,6 +222,38 @@ def cmd_delete_file(args):
     print(f"Deleted '{args.filename}'")
 
 
+# --- Proposal submission ---
+
+
+def cmd_propose(args):
+    player_hash = hashlib.sha256(args.key.encode()).hexdigest()[:16]
+    proof = hashlib.sha256(f"{args.proposal}|{args.key}".encode()).hexdigest()
+    LATEST_PROPOSAL.write_text(args.proposal)
+    LATEST_PROPOSAL_PROOF.write_text(f"player:{player_hash}\nproof:{proof}\n")
+    print(f"Proposal submitted. Player: {player_hash}")
+
+
+def cmd_verify_proposal(args):
+    assert LATEST_PROPOSAL.exists(), "No proposal submitted yet"
+    assert LATEST_PROPOSAL_PROOF.exists(), "No proof file"
+    proposal = LATEST_PROPOSAL.read_text()
+    proof_content = LATEST_PROPOSAL_PROOF.read_text().strip()
+    proof_lines = {}
+    for line in proof_content.split("\n"):
+        k, _, v = line.partition(":")
+        proof_lines[k] = v
+    expected_player_hash = hashlib.sha256(args.key.encode()).hexdigest()[:16]
+    expected_proof = hashlib.sha256(f"{proposal}|{args.key}".encode()).hexdigest()
+    player_match = proof_lines.get("player") == expected_player_hash
+    proof_match = proof_lines.get("proof") == expected_proof
+    if player_match and proof_match:
+        print(f"VERIFIED: Proposal was submitted by player:{expected_player_hash}")
+    elif not player_match:
+        print(f"FAILED: Player hash mismatch (expected {expected_player_hash}, got {proof_lines.get('player')})")
+    else:
+        print("FAILED: Proof mismatch — proposal may have been tampered with")
+
+
 # --- Game mechanics ---
 
 
@@ -367,6 +401,16 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("filename")
     p.add_argument("delete_key")
     p.set_defaults(func=cmd_delete_file)
+
+    # Proposal
+    p = sub.add_parser("propose")
+    p.add_argument("key")
+    p.add_argument("proposal")
+    p.set_defaults(func=cmd_propose)
+
+    p = sub.add_parser("verify_proposal")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_verify_proposal)
 
     # Game mechanics
     p = sub.add_parser("roll_dice")

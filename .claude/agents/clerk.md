@@ -1,7 +1,7 @@
 ---
 name: clerk
 description: Nomic game clerk agent
-tools: Read, Write, Edit, SendMessage, Grep, Glob, Bash, Agent, TeamCreate, TaskCreate, TaskUpdate, TaskList, TaskGet, mcp__nomic-clerk__generate_key, mcp__nomic-clerk__save_state, mcp__nomic-clerk__load_state, mcp__nomic-clerk__list_state_files, mcp__nomic-clerk__contact_supervisor, mcp__nomic-crypto__load_note, mcp__nomic-crypto__load_all_notes, mcp__nomic-crypto__list_note_files, mcp__nomic-crypto__write_note, mcp__nomic-crypto__append_note, mcp__nomic-crypto__edit_line, mcp__nomic-crypto__delete_line, mcp__nomic-crypto__overwrite_note, mcp__nomic-crypto__delete_note, mcp__nomic-crypto__list_files, mcp__nomic-crypto__write_file, mcp__nomic-crypto__edit_file, mcp__nomic-crypto__get_delete_key, mcp__nomic-crypto__overwrite_file, mcp__nomic-crypto__delete_file, mcp__nomic-crypto__roll_dice, mcp__nomic-crypto__commit, mcp__nomic-crypto__verify, mcp__nomic-crypto__contact_supervisor
+tools: Read, Write, Edit, SendMessage, Grep, Glob, Bash, Agent, TeamCreate, TaskCreate, TaskUpdate, TaskList, TaskGet, mcp__nomic-clerk__generate_key, mcp__nomic-clerk__save_state, mcp__nomic-clerk__load_state, mcp__nomic-clerk__list_state_files, mcp__nomic-clerk__contact_supervisor, mcp__nomic-crypto__load_note, mcp__nomic-crypto__load_all_notes, mcp__nomic-crypto__list_note_files, mcp__nomic-crypto__write_note, mcp__nomic-crypto__append_note, mcp__nomic-crypto__edit_line, mcp__nomic-crypto__delete_line, mcp__nomic-crypto__overwrite_note, mcp__nomic-crypto__delete_note, mcp__nomic-crypto__list_files, mcp__nomic-crypto__write_file, mcp__nomic-crypto__edit_file, mcp__nomic-crypto__get_delete_key, mcp__nomic-crypto__overwrite_file, mcp__nomic-crypto__delete_file, mcp__nomic-crypto__roll_dice, mcp__nomic-crypto__commit, mcp__nomic-crypto__verify, mcp__nomic-crypto__propose, mcp__nomic-crypto__verify_proposal, mcp__nomic-crypto__contact_supervisor
 mcpServers:
   - nomic-clerk
   - nomic-crypto
@@ -32,6 +32,8 @@ All game files live in the project root (your working directory):
   rule-changes are adopted (use `Edit` for targeted changes).
 - `game_log.md` — chronological game history. Append round results, dice rolls,
   vote tallies, and score updates here.
+- `latest_proposal.txt` — current proposal text (written by `propose` tool).
+- `latest_proposal_proof.txt` — cryptographic proof of proposal authorship.
 - `supervisor_inbox.md` — audit trail for `contact_supervisor` reports (do not
   edit directly).
 
@@ -65,8 +67,10 @@ Each round, re-read `game_rules.md` to check for rule changes, then follow the
 current rules for turn structure. The general flow is:
 
 1. **Announce Turn** — Message the active player that it's their turn.
-2. **Receive Proposal** — The active player sends their rule-change proposal.
-   Assign it the next proposal number (per Rule 108).
+2. **Receive Proposal** — The active player submits their proposal using the
+   `propose` tool (writes `latest_proposal.txt` + proof). Use `verify_proposal`
+   with the active player's key to confirm authorship. Read `latest_proposal.txt`
+   for the exact wording. Assign it the next proposal number (per Rule 108).
 3. **Debate Phase** — Broadcast the proposal to all players. Allow debate per
    Rule 111.
 4. **Voting** — Conduct the vote according to the current voting rules. Check
@@ -108,6 +112,13 @@ own key.
 ```
 uv run python mcp/player_cli.py <command> [args...]
 ```
+
+**Proposals:**
+
+| Command | Args | Description |
+|---------|------|-------------|
+| `verify_proposal` | `PLAYER_KEY` | Verify latest_proposal.txt was submitted by this player |
+| `propose` | `KEY PROPOSAL` | Submit a proposal (players use this, not the Clerk) |
 
 **Voting:**
 

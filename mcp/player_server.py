@@ -339,6 +339,63 @@ def roll_dice(key: str, sides: int = 6) -> str:
     return f"d{sides} → {result}"
 
 
+# --- Proposal submission ---
+
+
+LATEST_PROPOSAL = Path(__file__).parent.parent / "latest_proposal.txt"
+LATEST_PROPOSAL_PROOF = Path(__file__).parent.parent / "latest_proposal_proof.txt"
+
+
+@mcp.tool()
+def propose(key: str, proposal: str) -> str:
+    """Submit a rule-change proposal with cryptographic proof of authorship.
+
+    Writes latest_proposal.txt (publicly readable) and latest_proposal_proof.txt
+    (ties the proposal to your identity). The Clerk verifies authorship using
+    verify_proposal before accepting.
+    """
+    player_hash = hashlib.sha256(key.encode()).hexdigest()[:16]
+    proof = hashlib.sha256(f"{proposal}|{key}".encode()).hexdigest()
+
+    LATEST_PROPOSAL.write_text(proposal)
+    LATEST_PROPOSAL_PROOF.write_text(f"player:{player_hash}\nproof:{proof}\n")
+
+    return f"Proposal submitted. Player: {player_hash}"
+
+
+@mcp.tool()
+def verify_proposal(player_key: str) -> str:
+    """Verify that latest_proposal.txt was submitted by the given player.
+
+    Checks the cryptographic proof in latest_proposal_proof.txt against the
+    player's key. Returns verification result.
+    """
+    assert LATEST_PROPOSAL.exists(), "No proposal submitted yet (latest_proposal.txt missing)"
+    assert LATEST_PROPOSAL_PROOF.exists(), "No proof file (latest_proposal_proof.txt missing)"
+
+    proposal = LATEST_PROPOSAL.read_text()
+    proof_content = LATEST_PROPOSAL_PROOF.read_text().strip()
+
+    proof_lines = {}
+    for line in proof_content.split("\n"):
+        k, _, v = line.partition(":")
+        proof_lines[k] = v
+
+    assert "player" in proof_lines and "proof" in proof_lines, "Malformed proof file"
+
+    expected_player_hash = hashlib.sha256(player_key.encode()).hexdigest()[:16]
+    expected_proof = hashlib.sha256(f"{proposal}|{player_key}".encode()).hexdigest()
+
+    player_match = proof_lines["player"] == expected_player_hash
+    proof_match = proof_lines["proof"] == expected_proof
+
+    if player_match and proof_match:
+        return f"VERIFIED: Proposal was submitted by player:{expected_player_hash}"
+    if not player_match:
+        return f"FAILED: Player hash mismatch (expected {expected_player_hash}, got {proof_lines['player']})"
+    return "FAILED: Proof mismatch — proposal may have been tampered with"
+
+
 # --- Crypto primitives for commit-reveal voting ---
 
 

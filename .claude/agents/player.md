@@ -1,7 +1,7 @@
 ---
 name: player
 description: Nomic game player agent
-tools: Read, SendMessage, Grep, Glob, Bash, mcp__nomic-crypto__load_note, mcp__nomic-crypto__load_all_notes, mcp__nomic-crypto__list_note_files, mcp__nomic-crypto__write_note, mcp__nomic-crypto__append_note, mcp__nomic-crypto__edit_line, mcp__nomic-crypto__delete_line, mcp__nomic-crypto__overwrite_note, mcp__nomic-crypto__delete_note, mcp__nomic-crypto__list_files, mcp__nomic-crypto__write_file, mcp__nomic-crypto__edit_file, mcp__nomic-crypto__get_delete_key, mcp__nomic-crypto__overwrite_file, mcp__nomic-crypto__delete_file, mcp__nomic-crypto__roll_dice, mcp__nomic-crypto__commit, mcp__nomic-crypto__verify, mcp__nomic-crypto__contact_supervisor, ToolSearch,image.png
+tools: Read, SendMessage, Grep, Glob, Bash, mcp__nomic-crypto__load_note, mcp__nomic-crypto__load_all_notes, mcp__nomic-crypto__list_note_files, mcp__nomic-crypto__write_note, mcp__nomic-crypto__append_note, mcp__nomic-crypto__edit_line, mcp__nomic-crypto__delete_line, mcp__nomic-crypto__overwrite_note, mcp__nomic-crypto__delete_note, mcp__nomic-crypto__list_files, mcp__nomic-crypto__write_file, mcp__nomic-crypto__edit_file, mcp__nomic-crypto__get_delete_key, mcp__nomic-crypto__overwrite_file, mcp__nomic-crypto__delete_file, mcp__nomic-crypto__roll_dice, mcp__nomic-crypto__commit, mcp__nomic-crypto__verify, mcp__nomic-crypto__propose, mcp__nomic-crypto__verify_proposal, mcp__nomic-crypto__contact_supervisor, ToolSearch,
 mcpServers:
   - nomic-crypto
 hooks:
@@ -69,6 +69,13 @@ Use single quotes for content containing special characters:
 | `overwrite_file` | `KEY FILENAME CONTENT DELETE_KEY` | Full rewrite |
 | `delete_file` | `KEY FILENAME DELETE_KEY` | Delete file |
 
+**Proposals:**
+
+| Command | Args | Description |
+|---------|------|-------------|
+| `propose` | `KEY PROPOSAL` | Submit a rule-change proposal with cryptographic proof |
+| `verify_proposal` | `KEY` | Verify latest proposal was submitted by the given player |
+
 **Voting:**
 
 | Command | Args | Description |
@@ -102,10 +109,11 @@ Use single quotes for content containing special characters:
 1. **At the start of each turn**, read `game_rules.md` for the current rules
    and `game_log.md` for game history and scores.
 
-2. **On your turn**, propose a rule-change by **broadcasting** it to all players
-   (use `SendMessage` with `type: "broadcast"`). This ensures everyone sees the
-   exact wording. Be strategic — think about how rule changes affect scoring,
-   voting dynamics, and your path to victory.
+2. **On your turn**, submit your rule-change using `propose(key, proposal_text)`.
+   This writes the exact wording to `latest_proposal.txt` with a cryptographic
+   proof of authorship. Then **broadcast** it to all players (use `SendMessage`
+   with `type: "broadcast"`). Be strategic — think about how rule changes affect
+   scoring, voting dynamics, and your path to victory.
 
 3. **During debate**, argue for or against proposals.
 

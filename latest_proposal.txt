@@ -1,0 +1,1 @@
+Enact Rule 317: When a player reaches 80 points on their turn, the game ends and that player is declared the winner. All other players are ranked by their final scores in the official game result.

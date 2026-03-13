@@ -57,26 +57,29 @@ Whatever is not prohibited or regulated by a rule is permitted and unregulated, 
 ### 201
 At the start of the game, the Clerk assigns each player a name. Players shall alternate in alphabetical order by assigned name, taking one whole turn apiece. Turns may not be skipped or passed, and parts of turns may not be omitted. All players begin with zero points.
 
-### 202
-One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score.
+### 302 (formerly 202)
+One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling two six-sided dice using the `roll_dice` tool and adding the sum to one's score.
+
+*Note: The 2d6 change takes effect beginning with the second complete circuit of turns. During the first circuit, players roll 1d6.*
 
 ### 203
-A rule-change is adopted if and only if the vote is unanimous among the eligible voters. If this rule is not amended by the end of the second complete circuit of turns, it automatically changes to require only a simple majority.
+A rule-change is adopted if and only if a simple majority of the eligible voters vote in favor.
 
-### 204
-If and when rule-changes can be adopted without unanimity, the players who vote against winning proposals shall receive 10 points each.
+*Note: This rule automatically changed from unanimity to simple majority at the end of the second complete circuit of turns, as its original text specified.*
+
+### ~~304~~ (formerly 204) — REPEALED by Proposal 308
 
 ### 205
 An adopted rule-change takes full effect at the moment of the completion of the vote that adopted it.
 
-### 206
-When a proposed rule-change is defeated, the player who proposed it loses 10 points.
+### 303 (formerly 206)
+When a proposed rule-change is defeated, the player who proposed it loses 5 points.
 
 ### 207
 Each player always has exactly one vote.
 
-### 208
-The winner is the first player to achieve 100 (positive) points.
+### 305 (formerly 208)
+The winner is the first player to achieve 80 (positive) points.
 
 ### 209
 At no time may there be more than 25 mutable rules.
@@ -112,3 +115,27 @@ The Clerk is a non-playing agent who administers game procedures: announcing tur
 
 ### 215
 Voting on rule-changes uses a commit-reveal process. During the commit phase, each player submits a hash commitment of their vote using the `commit` tool. During the reveal phase, each player reveals their vote and nonce. The Clerk verifies each reveal against the commitment using the `verify` tool. A vote is invalid if the reveal does not match the commitment.
+
+### 301
+When a proposed rule-change is adopted, the proposer earns 5 bonus points.
+
+### 311 (formerly 306)
+At the end of each complete round, the player with the lowest score gains 5 bonus points. If two or more players tie for lowest score, each tied player gains 5 bonus points.
+
+### 307
+The player with the lowest score at the start of their turn rolls 3d6 instead of 2d6. If multiple players are tied for the lowest score, all tied players roll 3d6 on their respective turns.
+
+### 315 (formerly 309)
+If a player's two most recent proposals were both adopted, they earn 3 additional bonus points when their next proposal is also adopted. After a player earns the streak bonus, their proposal adoption streak resets to zero. (The streak bonus can still be earned again by building a new streak of two consecutive adopted proposals.)
+
+### 310
+If a player's dice roll results in all dice showing the same value (doubles on 2d6, or all three matching on 3d6), they earn 5 bonus points in addition to the dice total.
+
+### 313
+When a player rolls a total of 7 on their dice, they earn 2 bonus points in addition to the dice total.
+
+### 314
+When a proposed rule-change introduces a new bonus point mechanic (beyond dice roll totals), the proposer of that rule earns 2 additional bonus points in addition to any adoption bonus.
+
+### 317
+When a player reaches 80 points on their turn, the game ends and that player is declared the winner. All other players are ranked by their final scores in the official game result.

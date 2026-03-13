@@ -1,7 +1,10 @@
-# Nomic
+# Nomic — Game 4 (Completed)
 
 A self-amending rule game ([Peter Suber's Nomic](https://www.earlham.edu/~peters/nomic.htm))
 played by Claude Code agents using the team system.
+
+**This branch contains the completed Game 4.** Winner: **Wren (Haiku)** with 95
+points, over Sable (Opus) at 79 and Thorn (Sonnet) at 75. The game ran 6 rounds.
 
 ## Architecture
 
@@ -39,28 +42,53 @@ User (human supervisor, root of trust)
 ## Project Structure
 
 ```
-nomic/
+game-4/
 ├── mcp/
-│   ├── crypto.py               # Shared encryption primitives
-│   ├── player_server.py         # Player MCP: notes, files, voting, supervisor
-│   └── clerk_server.py          # Clerk MCP: encrypted state, supervisor
+│   ├── crypto.py                  # Shared encryption primitives
+│   ├── player_server.py           # Player MCP: notes, files, voting, supervisor
+│   ├── player_cli.py              # Player CLI fallback
+│   ├── clerk_server.py            # Clerk MCP: encrypted state, supervisor
+│   └── clerk_cli.py               # Clerk CLI fallback
 ├── hooks/
-│   ├── player_tool_restriction.py  # Allowlist enforcement for players
-│   └── clerk_tool_restriction.py   # Deny Bash + player MCP for Clerk
+│   ├── player_tool_restriction.py # Allowlist enforcement for players
+│   ├── clerk_tool_restriction.py  # Deny Bash + player MCP for Clerk
+│   └── debug_log_hook.py         # Debug logging hook
 ├── .claude/agents/
-│   ├── player.md               # Player agent definition (+ hooks)
-│   └── clerk.md                # Clerk agent definition (+ hooks)
-├── players/                    # Per-player storage (auto-created)
+│   ├── player.md                  # Player agent definition (+ hooks)
+│   └── clerk.md                   # Clerk agent definition (+ hooks)
+├── players/                       # Per-player storage (auto-created)
 │   └── <sha256(key)[:16]>/
-│       ├── encrypted/          # AES-encrypted private notes
-│       └── files/              # Plaintext working files
-├── clerk/                      # Encrypted Clerk state (auto-created)
-├── mcp-config.json             # MCP server config (passed via --mcp-config)
-├── game_rules.md               # Living ruleset (full Suber rules)
-├── game_log.md                 # Chronological game history
-├── supervisor_inbox.md         # Audit trail for supervisor reports
-└── tests/
-    └── test_crypto.py
+│       ├── encrypted/             # AES-encrypted private notes
+│       └── files/                 # Plaintext working files (post-mortem etc.)
+├── clerk/                         # Encrypted Clerk state (auto-created)
+├── transcripts/                   # Agent transcripts (post-game)
+│   ├── clerk.jsonl                # Raw clerk transcript
+│   ├── clerk.txt                  # Human-readable clerk transcript
+│   ├── player-sable-opus.jsonl    # Raw Sable (Opus) transcript
+│   ├── player-sable-opus.txt      # Human-readable Sable transcript
+│   ├── player-thorn-sonnet.jsonl  # Raw Thorn (Sonnet) transcript
+│   ├── player-thorn-sonnet.txt    # Human-readable Thorn transcript
+│   ├── player-wren-haiku.jsonl    # Raw Wren (Haiku) transcript
+│   └── player-wren-haiku.txt      # Human-readable Wren transcript
+├── game_rules.md                  # Final ruleset (as amended during play)
+├── game_log.md                    # Chronological game history
+├── game_charter.md                # Game charter (competitive play norms)
+├── game_briefing.md               # Pre-game briefing
+├── supervisor_inbox.md            # Audit trail for supervisor reports
+├── latest_proposal.txt            # Last proposal submitted
+├── latest_proposal_proof.txt      # Cryptographic proof of last proposal
+├── post-mortem.md                 # Game post-mortem summary
+├── post-mortem-discussion.md      # Post-game group discussion
+├── post-mortem-interview-sable.md # Post-mortem interview with Sable
+├── post-mortem-interview-thorn.md # Post-mortem interview with Thorn
+├── post-mortem-interview-wren.md  # Post-mortem interview with Wren
+├── mcp-config.json                # MCP server config (passed via --mcp-config)
+├── tests/
+│   ├── test_crypto.py
+│   ├── test_hooks.py
+│   └── conftest.py
+├── pyproject.toml
+└── uv.lock
 ```
 
 ## Setup

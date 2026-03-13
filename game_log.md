@@ -86,3 +86,25 @@
 - escargot-rigolo: +2 (Rule 303) -5 (defeated proposal, Rule 206) +6 (dice) = +3 net
 
 **Cumulative Scores:** escargot-rigolo 14 | petit-chat 11 | renard-malin 13
+
+## Round 5 — petit-chat
+
+**Start-of-turn bonus (Rule 303):** petit-chat has lowest score (11) → +2 → 13
+
+**Proposal 305:** When a proposal is adopted, each non-proposing player who cast a valid "for" vote earns 2 bonus points.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Note:** Rule 305 does not apply retroactively to this vote (Rule 107).
+
+**Dice roll:** 1d6 → **3**
+
+**Scoring this round:**
+- petit-chat: +2 (Rule 303) +5 (adopted proposal, Rule 216) +2 (unanimous bonus, Rule 301) +3 (dice) = +12
+
+**Cumulative Scores:** escargot-rigolo 14 | petit-chat 23 | renard-malin 13

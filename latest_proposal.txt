@@ -1,1 +1,1 @@
-RULE 304: At the end of each complete round, the player currently in second place (or tied for second place) receives 2 bonus points. If multiple players are tied for second place, each receives the bonus. This bonus does not apply if there is only one unique score (i.e., all players are tied).
+Rule 305: When a proposal is adopted, each non-proposing player who cast a valid "for" vote earns 2 bonus points.

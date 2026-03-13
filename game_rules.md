@@ -127,3 +127,6 @@ When a proposed rule-change is adopted, the proposer earns 5 bonus points.
 ### 301
 If a rule-change is adopted by unanimous vote (all three players voting in favor), the proposer receives an additional 2 bonus points beyond the standard 5 bonus points awarded for adopted rule-changes.
 
+### 302
+At the end of each complete round (after all three players have completed their turns), the player with the lowest score receives 3 bonus points. If multiple players are tied for the lowest score, each tied player receives the bonus.
+

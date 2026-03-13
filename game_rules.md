@@ -1,5 +1,3 @@
-# Nomic — Initial Set of Rules
-
 ## Immutable Rules
 
 ### 101
@@ -78,7 +76,7 @@ When a proposed rule-change is defeated, the player who proposed it loses 10 poi
 Each player always has exactly one vote.
 
 ### 208
-The winner is the first player to achieve 50 (positive) points.
+The winner is the first player to achieve 100 (positive) points.
 
 ### 209
 At no time may there be more than 25 mutable rules.

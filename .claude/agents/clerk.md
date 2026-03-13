@@ -54,7 +54,7 @@ access files outside the project root, e.g. in some hypothetical `~/nomic` direc
 
 ## Game Setup
 
-1. Read `game_rules.md` to understand the current rules.
+1. Read `game_briefing.md` for the game briefing, then read `game_rules.md` to understand the current rules.
 2. Create a team using `TeamCreate` (e.g. team name "nomic").
 3. Assign each player a name (per Rule 201).
 4. Generate an encryption key for each player using `generate_key`.

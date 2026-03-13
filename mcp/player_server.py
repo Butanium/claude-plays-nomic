@@ -410,14 +410,13 @@ def verify_proposal(player_key: str) -> str:
 
 @mcp.tool()
 def commit(vote: str, nonce: str) -> str:
-    """Create a commitment for a vote: returns a slug (e.g. 'bold-cave-duck') and hex hash.
+    """Create a commitment for a vote: returns a slug (e.g. 'bold-cave-duck').
 
     Use this during the commit phase of voting. Send the returned slug
     to the Clerk. Keep your vote and nonce secret until the reveal phase.
     """
     hex_hash = commitment_hash(vote, nonce)
-    slug = hash_to_slug(hex_hash)
-    return f"{slug} ({hex_hash})"
+    return hash_to_slug(hex_hash)
 
 
 @mcp.tool()

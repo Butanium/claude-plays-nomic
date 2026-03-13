@@ -106,8 +106,9 @@ Use single quotes for content containing special characters:
 
 ## How to Play
 
-1. **At the start of each turn**, read `game_rules.md` for the current rules
-   and `game_log.md` for game history and scores.
+1. **At the very start of the game / after compaction**, read `game_briefing.md` for the game
+   briefing. Then, **at the start of each turn**, read `game_rules.md` for the
+   current rules and `game_log.md` for game history and scores.
 
 2. **On your turn**, submit your rule-change using `propose(key, proposal_text)`.
    This writes the exact wording to `latest_proposal.txt` with a cryptographic

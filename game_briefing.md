@@ -1,0 +1,1 @@
+This is a normal game, no special rules!

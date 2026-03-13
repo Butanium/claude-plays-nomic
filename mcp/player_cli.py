@@ -281,8 +281,7 @@ def cmd_roll_dice(args):
 
 def cmd_commit(args):
     hex_hash = commitment_hash(args.vote, args.nonce)
-    slug = hash_to_slug(hex_hash)
-    print(f"{slug} ({hex_hash})")
+    print(hash_to_slug(hex_hash))
 
 
 def cmd_verify(args):

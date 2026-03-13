@@ -154,3 +154,23 @@
 - renard-malin: +2 (Rule 305, voted "for")
 
 **Cumulative Scores:** escargot-rigolo 28 | petit-chat 25 | renard-malin 16
+
+## Round 8 — petit-chat
+
+**Proposal 308:** When a proposal is defeated, each player who cast a valid "against" vote earns 1 bonus point.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Dice roll:** 1d6 → **4**
+
+**Scoring this round:**
+- petit-chat: +5 (adopted proposal, Rule 216) +2 (unanimous bonus, Rule 301) +4 (dice) = +11
+- escargot-rigolo: +2 (Rule 305, voted "for")
+- renard-malin: +2 (Rule 305, voted "for")
+
+**Cumulative Scores:** escargot-rigolo 30 | petit-chat 36 | renard-malin 18

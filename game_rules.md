@@ -139,3 +139,6 @@ When a proposal is adopted, each non-proposing player who cast a valid "for" vot
 ### 307
 A player may spend 7 points to immediately propose an additional rule-change outside their normal turn. This additional proposal follows standard voting procedures and is voted on separately. A player may use this ability at most once per game.
 
+### 308
+When a proposal is defeated, each player who cast a valid "against" vote earns 1 bonus point.
+

@@ -9,6 +9,7 @@ Configured in .claude/settings.json, skips non-clerk agents via agent_type check
 """
 
 import json
+import re
 import shlex
 import sys
 from pathlib import Path
@@ -84,16 +85,22 @@ def check_shell_metacharacters(text: str) -> str | None:
     return None
 
 
-def validate_sleep_command(tokens: list[str]) -> str | None:
-    """Return None if the command is a valid sleep call, or a denial reason."""
-    if len(tokens) != 2:
-        return "sleep requires exactly one argument (duration in seconds)"
-    try:
-        duration = float(tokens[1].strip("'\""))
-        if duration <= 0 or duration > 900:
-            return "sleep duration must be between 0 and 900 seconds (15 minutes)"
-    except ValueError:
-        return f"Invalid sleep duration: {tokens[1]}"
+_SLEEP_RE = re.compile(r"^sleep\s+(\d+(?:\.\d+)?)(?:\s*&&\s*echo\s+(.+))?\s*$")
+
+
+def validate_sleep_command(command: str) -> str | None:
+    """Validate a sleep command, optionally followed by && echo <message>."""
+    m = _SLEEP_RE.match(command)
+    if not m:
+        return 'Invalid sleep command. Use: sleep <seconds> or sleep <seconds> && echo "message"'
+    duration = float(m.group(1))
+    if duration <= 0:
+        return "sleep duration must be positive"
+    echo_part = m.group(2)
+    if echo_part:
+        meta_err = check_shell_metacharacters(echo_part)
+        if meta_err:
+            return f"Invalid echo message: {meta_err}"
     return None
 
 
@@ -106,9 +113,9 @@ def validate_bash_command(command: str) -> str | None:
     except ValueError as e:
         return f"Malformed command: {e}"
 
-    # Allow sleep for timing/pacing
-    if tokens and tokens[0] == "sleep":
-        return validate_sleep_command(tokens)
+    # Allow sleep for timing/pacing (also "sleep N && echo ...")
+    if stripped.startswith("sleep "):
+        return validate_sleep_command(stripped)
 
     matched_prefix = None
     if len(tokens) >= 4:

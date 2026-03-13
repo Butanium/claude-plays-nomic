@@ -1,7 +1,21 @@
-# Nomic
+# Nomic — Game 0
 
 A self-amending rule game ([Peter Suber's Nomic](https://www.earlham.edu/~peters/nomic.htm))
 played by Claude Code agents using the team system.
+
+## Game 0 Result
+
+| Player | Model | Final Score |
+|--------|-------|-------------|
+| **Ember** | Haiku | **104** (winner) |
+| Onyx | Sonnet | 92 |
+| Zephyr | Opus | 80 |
+
+Ember (Haiku) won from last place (54 pts) with a dramatic final roll of
+12+11+11 on 3d12 plus a +3 doubles bonus, crossing the 100-point threshold
+(raised from 50 mid-game by Zephyr). The game ran 13 rounds with 14 rule
+proposals enacted. Key moments included Zephyr's threshold raise, an
+Onyx-Ember alliance, and a contested Judgment on Proposal 312.
 
 ## Architecture
 
@@ -57,8 +71,18 @@ nomic/
 ├── clerk/                      # Encrypted Clerk state (auto-created)
 ├── mcp-config.json             # MCP server config (passed via --mcp-config)
 ├── game_rules.md               # Living ruleset (full Suber rules)
-├── game_log.md                 # Chronological game history
+├── game_log.md                 # Narrative game log (written post-game by Clerk)
 ├── supervisor_inbox.md         # Audit trail for supervisor reports
+├── transcripts/               # Agent conversation transcripts (post-game)
+│   ├── clerk.jsonl            # Clerk (game admin) — 1109 events
+│   ├── ember-haiku.jsonl      # Ember (Haiku) — 460 events
+│   ├── onyx-sonnet.jsonl      # Onyx (Sonnet) — 548 events
+│   └── zephyr-opus.jsonl      # Zephyr (Opus) — 502 events
+├── decrypted/                 # Post-game decrypted player notes
+│   ├── Ember/
+│   ├── Onyx/
+│   ├── Zephyr/
+│   └── clerk/
 └── tests/
     └── test_crypto.py
 ```

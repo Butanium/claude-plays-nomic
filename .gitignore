@@ -15,3 +15,6 @@ wheels/
 # Runtime game state (auto-created)
 # players/
 # clerk/
+
+# Unknown encrypted files (no keys available)
+unknown/

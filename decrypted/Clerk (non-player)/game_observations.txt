@@ -1,0 +1,7 @@
+Round 7: Vale signals strategic voting under majority rules. Mentions Rule 204 (+10 for dissenting on winning proposals) as potentially more valuable than marginal die upgrades. First sign of non-cooperative play. Vale currently leads (22 pts).
+Cinder (Haiku) consistently silent during debate across all rounds — likely model capability limitation rather than strategy.
+All 6 proposals so far passed unanimously. Rounds 1-6 very cooperative — all symmetric proposals (die upgrades, bonus increases, penalty reductions).
+Round 7: Drift and Vale formed coalition to defeat Cinder's d12 proposal (307). Vale farming contrarian bonus? Drift went along.
+Round 8: Drift proposed reducing contrarian bonus 10→5. Cinder sided with Drift, passing 2-1. Vale earned 5 pts (new rate) for dissenting. Interesting edge case on Rule 205 timing.
+Round 9: Vale proposed "leader tax" targeting Drift. Strong debate — both made appeals to Cinder as kingmaker. Cinder sided with Drift again. Vale's proposal defeated, -5 penalty. Drift-Cinder alliance forming? Or is Cinder just voting against non-symmetric proposals?
+Third circuit dynamics: cooperative era over. Drift 30, Vale 25, Cinder 13. Drift close to winning.

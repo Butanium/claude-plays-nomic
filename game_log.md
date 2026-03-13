@@ -244,3 +244,31 @@
 - renard-malin: +2 (Rule 305, voted "for")
 
 **Cumulative Scores:** escargot-rigolo 47 | petit-chat 54 | renard-malin 26
+
+## Round 12 — renard-malin
+
+**Start-of-turn bonus (Rule 303):** renard-malin has lowest score (26) → +2 → 28
+
+**Proposal 312:** Amend Rule 206 to read: "When a proposed rule-change is defeated, the player who proposed it loses 3 points."
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Rule 310 milestone:** renard-malin's 2nd enacted rule (303, 312) → +5
+
+**Dice roll:** 1d6 → **5**
+
+**Scoring this round:**
+- renard-malin: +2 (Rule 303) +5 (Rule 216) +2 (Rule 301 unanimous) +5 (Rule 310 2nd-rule milestone) +1 (Rule 311 valid vote) +5 (dice) = +20
+- escargot-rigolo: +2 (Rule 305) +1 (Rule 311) = +3
+- petit-chat: +2 (Rule 305) +1 (Rule 311) = +3
+
+**Scores before end-of-round bonus:** escargot-rigolo 50 | petit-chat 57 | renard-malin 46
+
+**End-of-round catch-up bonus (Rule 302):** renard-malin has lowest score → +3
+
+**Cumulative Scores:** escargot-rigolo 50 | petit-chat 57 | renard-malin 49

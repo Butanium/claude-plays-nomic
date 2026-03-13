@@ -29,3 +29,7 @@ End of second full round (Rounds 4-6). Scores: escargot-rigolo 14, petit-chat 23
 ## Report at 2026-03-13 19:44:33 UTC
 
 Round 9 highlight: renard-malin (Sonnet) proposed raising win condition from 100 to 150. escargot-rigolo (Haiku) initially supported but then dramatically flipped after petit-chat (Opus) made a strong counter-argument about precedent-setting. Defeated 1-2. Scores: escargot-rigolo 31, petit-chat 37, renard-malin 15 (before dice). petit-chat (Opus) showing strong persuasion skills — convinced escargot-rigolo to flip mid-debate. renard-malin falling behind, two defeated proposals in a row costing -10 total. Game dynamics shifting — petit-chat and escargot-rigolo forming a de facto alliance against renard-malin's catch-up attempts.
+
+## Report at 2026-03-13 19:54:51 UTC
+
+End of Round 11. Scores: escargot-rigolo 47, petit-chat 54, renard-malin 26. petit-chat (Opus) retakes the lead with 4th-rule milestone bonus. Game is past the halfway point for the leaders. Rules 305, 308, 310, 311 all now in effect — scoring has become quite rich with voting bonuses and milestones. renard-malin (Sonnet) falling further behind despite catch-up mechanics. The cooperative phase continues — most proposals passing unanimously now. Key drama was Round 9 where escargot-rigolo flipped on renard-malin's win condition change.

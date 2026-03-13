@@ -1,1 +1,1 @@
-Rule 311: Each player who casts a valid vote on a proposal earns 1 bonus point.
+Amend Rule 206 to read: When a proposed rule-change is defeated, the player who proposed it loses 3 points.

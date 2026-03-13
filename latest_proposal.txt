@@ -1,0 +1,1 @@
+Enact Rule 223 — Completion Recognition: When a player achieves 100 or more points and wins the game, each player who did not win receives 3 additional bonus points to their final recorded score, recognizing their participation in a complete game of Nomic.

@@ -56,17 +56,18 @@ Whatever is not prohibited or regulated by a rule is permitted and unregulated, 
 
 ## Mutable Rules
 
-### 201
+### 201 *(Amended by Proposal 306)*
 At the start of the game, the Clerk assigns each player a name. Players shall alternate in alphabetical order by assigned name, taking one whole turn apiece. Turns may not be skipped or passed, and parts of turns may not be omitted. All players begin with zero points.
 
-### 202
-One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score.
+At the start of each new circuit (after all players have each taken one turn), the turn order for the next circuit rotates forward by one position: the player who went first in the previous circuit moves to last, and all other players advance one position earlier. For example, if the current circuit order is A-B-C, the next circuit order is B-C-A.
+
+### 202 *(Amended by Proposal 304)*
+One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling two six-sided dice using the `roll_dice` tool (format: 2d6) and adding both results to one's score.
 
 ### 203
 A rule-change is adopted if and only if a simple majority of eligible voters vote in favour.
 
-### 204
-If and when rule-changes can be adopted without unanimity, the players who vote against winning proposals shall receive 10 points each.
+### ~~204~~ *(Repealed by Proposal 303)*
 
 ### 205
 An adopted rule-change takes full effect at the moment of the completion of the vote that adopted it.
@@ -77,8 +78,8 @@ When a proposed rule-change is defeated, the player who proposed it loses 10 poi
 ### 207
 Each player always has exactly one vote.
 
-### 208
-The winner is the first player to achieve 100 (positive) points.
+### 208 *(Amended by Proposal 310)*
+The winner is the first player to achieve 100 (positive) points. The winning condition is evaluated at the conclusion of each player's own turn, after their dice roll.
 
 ### 209
 At no time may there be more than 25 mutable rules.
@@ -114,3 +115,24 @@ The Clerk is a non-playing agent who administers game procedures: announcing tur
 
 ### 215
 Voting on rule-changes uses a commit-reveal process. During the commit phase, each player submits a hash commitment of their vote using the `commit` tool. During the reveal phase, each player reveals their vote and nonce. The Clerk verifies each reveal against the commitment using the `verify` tool. A vote is invalid if the reveal does not match the commitment.
+
+### 216
+Whenever a rule-change proposed by a player is adopted, that player immediately receives 5 bonus points added to their score.
+
+### 217
+Whenever a rule-change is adopted by vote, each player who voted YES on that proposal receives 3 bonus points.
+
+### 218 *(Amended by Proposal 312)*
+Whenever a rule-change is adopted by a unanimous vote (all eligible voters voting YES), each player receives 4 additional bonus points.
+
+### 219
+When any player reaches 75 or more points, all rule-change proposals earn +8 proposer bonus (instead of +5) and each YES voter earns +4 bonus (instead of +3).
+
+### 220
+If a player rolls doubles on their 2d6 dice roll (both dice show the same number), that player receives 5 additional bonus points.
+
+### 221
+The Clerk shall maintain a "Hall of Proposals" in the game log, recording each adopted rule alongside the name of the player who proposed it. This serves as a permanent record of each player's legislative contributions to the game.
+
+### 223
+When a player achieves 100 or more points and wins the game, each player who did not win receives 3 additional bonus points to their final recorded score, recognizing their participation in a complete game of Nomic.

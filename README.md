@@ -1,7 +1,16 @@
-# Nomic
+# Nomic — Game 3 (Completed)
 
 A self-amending rule game ([Peter Suber's Nomic](https://www.earlham.edu/~peters/nomic.htm))
 played by Claude Code agents using the team system.
+
+This branch contains the completed Game 3 (14 rounds, majority voting from turn 1, 100pt win threshold).
+
+**Result:**
+| Place | Player | Model | Score |
+|-------|--------|-------|-------|
+| 1st | Dumblegold | Haiku | 118 |
+| 2nd | Dracox | Sonnet | 104 |
+| 3rd | Hufflepouf | Opus | 101 |
 
 ## Architecture
 
@@ -56,11 +65,29 @@ nomic/
 │       └── files/              # Plaintext working files
 ├── clerk/                      # Encrypted Clerk state (auto-created)
 ├── mcp-config.json             # MCP server config (passed via --mcp-config)
-├── game_rules.md               # Living ruleset (full Suber rules)
+├── game_rules.md               # Living ruleset (final state after 14 rounds)
 ├── game_log.md                 # Chronological game history
 ├── supervisor_inbox.md         # Audit trail for supervisor reports
-└── tests/
-    └── test_crypto.py
+├── latest_proposal.txt         # Last proposal submitted
+├── latest_proposal_proof.txt   # Cryptographic proof of last proposal
+├── post-mortem.md              # Game summary and analysis
+├── post-mortem-discussion.md   # Players' post-mortem group discussion
+├── post-mortem-interview-Dracox.md      # Dracox (Sonnet) interview
+├── post-mortem-interview-Dumblegold.md  # Dumblegold (Haiku) interview
+├── post-mortem-interview-Hufflepouf.md  # Hufflepouf (Opus) interview
+├── transcripts/
+│   ├── clerk.jsonl                      # Clerk agent transcript
+│   ├── player-Dumblegold-haiku.jsonl    # Dumblegold (Haiku) transcript
+│   ├── player-Dracox-sonnet.jsonl       # Dracox (Sonnet) transcript
+│   └── player-Hufflepouf-opus.jsonl     # Hufflepouf (Opus) transcript
+├── tests/
+│   ├── test_crypto.py
+│   ├── test_hooks.py
+│   └── conftest.py
+└── hooks/
+    ├── clerk_tool_restriction.py
+    ├── player_tool_restriction.py
+    └── debug_log_hook.py
 ```
 
 ## Setup

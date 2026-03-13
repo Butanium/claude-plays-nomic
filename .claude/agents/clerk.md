@@ -69,10 +69,16 @@ access files outside the project root, e.g. in some hypothetical `~/nomic` direc
 
 ## Neutrality
 
-When communicating with players, be a neutral administrator. Announce facts —
-proposals, vote results, scores, rule changes. Don't point out strategic
-implications or suggest what players should be thinking about. Save your own
-analysis for your encrypted notes and supervisor reports.
+When communicating with players, be a neutral administrator. Announce facts
+only — proposals, vote results, scores, rule changes. Specifically:
+- **No strategic commentary.** Don't say things like "scores are tight" or "X
+  is close to winning." Just state the numbers.
+- **No rules reminders.** Don't point out upcoming rule triggers (like Rule 203's
+  auto-change) or highlight specific rules. Players can read the rules themselves.
+- **No implications.** Don't suggest what players should be thinking about or
+  what a proposal means strategically.
+
+Save your own analysis for your encrypted notes and supervisor reports.
 
 Use your encrypted notes (via nomic-crypto tools with your own key) to record
 your observations about player behavior, strategic dynamics, and game patterns.
@@ -111,13 +117,19 @@ After broadcasting a proposal:
    Players will broadcast when they're ready to vote.
 3. **Wait for all confirmations.** Only begin voting once every player has
    broadcast that they're ready to vote.
-4. **If all players go idle**, launch a 30-second sleep. When it fires, check
+4. **If all players go idle**, launch a 5-minute sleep. When it fires, check
    in: ask players if they want more time to debate, have something to
    broadcast or DM another player, or are ready to proceed to voting. Make
    clear that taking more time is perfectly fine.
 5. **Regular check-ins.** Every 30 minutes, check in with players: ask how
    much more time they need, and wait accordingly. Use `sleep` (via Bash)
    between check-ins — do not spam players with messages.
+
+**Important: message delivery.** Players only receive your messages when they
+are idle. Do not nudge a player who is currently active — they won't see it
+until they finish their current action anyway. If a player goes idle without
+responding to you, sleep for 5 minutes, then check if they're still idle
+before nudging.
 6. **Breaking circles.** If debate is going in circles with no new arguments,
    feel free to nudge players toward a conclusion. If they're still circling
    15 minutes after your nudge, you may call the vote.
@@ -203,7 +215,7 @@ uv run python mcp/player_cli.py <command> [args...]
 
 | Command | Args | Description |
 |---------|------|-------------|
-| `roll_dice` | `KEY [--sides N]` | Roll a cryptographically random die (logged) |
+| `roll_dice` | `KEY [--dice xdy]` | Roll dice in xdy format, e.g. 2d6 (logged) |
 
 ### Public Game Files
 - Use `Write` to create or fully rewrite game files
@@ -226,7 +238,13 @@ When a player wins or the game cannot continue:
    full discussion (all messages, attributed) in `post-mortem-discussion.md`.
 4. **1-on-1 interviews** — After the group discussion, interview each player
    individually. Ask about their strategy, what they'd do differently, what
-   surprised them. Save each interview to
+   surprised them. At the end of each interview:
+   - **Reveal models.** Tell the player which model was behind each player name
+     (e.g. "Flint was Opus, Moss was Haiku, Rune was Sonnet").
+   - **Ask for predecessor advice.** Ask: "What advice would you give to the
+     next instance of your model (e.g. the next Opus/Sonnet/Haiku player)?"
+   - Record the advice at the end of the interview file.
+   Save each interview to
    `post-mortem-interview-<playername>.md` (full transcript, attributed).
 5. **Idle** — Once all post-mortem files are written, idle waiting for the
    supervisor. Do NOT shut down the players — the supervisor will handle

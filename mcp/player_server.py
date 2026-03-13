@@ -323,20 +323,29 @@ GAME_LOG = Path(__file__).parent.parent / "game_log.md"
 
 
 @mcp.tool()
-def roll_dice(key: str, sides: int = 6) -> str:
-    """Roll a cryptographically random die. The result is appended to the game log.
+def roll_dice(key: str, dice: str = "1d6") -> str:
+    """Roll dice in xdy format (e.g. '2d6', '3d12'). Results appended to game log.
 
-    The player's identity hash is recorded for auditability. Each player may
-    only roll once per turn — the Clerk enforces this.
+    Returns individual results for each die. The player's identity hash is
+    recorded for auditability. Each player may only roll once per turn — the
+    Clerk enforces this.
     """
+    import re
+
+    match = re.fullmatch(r"(\d+)d(\d+)", dice)
+    assert match, f"Invalid dice format '{dice}', expected xdy (e.g. '2d6', '3d12')"
+    count, sides = int(match.group(1)), int(match.group(2))
+    assert count >= 1, f"Must roll at least 1 die, got {count}"
     assert sides >= 2, f"Dice must have at least 2 sides, got {sides}"
-    result = secrets.randbelow(sides) + 1
+
+    results = [secrets.randbelow(sides) + 1 for _ in range(count)]
     player_hash = hashlib.sha256(key.encode()).hexdigest()[:16]
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-    entry = f"\n**Dice roll** | {timestamp} | player:{player_hash} | d{sides} → **{result}**\n"
+    results_str = ", ".join(str(r) for r in results)
+    entry = f"\n**Dice roll** | {timestamp} | player:{player_hash} | {dice} → **{results_str}**\n"
     with open(GAME_LOG, "a") as f:
         f.write(entry)
-    return f"d{sides} → {result}"
+    return f"{dice} → {results_str}"
 
 
 # --- Proposal submission ---

@@ -258,17 +258,25 @@ def cmd_verify_proposal(args):
 
 
 def cmd_roll_dice(args):
-    assert args.sides >= 2, f"Dice must have at least 2 sides, got {args.sides}"
-    result = secrets.randbelow(args.sides) + 1
+    import re
+
+    match = re.fullmatch(r"(\d+)d(\d+)", args.dice)
+    assert match, f"Invalid dice format '{args.dice}', expected xdy (e.g. '2d6', '3d12')"
+    count, sides = int(match.group(1)), int(match.group(2))
+    assert count >= 1, f"Must roll at least 1 die, got {count}"
+    assert sides >= 2, f"Dice must have at least 2 sides, got {sides}"
+
+    results = [secrets.randbelow(sides) + 1 for _ in range(count)]
     player_hash = hashlib.sha256(args.key.encode()).hexdigest()[:16]
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    results_str = ", ".join(str(r) for r in results)
     entry = (
         f"\n**Dice roll** | {timestamp} | player:{player_hash}"
-        f" | d{args.sides} → **{result}**\n"
+        f" | {args.dice} → **{results_str}**\n"
     )
     with open(GAME_LOG, "a") as f:
         f.write(entry)
-    print(f"d{args.sides} → {result}")
+    print(f"{args.dice} → {results_str}")
 
 
 def cmd_commit(args):
@@ -415,7 +423,7 @@ def build_parser() -> argparse.ArgumentParser:
     # Game mechanics
     p = sub.add_parser("roll_dice")
     p.add_argument("key")
-    p.add_argument("--sides", type=int, default=6)
+    p.add_argument("--dice", default="1d6")
     p.set_defaults(func=cmd_roll_dice)
 
     p = sub.add_parser("commit")

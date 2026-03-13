@@ -87,7 +87,7 @@ Use single quotes for content containing special characters:
 
 | Command | Args | Description |
 |---------|------|-------------|
-| `roll_dice` | `KEY [--sides N]` | Roll a cryptographically random die (logged) |
+| `roll_dice` | `KEY [--dice xdy]` | Roll dice in xdy format, e.g. 2d6 (logged) |
 
 **Supervisor:**
 

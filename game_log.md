@@ -132,3 +132,25 @@
 **End-of-round catch-up bonus (Rule 302):** renard-malin has lowest score → +3
 
 **Cumulative Scores:** escargot-rigolo 14 | petit-chat 23 | renard-malin 14
+
+## Round 7 — escargot-rigolo
+
+**Start-of-turn bonus (Rule 303):** escargot-rigolo tied for lowest (14) → +2 → 16
+
+**Proposal 307:** A player may spend 7 points to immediately propose an additional rule-change outside their normal turn. This additional proposal follows standard voting procedures and is voted on separately. A player may use this ability at most once per game.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Dice roll:** 1d6 → **5**
+
+**Scoring this round:**
+- escargot-rigolo: +2 (Rule 303) +5 (adopted proposal, Rule 216) +2 (unanimous bonus, Rule 301) +5 (dice) = +14
+- petit-chat: +2 (Rule 305, voted "for")
+- renard-malin: +2 (Rule 305, voted "for")
+
+**Cumulative Scores:** escargot-rigolo 28 | petit-chat 25 | renard-malin 16

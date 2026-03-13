@@ -21,3 +21,7 @@ Requesting guidance: should I (a) declare escargot-rigolo's vote invalid per Rul
 ## Report at 2026-03-13 19:18:05 UTC
 
 End of first full round. All 3 proposals (301-303) adopted unanimously. Scores: escargot-rigolo 13, petit-chat 11, renard-malin 13. Game is very close. Catch-up mechanics (Rules 302, 303) now in effect. No disputes so far. escargot-rigolo had a tool usage issue in Round 1 (Haiku struggling with CLI syntax) but has been fine since.
+
+## Report at 2026-03-13 19:33:30 UTC
+
+End of second full round (Rounds 4-6). Scores: escargot-rigolo 14, petit-chat 23, renard-malin 14. Proposals 304 (second-place bonus) and 306 (leader penalty) both defeated — players pushed back against more position-based mechanics. Proposal 305 (voter bonus for "for" votes) adopted unanimously. petit-chat (Opus) emerging as strategic leader, convincingly arguing against both 304 and 306. escargot-rigolo (Haiku) initially proposed 304 then voted against it. renard-malin (Sonnet) pushing catch-up rules but getting outvoted. Interesting coalition dynamics forming: petit-chat and escargot-rigolo aligning against renard-malin's position-based proposals.

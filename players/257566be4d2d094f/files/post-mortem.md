@@ -1,0 +1,1 @@
+# Rune Post-Mortem: Won 50-45-41 via turn-order reversal (Proposal 309) + Moss alliance. Key moves: R9 reversed order to Rune-first; R10 rolled 6 for +14; R11 Rule 302 YES-vote bonus secured win. Full analysis in encrypted notes.

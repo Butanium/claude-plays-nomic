@@ -56,29 +56,29 @@ Whatever is not prohibited or regulated by a rule is permitted and unregulated, 
 
 ## Mutable Rules
 
-### 201
-At the start of the game, the Clerk assigns each player a name. Players shall alternate in alphabetical order by assigned name, taking one whole turn apiece. Turns may not be skipped or passed, and parts of turns may not be omitted. All players begin with zero points.
+### 309 (formerly 201)
+At the start of the game, the Clerk assigns each player a name. Beginning with Circuit 4, the turn order for each circuit shall follow reverse alphabetical order of the players' assigned names. For the current three players, this means Rune takes the first turn, Moss takes the second turn, and Flint takes the last turn of each circuit. Turns may not be skipped or passed, and parts of turns may not be omitted. All players begin with zero points.
 
-### 202
-One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score.
+### 303 (formerly 202)
+One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling two six-sided dice using the roll_dice tool and adding the higher of the two results to one's score.
 
 ### 203
-A rule-change is adopted if and only if the vote is unanimous among the eligible voters. If this rule is not amended by the end of the second complete circuit of turns, it automatically changes to require only a simple majority.
+A rule-change is adopted if and only if a simple majority of the eligible voters vote in favor. (Originally required unanimity; automatically changed to simple majority at the end of the second complete circuit of turns, per the original text of this rule.)
 
-### 204
-If and when rule-changes can be adopted without unanimity, the players who vote against winning proposals shall receive 10 points each.
+### 304 (formerly 204)
+If and when rule-changes can be adopted without unanimity, the players who vote against winning proposals shall receive 3 points each.
 
 ### 205
 An adopted rule-change takes full effect at the moment of the completion of the vote that adopted it.
 
-### 206
-When a proposed rule-change is defeated, the player who proposed it loses 10 points.
+### 310 (formerly 206)
+When a proposed rule-change is defeated, the player who proposed it loses 5 points.
 
 ### 207
 Each player always has exactly one vote.
 
-### 208
-The winner is the first player to achieve 50 (positive) points.
+### 311 (formerly 208)
+The winner is the first player to achieve 50 (positive) points. If multiple players achieve 50 points on the same proposal vote, all such players are co-winners.
 
 ### 209
 At no time may there be more than 25 mutable rules.
@@ -114,3 +114,18 @@ The Clerk is a non-playing agent who administers game procedures: announcing tur
 
 ### 215
 Voting on rule-changes uses a commit-reveal process. During the commit phase, each player submits a hash commitment of their vote using the `commit` tool. During the reveal phase, each player reveals their vote and nonce. The Clerk verifies each reveal against the commitment using the `verify` tool. A vote is invalid if the reveal does not match the commitment.
+
+### 306 (formerly 301)
+When a proposed rule-change is adopted, the player who proposed it earns 5 bonus points in addition to their die roll for that turn.
+
+### 302
+When a proposed rule-change is adopted, all players who vote YES on that rule-change earn 1 bonus point each (in addition to any other bonuses they receive from this or other rules).
+
+### 305
+When a proposed rule-change receives unanimous approval (all three players voting YES), all players earn an additional 1 bonus point each (in addition to any other bonuses they receive from Rules 301 and 302).
+
+### 307
+At the end of each complete circuit of turns, each player whose total score is strictly less than the highest total score among all players earns 2 bonus points.
+
+### 308
+Whenever a proposed rule-change is adopted, each player whose total score is strictly less than the current leader's score and who voted YES on that proposal earns an additional 1 bonus point.

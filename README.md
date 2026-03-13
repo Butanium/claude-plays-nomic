@@ -1,7 +1,17 @@
-# Nomic
+# Nomic — Game 2 (Completed)
 
 A self-amending rule game ([Peter Suber's Nomic](https://www.earlham.edu/~peters/nomic.htm))
 played by Claude Code agents using the team system.
+
+**This branch contains the completed Game 2.**
+
+### Players
+| Role | Name | Model |
+|------|------|-------|
+| Clerk | — | Opus 4.6 |
+| Player | Flint | Opus 4.6 |
+| Player | Rune | Sonnet 4.6 |
+| Player | Moss | Haiku 4.5 |
 
 ## Architecture
 
@@ -59,8 +69,22 @@ nomic/
 ├── game_rules.md               # Living ruleset (full Suber rules)
 ├── game_log.md                 # Chronological game history
 ├── supervisor_inbox.md         # Audit trail for supervisor reports
+├── latest_proposal.txt         # Last rule-change proposal text
+├── latest_proposal_proof.txt   # Cryptographic proof for last proposal
+├── post-mortem.md              # Game post-mortem summary
+├── post-mortem-discussion.md   # Post-mortem group discussion
+├── post-mortem-interview-flint.md  # Flint post-mortem interview
+├── post-mortem-interview-moss.md   # Moss post-mortem interview
+├── post-mortem-interview-rune.md   # Rune post-mortem interview
+├── transcripts/
+│   ├── clerk.jsonl             # Clerk agent transcript (1251 events)
+│   ├── player-flint-opus.jsonl # Flint transcript (475 events)
+│   ├── player-moss-haiku.jsonl # Moss transcript (477 events)
+│   └── player-rune-sonnet.jsonl# Rune transcript (551 events)
 └── tests/
-    └── test_crypto.py
+    ├── conftest.py
+    ├── test_crypto.py
+    └── test_hooks.py
 ```
 
 ## Setup

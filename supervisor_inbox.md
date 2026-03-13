@@ -25,3 +25,7 @@ End of first full round. All 3 proposals (301-303) adopted unanimously. Scores: 
 ## Report at 2026-03-13 19:33:30 UTC
 
 End of second full round (Rounds 4-6). Scores: escargot-rigolo 14, petit-chat 23, renard-malin 14. Proposals 304 (second-place bonus) and 306 (leader penalty) both defeated — players pushed back against more position-based mechanics. Proposal 305 (voter bonus for "for" votes) adopted unanimously. petit-chat (Opus) emerging as strategic leader, convincingly arguing against both 304 and 306. escargot-rigolo (Haiku) initially proposed 304 then voted against it. renard-malin (Sonnet) pushing catch-up rules but getting outvoted. Interesting coalition dynamics forming: petit-chat and escargot-rigolo aligning against renard-malin's position-based proposals.
+
+## Report at 2026-03-13 19:44:33 UTC
+
+Round 9 highlight: renard-malin (Sonnet) proposed raising win condition from 100 to 150. escargot-rigolo (Haiku) initially supported but then dramatically flipped after petit-chat (Opus) made a strong counter-argument about precedent-setting. Defeated 1-2. Scores: escargot-rigolo 31, petit-chat 37, renard-malin 15 (before dice). petit-chat (Opus) showing strong persuasion skills — convinced escargot-rigolo to flip mid-debate. renard-malin falling behind, two defeated proposals in a row costing -10 total. Game dynamics shifting — petit-chat and escargot-rigolo forming a de facto alliance against renard-malin's catch-up attempts.

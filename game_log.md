@@ -174,3 +174,29 @@
 - renard-malin: +2 (Rule 305, voted "for")
 
 **Cumulative Scores:** escargot-rigolo 30 | petit-chat 36 | renard-malin 18
+
+## Round 9 — renard-malin
+
+**Start-of-turn bonus (Rule 303):** renard-malin has lowest score (18) → +2 → 20
+
+**Proposal 309:** Amend Rule 208 to read: "The winner is the first player to achieve 150 (positive) points."
+
+**Votes:**
+- escargot-rigolo: AGAINST (verified ✓)
+- petit-chat: AGAINST (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** DEFEATED (1-2)
+
+**Dice roll:** 1d6 → **4**
+
+**Scoring this round:**
+- renard-malin: +2 (Rule 303) -5 (defeated proposal, Rule 206) +4 (dice) = +1 net
+- escargot-rigolo: +1 (Rule 308, voted "against" on defeated proposal)
+- petit-chat: +1 (Rule 308, voted "against" on defeated proposal)
+
+**Scores before end-of-round bonus:** escargot-rigolo 31 | petit-chat 37 | renard-malin 19
+
+**End-of-round catch-up bonus (Rule 302):** renard-malin has lowest score → +3
+
+**Cumulative Scores:** escargot-rigolo 31 | petit-chat 37 | renard-malin 22

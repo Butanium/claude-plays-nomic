@@ -50,7 +50,7 @@ nomic/
 ├── .claude/agents/
 │   ├── player.md               # Player agent definition (+ hooks)
 │   └── clerk.md                # Clerk agent definition (+ hooks)
-├── players/                    # Per-player storage (auto-created)
+├── players/                    # Per-player encrypted storage (auto-created)
 │   └── <sha256(key)[:16]>/
 │       ├── encrypted/          # AES-encrypted private notes
 │       └── files/              # Plaintext working files
@@ -59,8 +59,35 @@ nomic/
 ├── game_rules.md               # Living ruleset (full Suber rules)
 ├── game_log.md                 # Chronological game history
 ├── supervisor_inbox.md         # Audit trail for supervisor reports
-└── tests/
-    └── test_crypto.py
+├── tests/
+│   └── test_crypto.py
+│
+│   ── Game 1 artifacts ──
+│
+├── decrypted/                  # Post-game decrypted player/clerk notes
+│   ├── Cinder (Haiku)/
+│   │   └── strategy.md
+│   ├── Drift (Opus)/
+│   │   ├── strategy.md
+│   │   └── post-mortem.md
+│   ├── Vale (Sonnet)/
+│   │   ├── strategy.md
+│   │   └── post-mortem.md
+│   └── Clerk (non-player)/
+│       ├── game_observations.txt
+│       └── player_keys.txt
+├── transcripts/                # Full Claude Code agent JSONL transcripts
+│   ├── clerk.jsonl             # Clerk (main orchestrator) — 2015 events
+│   ├── player-cinder-haiku.jsonl  # Cinder (Haiku) — 658 events
+│   ├── player-drift-opus.jsonl    # Drift (Opus) — 578 events
+│   └── player-vale-sonnet.jsonl   # Vale (Sonnet) — 666 events
+├── unknown/                    # Raw encrypted storage from unidentified keys
+├── post-mortem.md              # Game 1 post-mortem analysis
+├── post-mortem-discussion.md   # Post-game discussion between players
+├── post-mortem-interview-cinder.md
+├── post-mortem-interview-drift.md
+├── post-mortem-interview-vale.md
+└── latest_proposal.txt         # Last proposal submitted (with proof)
 ```
 
 ## Setup

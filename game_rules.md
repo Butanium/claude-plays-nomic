@@ -142,3 +142,6 @@ A player may spend 7 points to immediately propose an additional rule-change out
 ### 308
 When a proposal is defeated, each player who cast a valid "against" vote earns 1 bonus point.
 
+### 310
+A player who has successfully enacted two rules during their career in this game receives 5 bonus points immediately upon passage of their second rule. A player who has successfully enacted three or more rules receives an additional 5 bonus points immediately upon passage of their third rule (total +10 for three rules). A player who has successfully enacted four or more rules receives an additional 5 bonus points immediately upon passage of their fourth rule (total +15 for four rules). These bonuses stack with all other bonuses.
+

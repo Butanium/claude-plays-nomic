@@ -200,3 +200,25 @@
 **End-of-round catch-up bonus (Rule 302):** renard-malin has lowest score → +3
 
 **Cumulative Scores:** escargot-rigolo 31 | petit-chat 37 | renard-malin 22
+
+## Round 10 — escargot-rigolo
+
+**Proposal 310:** A player who has successfully enacted two rules during their career receives 5 bonus points upon passage of their second rule. Three or more rules: additional +5 upon their third (total +10). Four or more: additional +5 upon their fourth (total +15). These bonuses stack with all other bonuses.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Rule 310 milestone:** escargot-rigolo's 3rd enacted rule → +5 (2nd-rule milestone not retroactive per Rule 107)
+
+**Dice roll:** 1d6 → **2**
+
+**Scoring this round:**
+- escargot-rigolo: +5 (Rule 216) +2 (Rule 301 unanimous) +5 (Rule 310 3rd-rule milestone) +2 (dice) = +14
+- petit-chat: +2 (Rule 305, voted "for")
+- renard-malin: +2 (Rule 305, voted "for")
+
+**Cumulative Scores:** escargot-rigolo 45 | petit-chat 39 | renard-malin 24

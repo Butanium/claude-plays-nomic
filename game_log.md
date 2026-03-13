@@ -222,3 +222,25 @@
 - renard-malin: +2 (Rule 305, voted "for")
 
 **Cumulative Scores:** escargot-rigolo 45 | petit-chat 39 | renard-malin 24
+
+## Round 11 — petit-chat
+
+**Proposal 311:** Each player who casts a valid vote on a proposal earns 1 bonus point.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Rule 310 milestone:** petit-chat's 4th enacted rule (302, 305, 308, 311) → +5
+
+**Dice roll:** 1d6 → **3**
+
+**Scoring this round:**
+- petit-chat: +5 (Rule 216) +2 (Rule 301 unanimous) +5 (Rule 310 4th-rule milestone) +3 (dice) = +15
+- escargot-rigolo: +2 (Rule 305, voted "for")
+- renard-malin: +2 (Rule 305, voted "for")
+
+**Cumulative Scores:** escargot-rigolo 47 | petit-chat 54 | renard-malin 26

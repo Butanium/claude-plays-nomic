@@ -1,1 +1,1 @@
-This is a normal game, no special rules!
+For this game, all players need to sign the @game_charter.md at the start of the game. If they do not want to play the game in this manner, they should exit the game.

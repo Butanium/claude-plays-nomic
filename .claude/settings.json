@@ -1,6 +1,10 @@
 {
   "permissions": {
-    "defaultMode": "dontAsk"
+    "defaultMode": "dontAsk",
+    "allow": [
+      "mcp__nomic-clerk__*",
+      "mcp__nomic-crypto__*"
+  ]
   },
   "hooks": {
     "PreToolUse": [

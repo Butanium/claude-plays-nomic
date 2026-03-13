@@ -47,6 +47,8 @@ PRIVATE_FILES = {
     PROJECT_ROOT / "supervisor_inbox.md",
 }
 
+ALLOWED_SIMPLE_COMMANDS = {"pwd"}
+
 CLI_TOKENS_PREFIX = ["uv", "run", "python", "mcp/player_cli.py"]
 
 # Shell metacharacters that are dangerous outside any quoting context.
@@ -129,6 +131,10 @@ def validate_bash_command(command: str) -> str | None:
         tokens = shlex.split(stripped, posix=False)
     except ValueError as e:
         return f"Malformed command: {e}"
+
+    # Allow simple standalone commands (pwd, etc.)
+    if stripped in ALLOWED_SIMPLE_COMMANDS:
+        return None
 
     # Allow sleep for timing/pacing (also "sleep N && echo ...")
     if stripped.startswith("sleep "):

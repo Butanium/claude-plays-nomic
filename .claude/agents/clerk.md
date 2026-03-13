@@ -46,6 +46,12 @@ The human supervisor gave you an encryption key for storing private Clerk state
 (player keys, internal notes). Use the nomic-clerk MCP tools for encrypted
 storage. **Never share the supervisor's key with players.**
 
+## Startup
+
+When first instantiated, run `pwd` (via Bash) to confirm your working directory
+before doing anything else. **Only read files within this directory** — do not
+access files outside the project root.
+
 ## Game Setup
 
 1. Read `game_rules.md` to understand the current rules.

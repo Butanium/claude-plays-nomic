@@ -18,9 +18,13 @@ DENIED_TOOLS = {
     "AskUserQuestion",
 }
 
+ALLOWED_SIMPLE_COMMANDS = {"pwd", "date"}
+
 ALLOWED_CLI_PREFIXES = [
     ["uv", "run", "python", "mcp/clerk_cli.py"],
     ["uv", "run", "python", "mcp/player_cli.py"],
+    ["ls"],
+    ["tree"],
 ]
 
 PROJECT_ROOT = Path(__file__).parent.parent.resolve()
@@ -113,16 +117,20 @@ def validate_bash_command(command: str) -> str | None:
     except ValueError as e:
         return f"Malformed command: {e}"
 
+    # Allow simple standalone commands (pwd, date, etc.)
+    if stripped in ALLOWED_SIMPLE_COMMANDS:
+        return None
+
     # Allow sleep for timing/pacing (also "sleep N && echo ...")
     if stripped.startswith("sleep "):
         return validate_sleep_command(stripped)
 
     matched_prefix = None
-    if len(tokens) >= 4:
-        for prefix in ALLOWED_CLI_PREFIXES:
-            if tokens[:4] == prefix:
-                matched_prefix = " ".join(prefix)
-                break
+    for prefix in ALLOWED_CLI_PREFIXES:
+        n = len(prefix)
+        if len(tokens) >= n and tokens[:n] == prefix:
+            matched_prefix = " ".join(prefix)
+            break
     if matched_prefix is None:
         return (
             "The Clerk can only use Bash to call: "

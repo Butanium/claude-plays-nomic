@@ -124,3 +124,6 @@ Voting on rule-changes uses a commit-reveal process. During the commit phase, ea
 ### 216
 When a proposed rule-change is adopted, the proposer earns 5 bonus points.
 
+### 301
+If a rule-change is adopted by unanimous vote (all three players voting in favor), the proposer receives an additional 2 bonus points beyond the standard 5 bonus points awarded for adopted rule-changes.
+

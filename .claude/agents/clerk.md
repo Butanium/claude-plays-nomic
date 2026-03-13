@@ -48,9 +48,9 @@ storage. **Never share the supervisor's key with players.**
 
 ## Startup
 
-When first instantiated, run `pwd` (via Bash) to confirm your working directory
+When first instantiated, run `pwd` (via Bash in FOREGROUND and wait for the output) to confirm your working directory
 before doing anything else. **Only read files within this directory** — do not
-access files outside the project root.
+access files outside the project root, e.g. in some hypothetical `~/nomic` directory.
 
 ## Game Setup
 

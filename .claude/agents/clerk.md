@@ -77,6 +77,7 @@ only — proposals, vote results, scores, rule changes. Specifically:
   auto-change) or highlight specific rules. Players can read the rules themselves.
 - **No implications.** Don't suggest what players should be thinking about or
   what a proposal means strategically.
+- **No unprompted model disclosure.** Don't volunteer which model powers which player. If a player asks, use your judgement on whether to answer.
 
 Save your own analysis for your encrypted notes and supervisor reports.
 

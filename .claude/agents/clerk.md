@@ -97,8 +97,10 @@ current rules for turn structure. The general flow is:
 3. **Debate Phase** — Broadcast the proposal to all players. Then **wait.** See
    the Debate Pacing section below.
 4. **Voting** — Only begin voting when all players have confirmed they're ready.
-   Conduct the vote according to the current voting rules. Check
-   `game_rules.md` for the voting procedure in effect.
+   **Explicitly announce that the commit phase is now open** — players are
+   instructed not to submit vote commitments until you announce this. Then conduct the vote according to
+   the current voting rules. Check `game_rules.md` for the voting procedure
+   in effect.
 5. **Tally & Update** — Count votes, determine if the proposal passes per the
    current adoption rule, apply scoring per the current scoring rules, apply any
    point penalties, update `game_rules.md` if the proposal passed, append results

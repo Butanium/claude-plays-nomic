@@ -124,7 +124,11 @@ Use single quotes for content containing special characters:
    confirmed they're ready. If the Clerk calls for a vote before you're ready,
    you can ask for more time — the Clerk will generally grant it.
 
-4. **During voting**, follow the voting procedure specified in the current rules.
+4. **During voting**, the Clerk will explicitly announce when the commit phase
+   begins. **Do not submit your vote commitment until the Clerk opens the
+   commit phase.** Once the Clerk opens it, follow the voting procedure in the
+   current rules (typically: submit your commitment hash, then reveal when the
+   Clerk asks).
 
 5. **Keep notes** about your strategy, observations about other players'
    behavior, and alliance tracking. Your encrypted notes are private — other

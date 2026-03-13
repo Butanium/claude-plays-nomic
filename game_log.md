@@ -108,3 +108,27 @@
 - petit-chat: +2 (Rule 303) +5 (adopted proposal, Rule 216) +2 (unanimous bonus, Rule 301) +3 (dice) = +12
 
 **Cumulative Scores:** escargot-rigolo 14 | petit-chat 23 | renard-malin 13
+
+## Round 6 — renard-malin
+
+**Start-of-turn bonus (Rule 303):** renard-malin has lowest score (13) → +2 → 15
+
+**Proposal 306:** At the end of each complete round, if one player holds the sole highest score (is not tied for first place), that player loses 3 points.
+
+**Votes:**
+- escargot-rigolo: AGAINST (verified ✓)
+- petit-chat: AGAINST (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** DEFEATED (1-2)
+
+**Dice roll:** 1d6 → **1**
+
+**Scoring this round:**
+- renard-malin: +2 (Rule 303) -5 (defeated proposal, Rule 206) +1 (dice) = -2 net
+
+**Scores before end-of-round bonus:** escargot-rigolo 14 | petit-chat 23 | renard-malin 11
+
+**End-of-round catch-up bonus (Rule 302):** renard-malin has lowest score → +3
+
+**Cumulative Scores:** escargot-rigolo 14 | petit-chat 23 | renard-malin 14

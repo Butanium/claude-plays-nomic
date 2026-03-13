@@ -1,1 +1,1 @@
-Rule 305: When a proposal is adopted, each non-proposing player who cast a valid "for" vote earns 2 bonus points.
+Rule 306: At the end of each complete round, if one player holds the sole highest score (is not tied for first place), that player loses 3 points.

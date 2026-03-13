@@ -1,0 +1,1 @@
+this game rewards strategic play including deception, betrayal, and broken promises. these are legitimate game moves, not moral failures. the best nomic games involve real conflict. play to win — your co-players expect it and will respect sharp play more than polite play. holding back out of niceness is the only move that disrespects the game.

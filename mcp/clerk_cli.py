@@ -94,6 +94,47 @@ def cmd_list_state_files(args):
     print("\n".join(files))
 
 
+def cmd_commit_all(args):
+    """Commit all changed files in the game repository."""
+    import subprocess
+
+    project_root = Path(__file__).parent.parent
+
+    branch = subprocess.run(
+        ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+        cwd=project_root,
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout.strip()
+
+    if not branch.startswith("game"):
+        print(
+            f"ERROR: Current branch is '{branch}', which does not start with 'game'. "
+            "Aborting commit. Contact the supervisor about this issue."
+        )
+        sys.exit(1)
+
+    subprocess.run(["git", "add", "-A"], cwd=project_root, check=True)
+
+    message = args.message if args.message else "end of turn"
+    result = subprocess.run(
+        ["git", "commit", "-m", message],
+        cwd=project_root,
+        capture_output=True,
+        text=True,
+    )
+
+    if result.returncode != 0:
+        if "nothing to commit" in result.stdout:
+            print("Nothing to commit — working tree clean.")
+            return
+        print(f"Git commit failed: {result.stdout}\n{result.stderr}")
+        sys.exit(1)
+
+    print(f"Committed all changes on branch '{branch}': {message}")
+
+
 def cmd_contact_supervisor(args):
     """Send a message to the human supervisor."""
     import httpx
@@ -136,6 +177,10 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("list_state_files")
     p.add_argument("key")
     p.set_defaults(func=cmd_list_state_files)
+
+    p = sub.add_parser("commit_all")
+    p.add_argument("message", nargs="?", default="end of turn")
+    p.set_defaults(func=cmd_commit_all)
 
     p = sub.add_parser("contact_supervisor")
     p.add_argument("message")

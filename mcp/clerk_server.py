@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import os
 import secrets
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -79,6 +80,47 @@ def list_state_files(key: str) -> str:
     if not files:
         return "No state files yet."
     return "\n".join(files)
+
+
+@mcp.tool()
+def commit_all(message: str = "end of turn") -> str:
+    """Commit all changed files in the game repository.
+
+    Stages all changes (git add -A) and commits with the given message.
+    Fails if the current branch does not start with 'game' — contact the
+    supervisor if this happens.
+    """
+    project_root = Path(__file__).parent.parent
+
+    branch = subprocess.run(
+        ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+        cwd=project_root,
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout.strip()
+
+    if not branch.startswith("game"):
+        return (
+            f"ERROR: Current branch is '{branch}', which does not start with 'game'. "
+            "Aborting commit. Contact the supervisor about this issue."
+        )
+
+    subprocess.run(["git", "add", "-A"], cwd=project_root, check=True)
+
+    result = subprocess.run(
+        ["git", "commit", "-m", message],
+        cwd=project_root,
+        capture_output=True,
+        text=True,
+    )
+
+    if result.returncode != 0:
+        if "nothing to commit" in result.stdout:
+            return "Nothing to commit — working tree clean."
+        return f"Git commit failed: {result.stdout}\n{result.stderr}"
+
+    return f"Committed all changes on branch '{branch}': {message}"
 
 
 @mcp.tool()

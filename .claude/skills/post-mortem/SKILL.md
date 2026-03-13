@@ -68,7 +68,25 @@ Report a summary table to the user:
 | Player | ... | ... | ... |
 | ... | ... | ... | ... |
 
-## Step 5: Update README
+## Step 5: Generate readable transcripts
+
+For each JSONL transcript, generate a human-readable `.txt` version using
+`read_agent_transcript` with `output_file` set to the same path but with a
+`.txt` extension. Use default settings (truncated tool outputs). Run all four
+calls in parallel.
+
+```
+transcripts/
+├── clerk.jsonl
+├── clerk.txt                        ← generated
+├── player-<name>-<model>.jsonl
+├── player-<name>-<model>.txt        ← generated
+├── ...
+```
+
+Do NOT read the generated files — they will be large.
+
+## Step 6: Update README
 
 This branch represents a finished game. Update the README to:
 1. Note that this branch is a completed game (e.g. "This branch contains the

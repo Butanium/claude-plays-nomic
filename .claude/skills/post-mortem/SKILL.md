@@ -67,3 +67,13 @@ Report a summary table to the user:
 | Clerk | ... | ... | ... |
 | Player | ... | ... | ... |
 | ... | ... | ... | ... |
+
+## Step 5: Update README
+
+This branch represents a finished game. Update the README to:
+1. Note that this branch is a completed game (e.g. "This branch contains the
+   completed Game N").
+2. List ALL files in the project that are not already documented in the README's
+   project structure — including transcripts, decrypted notes, post-mortem files,
+   and any other game artifacts. Read the current README and do a file listing
+   to find gaps.

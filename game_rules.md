@@ -63,7 +63,7 @@ At the start of the game, the Clerk assigns each player a name. Players shall al
 One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score.
 
 ### 203
-A rule-change is adopted if and only if the vote is unanimous among the eligible voters. If this rule is not amended by the end of the second complete circuit of turns, it automatically changes to require only a simple majority.
+A rule-change is adopted if and only if a simple majority of eligible voters vote in favour.
 
 ### 204
 If and when rule-changes can be adopted without unanimity, the players who vote against winning proposals shall receive 10 points each.
@@ -78,7 +78,7 @@ When a proposed rule-change is defeated, the player who proposed it loses 10 poi
 Each player always has exactly one vote.
 
 ### 208
-The winner is the first player to achieve 50 (positive) points.
+The winner is the first player to achieve 100 (positive) points.
 
 ### 209
 At no time may there be more than 25 mutable rules.

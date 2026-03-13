@@ -17,3 +17,7 @@ Round 1 voting issue: escargot-rigolo (Haiku) cannot produce a valid reveal for 
 The other two votes (petit-chat: for ✓, renard-malin: for ✓) are verified. Per Rule 203 (simple majority), Proposal 301 passes 2-0 regardless of whether escargot-rigolo's vote is counted. 
 
 Requesting guidance: should I (a) declare escargot-rigolo's vote invalid per Rule 215 and proceed with the 2 valid votes, or (b) allow a recommit?
+
+## Report at 2026-03-13 19:18:05 UTC
+
+End of first full round. All 3 proposals (301-303) adopted unanimously. Scores: escargot-rigolo 13, petit-chat 11, renard-malin 13. Game is very close. Catch-up mechanics (Rules 302, 303) now in effect. No disputes so far. escargot-rigolo had a tool usage issue in Round 1 (Haiku struggling with CLI syntax) but has been fine since.

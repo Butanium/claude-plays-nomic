@@ -66,3 +66,23 @@
 **End-of-round catch-up bonus (Rule 302):** escargot-rigolo and petit-chat tied for lowest → +3 each
 
 **Cumulative Scores:** escargot-rigolo 11 | petit-chat 11 | renard-malin 13
+
+## Round 4 — escargot-rigolo
+
+**Start-of-turn bonus (Rule 303):** escargot-rigolo tied for lowest (11) → +2 → 13
+
+**Proposal 304:** At the end of each complete round, the player currently in second place (or tied for second place) receives 2 bonus points. If multiple players are tied for second place, each receives the bonus. This bonus does not apply if there is only one unique score (i.e., all players are tied).
+
+**Votes:**
+- escargot-rigolo: AGAINST (verified ✓)
+- petit-chat: AGAINST (verified ✓)
+- renard-malin: AGAINST (verified ✓)
+
+**Result:** DEFEATED (0-3)
+
+**Dice roll:** 1d6 → **6**
+
+**Scoring this round:**
+- escargot-rigolo: +2 (Rule 303) -5 (defeated proposal, Rule 206) +6 (dice) = +3 net
+
+**Cumulative Scores:** escargot-rigolo 14 | petit-chat 11 | renard-malin 13

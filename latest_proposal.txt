@@ -1,1 +1,1 @@
-Rule 303: At the start of each player's turn, if that player currently has the lowest score among all players (or is tied for the lowest score), they receive 2 bonus points before their turn proceeds.
+RULE 304: At the end of each complete round, the player currently in second place (or tied for second place) receives 2 bonus points. If multiple players are tied for second place, each receives the bonus. This bonus does not apply if there is only one unique score (i.e., all players are tied).

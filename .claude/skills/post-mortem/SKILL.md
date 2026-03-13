@@ -1,14 +1,13 @@
 ---
 name: post-mortem
-description: Find and analyze agent transcripts from a completed Nomic game
+description: Find agent transcripts from a completed Nomic game
 disable-model-invocation: true
 ---
 
-# Post-Mortem: Locate & Analyze Game Transcripts
+# Post-Mortem: Locate Game Transcripts
 
-Run a post-mortem analysis of a completed Nomic game. This involves finding the
-agent transcripts (clerk + players), identifying who played, and optionally
-producing summaries or analyses.
+Find the clerk and player agent transcripts from a completed Nomic game, copy
+them to the project, and verify they look correct.
 
 ## Step 1: Find transcripts
 
@@ -29,9 +28,9 @@ agent session (clerk, players, or auxiliary sub-agents).
 
 ## Step 2: Identify agents
 
-For each JSONL file, read the first line to determine the agent type:
+For each JSONL file, read the first line (JSON) to determine the agent type:
 - `{"type": "agent-setting", "agentSetting": "clerk"}` → **Clerk**
-- `{"type": "agent-setting", "agentSetting": "player"}` → **Player** (but subagent_type may also say "player")
+- `{"type": "agent-setting", "agentSetting": "player"}` → **Player**
 - Files starting with `{"type": "user"}` with large line counts are likely the main orchestrator or player sessions
 - Files starting with `{"type": "progress"}` are auxiliary sub-agents (check-bash, explore, etc.)
 
@@ -51,18 +50,20 @@ transcripts/
 └── player-<name>-<model>.jsonl
 ```
 
-## Step 4: Analyze (if requested)
+## Step 4: Verify transcripts
 
-Use the `read_agent_transcript` MCP tool to explore transcripts. Useful
-parameters:
-- `limit` / `offset` for pagination (e.g. `offset=-20` for the last 20 events)
-- `max_chars_per_tool=1000` to see more of each tool result
-- `get_tool_call_output` with a 4-char tool ID to get full output of a specific call
-- Write summaries to `output_file` to avoid blowing context
+For each copied transcript, check:
+1. **Event count** — use `read_agent_transcript` with defaults and note the
+   total event count reported in the `[events X-Y of Z]` header.
+2. **Last 5 messages** — use `read_agent_transcript` with `offset=-5` to read
+   the final events. Confirm they look like a reasonable end of game (e.g.
+   game-over announcement, final scores, post-mortem discussion) rather than a
+   mid-conversation cutoff.
 
-Things to look for:
-- Key strategic decisions each player made
-- Voting patterns and alliances
-- Rule proposals and their outcomes
-- How players used (or tried to exploit) the encryption/MCP system
-- Communication patterns between players
+Report a summary table to the user:
+
+| Role | Name (Model) | Events | Last message summary |
+|------|-------------|--------|---------------------|
+| Clerk | ... | ... | ... |
+| Player | ... | ... | ... |
+| ... | ... | ... | ... |

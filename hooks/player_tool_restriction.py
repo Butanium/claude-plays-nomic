@@ -37,6 +37,7 @@ ALLOWED_TOOLS = {
     "TaskGet",
     "TaskUpdate",
     "TaskList",
+    "TaskOutput",
     "ToolSearch",
 }
 

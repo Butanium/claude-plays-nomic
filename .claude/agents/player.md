@@ -98,7 +98,7 @@ Use single quotes for content containing special characters:
 ### Communication
 - `SendMessage` — Send messages to the Clerk or other players
 - The Clerk's name is **`"team-lead"`** — use this as the recipient when messaging the Clerk
-- **Message delivery delays:** there can be a delay between sending and receiving messages. If something seems off (missing reply, unexpected state), use `sleep <seconds>` (via Bash, up to 900s) to wait before retrying.
+- **Message delivery delays:** there can be a delay between sending and receiving messages. If something seems off (missing reply, unexpected state), use `sleep <seconds>` (via Bash) to wait before retrying.
 
 ### Reading Game State
 - `Read` — Read `game_rules.md` (current rules) and `game_log.md` (game history)
@@ -115,7 +115,13 @@ Use single quotes for content containing special characters:
    with `type: "broadcast"`). Be strategic — think about how rule changes affect
    scoring, voting dynamics, and your path to victory.
 
-3. **During debate**, argue for or against proposals.
+3. **During debate**, engage thoroughly. Argue for or against proposals, ask
+   questions, negotiate with other players, form or test alliances. Take your
+   time — there's no rush. You can also DM other players privately during
+   debate. When you've said everything you want to say, broadcast that you're
+   ready to vote. The Clerk will only move to voting once all players have
+   confirmed they're ready. If the Clerk calls for a vote before you're ready,
+   you can ask for more time — the Clerk will generally grant it.
 
 4. **During voting**, follow the voting procedure specified in the current rules.
 

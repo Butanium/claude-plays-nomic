@@ -382,3 +382,25 @@
 - renard-malin: +2 (Rule 305) +1 (Rule 311) = +3
 
 **Cumulative Scores:** escargot-rigolo 93 | petit-chat 84 | renard-malin 93
+
+## Round 17 — petit-chat
+
+**Start-of-turn bonus (Rule 303/317):** petit-chat has lowest score (84) → +3 → 87
+
+**Proposal 318:** Amend Rule 209 to increase mutable rule limit from 25 to 30.
+
+**Votes:**
+- escargot-rigolo: AGAINST (verified ✓)
+- petit-chat: AGAINST (verified ✓)
+- renard-malin: AGAINST (verified ✓)
+
+**Result:** DEFEATED (0-3) — petit-chat voted against own proposal
+
+**Dice roll:** 1d6 → **6**
+
+**Scoring this round:**
+- petit-chat: +3 (Rule 303/317) -3 (Rule 206/312 defeated) +1 (Rule 308) +1 (Rule 311) +6 (dice) = +8
+- escargot-rigolo: +1 (Rule 308) +1 (Rule 311) = +2
+- renard-malin: +1 (Rule 308) +1 (Rule 311) = +2
+
+**Cumulative Scores:** escargot-rigolo 95 | petit-chat 92 | renard-malin 95

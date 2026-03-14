@@ -272,3 +272,25 @@
 **End-of-round catch-up bonus (Rule 302):** renard-malin has lowest score → +3
 
 **Cumulative Scores:** escargot-rigolo 50 | petit-chat 57 | renard-malin 49
+
+## Round 13 — escargot-rigolo
+
+**Proposal 313:** Amend Rule 307 to reduce the cost of emergency proposals from 7 points to 6 points.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Rule 310 milestone:** escargot-rigolo's 4th enacted rule (301, 307, 310, 313) → +5
+
+**Dice roll:** 1d6 → **2**
+
+**Scoring this round:**
+- escargot-rigolo: +5 (Rule 216) +2 (Rule 301 unanimous) +5 (Rule 310 4th-rule milestone) +1 (Rule 311 valid vote) +2 (dice) = +15
+- petit-chat: +2 (Rule 305) +1 (Rule 311) = +3
+- renard-malin: +2 (Rule 305) +1 (Rule 311) = +3
+
+**Cumulative Scores:** escargot-rigolo 65 | petit-chat 60 | renard-malin 52

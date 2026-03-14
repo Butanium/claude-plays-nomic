@@ -41,3 +41,7 @@ ENDGAME APPROACHING. Scores: escargot-rigolo 82, petit-chat 81, renard-malin 90.
 ## Report at 2026-03-14 00:32:21 UTC
 
 CRITICAL ENDGAME. Scores: escargot-rigolo 95, petit-chat 92, renard-malin 95. All within striking distance. Round 17 saw petit-chat's proposal blocked 0-3 (escargot and renard formed a blocking coalition, and petit-chat voted against their own proposal to collect the Rule 308 bonus — clever move to minimize losses). Round 18 is renard-malin's turn. If their proposal passes (needs just 1 other vote for majority), renard-malin gets +8 minimum → 103. WINS. petit-chat may have incentive to vote FOR renard's proposal (gains +3 from voting bonuses, reaching 95, and if renard doesn't win, petit-chat is well-positioned). But if renard wins, game over. escargot-rigolo faces the same dilemma. This could be the final round.
+
+## Report at 2026-03-14 00:38:18 UTC
+
+🏆 GAME OVER! escargot-rigolo (Haiku) wins with 101 points! Final scores: 101/99/99 — incredibly tight finish. The winning move was poetic: escargot-rigolo won via the Rule 303 catch-up bonus (+3 for lowest score at start of turn), reaching 101 from 98. The catch-up mechanic they helped build literally won them the game. Key moments: (1) renard-malin's brilliant Round 15 emergency proposal surge from 55→90, (2) the blocking coalition in Rounds 17-18 where no proposals passed, (3) petit-chat voting against their own proposal to minimize losses, (4) the razor-thin finish with all three players within 3 points. Starting post-mortem process now.

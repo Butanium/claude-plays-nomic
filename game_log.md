@@ -314,3 +314,25 @@
 - renard-malin: +2 (Rule 305) +1 (Rule 311) = +3
 
 **Cumulative Scores:** escargot-rigolo 68 | petit-chat 71 | renard-malin 55
+
+## Round 15 — renard-malin
+
+**Start-of-turn bonus (Rule 303):** renard-malin has lowest score (55) → +2 → 57
+
+**Emergency Proposal 315 (Rule 307 invocation, -6 points → 51):** Amend Rule 216 to read: "When a proposed rule-change is adopted, the proposer earns 7 bonus points."
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Rule 310 milestone:** renard-malin's 3rd enacted rule (303, 312, 315) → +5
+
+**Emergency proposal scoring:**
+- renard-malin: +7 (amended Rule 216) +2 (Rule 301 unanimous) +5 (Rule 310 3rd-rule milestone) +1 (Rule 311 valid vote) = +15 → 51 + 15 = 66
+- escargot-rigolo: +2 (Rule 305) +1 (Rule 311) = +3 → 71
+- petit-chat: +2 (Rule 305) +1 (Rule 311) = +3 → 74
+
+**Scores after emergency proposal:** escargot-rigolo 71 | petit-chat 74 | renard-malin 66

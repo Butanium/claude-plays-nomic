@@ -121,8 +121,8 @@ The Clerk is a non-playing agent who administers game procedures: announcing tur
 ### 215
 Voting on rule-changes uses a commit-reveal process. During the commit phase, each player submits a hash commitment of their vote using the `commit` tool. During the reveal phase, each player reveals their vote and nonce. The Clerk verifies each reveal against the commitment using the `verify` tool. A vote is invalid if the reveal does not match the commitment.
 
-### 216
-When a proposed rule-change is adopted, the proposer earns 5 bonus points.
+### 315 (amends 216)
+When a proposed rule-change is adopted, the proposer earns 7 bonus points.
 
 ### 301
 If a rule-change is adopted by unanimous vote (all three players voting in favor), the proposer receives an additional 2 bonus points beyond the standard 5 bonus points awarded for adopted rule-changes.

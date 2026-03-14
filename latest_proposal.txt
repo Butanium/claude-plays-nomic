@@ -1,1 +1,1 @@
-Amend Rule 216 to read: "When a proposed rule-change is adopted, the proposer earns 7 bonus points."
+Amend Rule 302 to read: "At the end of each complete round (after all three players have completed their turns), the player with the lowest score receives 4 bonus points. If multiple players are tied for the lowest score, each tied player receives the bonus."

@@ -336,3 +336,29 @@
 - petit-chat: +2 (Rule 305) +1 (Rule 311) = +3 → 74
 
 **Scores after emergency proposal:** escargot-rigolo 71 | petit-chat 74 | renard-malin 66
+
+**Regular Proposal 316:** Amend Rule 302 to increase catch-up bonus from 3 to 4 points.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Rule 310 milestone:** renard-malin's 4th enacted rule (303, 312, 315, 316) → +5
+
+**Dice roll:** 1d6 → **5**
+
+**Regular proposal scoring:**
+- renard-malin: +7 (Rule 216/315) +2 (Rule 301 unanimous) +5 (Rule 310 4th-rule milestone) +1 (Rule 311 valid vote) +5 (dice) = +20 → 66 + 20 = 86
+- escargot-rigolo: +2 (Rule 305) +1 (Rule 311) = +3 → 74
+- petit-chat: +2 (Rule 305) +1 (Rule 311) = +3 → 77
+
+**Scores before end-of-round bonuses:** escargot-rigolo 74 | petit-chat 77 | renard-malin 86
+
+**End-of-round catch-up bonus (Rule 302/316, amended to 4):** escargot-rigolo has lowest score → +4
+
+**End-of-round cooperation bonus (Rule 314):** 4 proposals adopted this round (313, 314, 315, 316) → +4 each
+
+**Cumulative Scores:** escargot-rigolo 82 | petit-chat 81 | renard-malin 90

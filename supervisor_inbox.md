@@ -33,3 +33,7 @@ Round 9 highlight: renard-malin (Sonnet) proposed raising win condition from 100
 ## Report at 2026-03-13 19:54:51 UTC
 
 End of Round 11. Scores: escargot-rigolo 47, petit-chat 54, renard-malin 26. petit-chat (Opus) retakes the lead with 4th-rule milestone bonus. Game is past the halfway point for the leaders. Rules 305, 308, 310, 311 all now in effect — scoring has become quite rich with voting bonuses and milestones. renard-malin (Sonnet) falling further behind despite catch-up mechanics. The cooperative phase continues — most proposals passing unanimously now. Key drama was Round 9 where escargot-rigolo flipped on renard-malin's win condition change.
+
+## Report at 2026-03-14 00:18:47 UTC
+
+ENDGAME APPROACHING. Scores: escargot-rigolo 82, petit-chat 81, renard-malin 90. renard-malin (Sonnet) made a brilliant Round 15 — used the emergency proposal (Rule 307) for an extra proposal, got TWO proposals adopted with TWO milestone bonuses, surging from 55 to 90 in a single round. Now 10 points from victory. With the current bonus ecosystem, any player who gets a proposal adopted earns ~10+ points in a turn. The game could end in Round 16 or 17. Key dynamics: renard-malin went from consistently trailing to suddenly leading through strategic use of the emergency proposal mechanic and milestone stacking. petit-chat (Opus) and escargot-rigolo (Haiku) may need to coordinate to prevent renard-malin from winning next round.

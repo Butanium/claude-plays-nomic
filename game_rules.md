@@ -130,8 +130,8 @@ If a rule-change is adopted by unanimous vote (all three players voting in favor
 ### 316 (amends 302)
 At the end of each complete round (after all three players have completed their turns), the player with the lowest score receives 4 bonus points. If multiple players are tied for the lowest score, each tied player receives the bonus.
 
-### 303
-At the start of each player's turn, if that player currently has the lowest score among all players (or is tied for the lowest score), they receive 2 bonus points before their turn proceeds.
+### 317 (amends 303)
+At the start of each player's turn, if that player currently has the lowest score among all players (or is tied for the lowest score), they receive 3 bonus points before their turn proceeds.
 
 ### 305
 When a proposal is adopted, each non-proposing player who cast a valid "for" vote earns 2 bonus points.

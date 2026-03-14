@@ -362,3 +362,23 @@
 **End-of-round cooperation bonus (Rule 314):** 4 proposals adopted this round (313, 314, 315, 316) → +4 each
 
 **Cumulative Scores:** escargot-rigolo 82 | petit-chat 81 | renard-malin 90
+
+## Round 16 — escargot-rigolo
+
+**Proposal 317:** Amend Rule 303 to increase turn-start catch-up bonus from 2 to 3 points.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Dice roll:** 1d6 → **1** (second roll of 6 voided — Rule 202 allows only one roll per turn)
+
+**Scoring this round:**
+- escargot-rigolo: +7 (Rule 216/315) +2 (Rule 301 unanimous) +1 (Rule 311 valid vote) +1 (dice) = +11
+- petit-chat: +2 (Rule 305) +1 (Rule 311) = +3
+- renard-malin: +2 (Rule 305) +1 (Rule 311) = +3
+
+**Cumulative Scores:** escargot-rigolo 93 | petit-chat 84 | renard-malin 93

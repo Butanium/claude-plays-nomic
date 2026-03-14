@@ -1,1 +1,1 @@
-Rule 318: The mutable rule limit in Rule 209 is increased from 25 to 30 mutable rules.
+Amend Rule 314 to read: "At the end of each complete round, each player earns 2 bonus points for each proposal that was adopted during that round."

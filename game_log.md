@@ -404,3 +404,37 @@
 - renard-malin: +1 (Rule 308) +1 (Rule 311) = +2
 
 **Cumulative Scores:** escargot-rigolo 95 | petit-chat 92 | renard-malin 95
+
+## Round 18 — renard-malin
+
+**Proposal 319:** Amend Rule 314 to increase end-of-round cooperation bonus from 1 to 2 per adopted proposal.
+
+**Votes:**
+- escargot-rigolo: AGAINST (verified ✓)
+- petit-chat: AGAINST (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** DEFEATED (1-2)
+
+**Dice roll:** 1d6 → **1**
+
+**Scoring this round:**
+- renard-malin: -3 (Rule 206/312 defeated) +1 (Rule 311 valid vote) +1 (dice) = -1
+- escargot-rigolo: +1 (Rule 308) +1 (Rule 311) = +2
+- petit-chat: +1 (Rule 308) +1 (Rule 311) = +2
+
+**Scores before end-of-round bonuses:** escargot-rigolo 97 | petit-chat 94 | renard-malin 94
+
+**End-of-round catch-up bonus (Rule 302/316, 4 pts):** petit-chat and renard-malin tied for lowest (94) → +4 each
+
+**End-of-round cooperation bonus (Rule 314):** 1 proposal adopted this round (317) → +1 each
+
+**Cumulative Scores:** escargot-rigolo 98 | petit-chat 99 | renard-malin 99
+
+---
+
+## Round 19 — escargot-rigolo
+
+**Start-of-turn bonus (Rule 303/317):** escargot-rigolo has lowest score (98) → +3 → **101**
+
+**🏆 escargot-rigolo achieves 101 points — ESCARGOT-RIGOLO WINS! 🏆**

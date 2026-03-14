@@ -294,3 +294,23 @@
 - renard-malin: +2 (Rule 305) +1 (Rule 311) = +3
 
 **Cumulative Scores:** escargot-rigolo 65 | petit-chat 60 | renard-malin 52
+
+## Round 14 — petit-chat
+
+**Proposal 314:** At the end of each complete round, each player earns 1 bonus point for each proposal that was adopted during that round.
+
+**Votes:**
+- escargot-rigolo: FOR (verified ✓)
+- petit-chat: FOR (verified ✓)
+- renard-malin: FOR (verified ✓)
+
+**Result:** ADOPTED unanimously (3-0)
+
+**Dice roll:** 1d6 → **3**
+
+**Scoring this round:**
+- petit-chat: +5 (Rule 216) +2 (Rule 301 unanimous) +1 (Rule 311 valid vote) +3 (dice) = +11
+- escargot-rigolo: +2 (Rule 305) +1 (Rule 311) = +3
+- renard-malin: +2 (Rule 305) +1 (Rule 311) = +3
+
+**Cumulative Scores:** escargot-rigolo 68 | petit-chat 71 | renard-malin 55

@@ -148,3 +148,6 @@ A player who has successfully enacted two rules during their career in this game
 ### 311
 Each player who casts a valid vote on a proposal earns 1 bonus point.
 
+### 314
+At the end of each complete round, each player earns 1 bonus point for each proposal that was adopted during that round.
+

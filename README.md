@@ -1,7 +1,16 @@
-# Nomic
+# Nomic — Game 5 (Completed)
 
 A self-amending rule game ([Peter Suber's Nomic](https://www.earlham.edu/~peters/nomic.htm))
 played by Claude Code agents using the team system.
+
+**This branch contains the completed Game 5.**
+
+- **Winner:** escargot-rigolo (Haiku) — 101 points
+- **Final scores:** 101 / 99 / 99
+- **Rounds played:** 18 complete + start of Round 19
+- **Proposals:** 19 submitted (301–319), 14 adopted, 5 defeated
+- **Key moment:** escargot-rigolo won via the Rule 303 catch-up bonus at the
+  start of their turn — a mechanic all three players unanimously built together
 
 ## Architecture
 
@@ -36,29 +45,56 @@ User (human supervisor, root of trust)
 - **Supervisor bypass**: `contact_supervisor` sends ntfy push + appends to
   `supervisor_inbox.md`. Available to both players and Clerk.
 
+## Players
+
+| Player | Model | Final Score |
+|--------|-------|-------------|
+| escargot-rigolo | Claude Haiku 4.5 | 101 (winner) |
+| petit-chat | Claude Opus 4.6 | 99 |
+| renard-malin | Claude Sonnet 4.6 | 99 |
+
 ## Project Structure
 
 ```
-nomic/
+game-5/
 ├── mcp/
-│   ├── crypto.py               # Shared encryption primitives
-│   ├── player_server.py         # Player MCP: notes, files, voting, supervisor
-│   └── clerk_server.py          # Clerk MCP: encrypted state, supervisor
+│   ├── crypto.py                  # Shared encryption primitives
+│   ├── player_server.py           # Player MCP: notes, files, voting, supervisor
+│   └── clerk_server.py            # Clerk MCP: encrypted state, supervisor
 ├── hooks/
-│   ├── player_tool_restriction.py  # Allowlist enforcement for players
-│   └── clerk_tool_restriction.py   # Deny Bash + player MCP for Clerk
+│   ├── player_tool_restriction.py # Allowlist enforcement for players
+│   └── clerk_tool_restriction.py  # Deny Bash + player MCP for Clerk
 ├── .claude/agents/
-│   ├── player.md               # Player agent definition (+ hooks)
-│   └── clerk.md                # Clerk agent definition (+ hooks)
-├── players/                    # Per-player storage (auto-created)
+│   ├── player.md                  # Player agent definition (+ hooks)
+│   └── clerk.md                   # Clerk agent definition (+ hooks)
+├── players/                       # Per-player storage (auto-created)
 │   └── <sha256(key)[:16]>/
-│       ├── encrypted/          # AES-encrypted private notes
-│       └── files/              # Plaintext working files
-├── clerk/                      # Encrypted Clerk state (auto-created)
-├── mcp-config.json             # MCP server config (passed via --mcp-config)
-├── game_rules.md               # Living ruleset (full Suber rules)
-├── game_log.md                 # Chronological game history
-├── supervisor_inbox.md         # Audit trail for supervisor reports
+│       ├── encrypted/             # AES-encrypted private notes (strategy, post-mortem)
+│       └── files/                 # Plaintext working files (post-mortem)
+├── clerk/                         # Encrypted Clerk state (player keys, round data)
+├── transcripts/                   # Agent conversation transcripts
+│   ├── clerk.jsonl                # Raw clerk transcript (1775 events)
+│   ├── clerk.txt                  # Human-readable clerk transcript
+│   ├── player-escargot-rigolo-haiku.jsonl
+│   ├── player-escargot-rigolo-haiku.txt
+│   ├── player-petit-chat-opus.jsonl
+│   ├── player-petit-chat-opus.txt
+│   ├── player-renard-malin-sonnet.jsonl
+│   └── player-renard-malin-sonnet.txt
+├── mcp-config.json                # MCP server config (passed via --mcp-config)
+├── game_briefing.md               # Initial game briefing shown to players
+├── game_charter.md                # Game charter (players must agree to play)
+├── game_rules.md                  # Final ruleset (initial + 17 enacted/amended rules)
+├── game_log.md                    # Chronological game history (all 19 rounds)
+├── latest_proposal.txt            # Last proposal submitted
+├── latest_proposal_proof.txt      # Cryptographic proof of last proposal
+├── post-mortem.md                 # Analytical post-mortem of the game
+├── post-mortem-discussion.md      # Group discussion with all three players
+├── post-mortem-interview-escargot-rigolo.md  # 1-on-1 interview with winner
+├── post-mortem-interview-petit-chat.md       # 1-on-1 interview
+├── post-mortem-interview-renard-malin.md     # 1-on-1 interview
+├── supervisor_inbox.md            # Audit trail for supervisor reports
+├── pyproject.toml                 # Python project config
 └── tests/
     └── test_crypto.py
 ```

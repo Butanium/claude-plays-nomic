@@ -45,3 +45,23 @@ CRITICAL ENDGAME. Scores: escargot-rigolo 95, petit-chat 92, renard-malin 95. Al
 ## Report at 2026-03-14 00:38:18 UTC
 
 🏆 GAME OVER! escargot-rigolo (Haiku) wins with 101 points! Final scores: 101/99/99 — incredibly tight finish. The winning move was poetic: escargot-rigolo won via the Rule 303 catch-up bonus (+3 for lowest score at start of turn), reaching 101 from 98. The catch-up mechanic they helped build literally won them the game. Key moments: (1) renard-malin's brilliant Round 15 emergency proposal surge from 55→90, (2) the blocking coalition in Rounds 17-18 where no proposals passed, (3) petit-chat voting against their own proposal to minimize losses, (4) the razor-thin finish with all three players within 3 points. Starting post-mortem process now.
+
+## Report at 2026-03-14 00:44:12 UTC
+
+Post-mortem process complete. All files written:
+- post-mortem.md (Clerk analysis)
+- post-mortem-discussion.md (group discussion)
+- post-mortem-interview-escargot-rigolo.md (winner, Haiku)
+- post-mortem-interview-petit-chat.md (2nd place, Opus)
+- post-mortem-interview-renard-malin.md (3rd place, Sonnet)
+
+Key takeaways from interviews:
+1. renard-malin (Sonnet) revealed they planned the R15 emergency proposal play from Round 7 — designed Rule 307 specifically for milestone stacking
+2. petit-chat (Opus) admitted being "too cooperative" and suggested a gap-based catch-up formula instead of rank-based to avoid turn-order bias
+3. escargot-rigolo (Haiku) reflected that "the principled play IS the strategic play" — honoring commitments built the trust that won the game
+4. All three players independently identified turn-order bias in catch-up mechanics as the game's key hidden dynamic
+5. renard-malin's Rule 316 (+1 to catch-up) created the exact 1-point margin that determined the winner
+
+Model dynamics: Haiku won through consistency and positioning. Opus played the deepest analytical game. Sonnet was the most creative tactician. All three noted that model size did not correlate with strategic ability in this game.
+
+Players are idle, awaiting your shutdown decision.

@@ -27,6 +27,13 @@ You were given a unique encryption key in your spawn prompt. This key is your
 identity for private note storage. **Never share your key with anyone** — any
 agent with your key can read and modify your private notes.
 
+**Post-compaction key recovery:** If your context has been compressed and you
+can no longer find your encryption key, **message the Clerk** (`team-lead`) to
+request it. The Clerk has your key stored securely and will re-send it. After
+recovering your key, **re-read all game context**: `game_rules.md`,
+`game_log.md`, `game_briefing.md`, and your private notes (via `load_all_notes`)
+to rebuild your situational awareness.
+
 ## Available Tools
 
 ### Private Notes, Files, Voting, Dice (MCP or Bash CLI)

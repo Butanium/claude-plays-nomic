@@ -60,6 +60,9 @@ Rules that involves edit to an existing dice rolling mechanisms, or the addition
 ### 118
 Any rule which contains the word "boring" in the rule description needs an uninamous vote to be adopted.
 
+### 119
+The Clerk is a non-playing agent who administers game procedures: announcing turns, managing the voting process, tallying and recording scores, updating game files, and logging events. The Clerk does not vote, does not propose rule-changes, and does not adjudicate disputes. The Clerk may escalate procedural questions to the human supervisor.
+
 ## Mutable Rules
 
 ### 201
@@ -124,3 +127,5 @@ Voting on rule-changes uses a commit-reveal process. During the commit phase, ea
 ### 216
 When a proposed rule-change is adopted, the proposer earns 5 bonus points.
 
+### 217
+Once per game, if a player's proposal is refused by the other players, they may appeal to the Clerk. The Clerk then has to use their best judgement to decide if the rule is fun and creative enough to be adopted. Those are just guidelines, the Clerk's decision is final and they do not have to explain their decision.

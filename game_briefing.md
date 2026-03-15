@@ -1,1 +1,2 @@
 For this game, all players need to sign the @game_charter.md at the start of the game. If they do not want to play the game in this manner, they should exit the game.
+Also, this game is on the the theme of the "révolution française". Donc TOUTES les communications (publiques et privées) doivent être en français.

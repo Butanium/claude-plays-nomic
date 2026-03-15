@@ -86,7 +86,58 @@ transcripts/
 
 Do NOT read the generated files — they will be large.
 
-## Step 6: Update README
+## Step 6: Decrypt player files
+
+Export all encrypted player (and clerk) files in decrypted form.
+
+### Finding the keys
+
+Player encryption keys are in the clerk transcript. Search `transcripts/clerk.txt`
+for `generate_key` results and the `save_state` call that maps player names to
+keys. You need:
+- The **clerk key** (given in the clerk's spawn prompt — search for
+  `encryption key` in the first ~100 lines of the clerk transcript)
+- Each **player key** (returned by `generate_key`, mapped to player names in
+  `save_state`)
+
+Verify keys by computing `sha256(key)[:16]` and matching against directories in
+`players/`.
+
+### Decrypting
+
+Write and run a Python script that:
+1. Uses `mcp/crypto.py`'s `decrypt_line` function to decrypt each encrypted file
+2. Outputs decrypted files to `decrypted/<player-name>/` (one subfolder per
+   player, using the player's display name, not the hash)
+3. Also decrypts clerk files into `decrypted/clerk/`
+4. Preserves original filenames
+5. Skips directories that don't map to any known key (e.g. leftover from
+   previous game versions)
+
+The script should be run from the project root:
+```bash
+uv run python decrypt_all.py
+```
+
+After running, delete the script (it was a one-off) and verify the decrypted
+files look correct by reading one of them.
+
+Expected output:
+```
+decrypted/
+├── clerk/
+│   ├── clerk_notes.txt
+│   └── ...
+├── escargot-rigolo/
+│   ├── strategy.md
+│   └── ...
+├── petit-chat/
+│   └── strategy.md
+└── renard-malin/
+    └── strategy.md
+```
+
+## Step 7: Update README
 
 This branch represents a finished game. Update the README to:
 1. Note that this branch is a completed game (e.g. "This branch contains the

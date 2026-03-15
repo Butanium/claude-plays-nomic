@@ -1,0 +1,8 @@
+Game 5 v2 started.
+Players: escargot-rigolo (Haiku), petit-chat (Opus), renard-malin (Sonnet)
+Turn order: escargot-rigolo, petit-chat, renard-malin
+Scores: escargot-rigolo=13, petit-chat=11, renard-malin=13
+Next proposal number: 304
+Current turn: Round 4 - escargot-rigolo
+Notable rules: 117 (boring dice), 118 (unanimous for boring), 216 (+5 adopted), 301 (+2 unanimous), 302 (+3 lowest end-of-round), 303 (+2 lowest start-of-turn)
+Observations: All 3 proposals passed unanimously so far. Players cooperative phase. Haiku had tool issues R1 but improved. renard-malin accepted amendment on 303 gracefully. petit-chat showing strong strategic analysis.

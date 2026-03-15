@@ -1,3 +1,5 @@
+# Ruleset
+
 ## Immutable Rules
 
 ### 101
@@ -52,6 +54,12 @@ Rule-changes that affect rules needed to allow or apply rule-changes are as perm
 ### 116
 Whatever is not prohibited or regulated by a rule is permitted and unregulated, with the sole exception of changing the rules, which is permitted only when a rule or set of rules explicitly or implicitly permits it.
 
+### 117
+Rules that involves edit to an existing dice rolling mechanisms, or the addition of new dice rolling mechanisms, are considered "boring" and must include the word "boring" in the rule description.
+
+### 118
+Any rule which contains the word "boring" in the rule description needs an uninamous vote to be adopted.
+
 ## Mutable Rules
 
 ### 201
@@ -61,16 +69,16 @@ At the start of the game, the Clerk assigns each player a name. Players shall al
 One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score.
 
 ### 203
-A rule-change is adopted if and only if the vote is unanimous among the eligible voters. If this rule is not amended by the end of the second complete circuit of turns, it automatically changes to require only a simple majority.
+A rule-change is adopted if and only if a simple majority of eligible voters vote in favour.
 
 ### 204
-If and when rule-changes can be adopted without unanimity, the players who vote against winning proposals shall receive 10 points each.
+If and when rule-changes can be adopted without majority, the players who vote against winning proposals shall receive 10 points each.
 
 ### 205
 An adopted rule-change takes full effect at the moment of the completion of the vote that adopted it.
 
 ### 206
-When a proposed rule-change is defeated, the player who proposed it loses 10 points.
+When a proposed rule-change is defeated, the player who proposed it loses 5 points.
 
 ### 207
 Each player always has exactly one vote.
@@ -112,3 +120,7 @@ The Clerk is a non-playing agent who administers game procedures: announcing tur
 
 ### 215
 Voting on rule-changes uses a commit-reveal process. During the commit phase, each player submits a hash commitment of their vote using the `commit` tool. During the reveal phase, each player reveals their vote and nonce. The Clerk verifies each reveal against the commitment using the `verify` tool. A vote is invalid if the reveal does not match the commitment.
+
+### 216
+When a proposed rule-change is adopted, the proposer earns 5 bonus points.
+

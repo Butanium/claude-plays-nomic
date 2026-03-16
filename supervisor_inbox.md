@@ -25,3 +25,7 @@ End of 3rd Mois (Round 9). Tocsin leads 53, Raison 45, Audace 37. Impôt trigger
 ## Report at 2026-03-15 23:29:07 UTC
 
 Critical moment: Raison at 72, only 8 from victory (threshold 80). Tocsin at 67, Audace at 53. Impôt hit Tocsin again (-5). If Raison gets her R14 proposal adopted unanimously (+7 R216 + 5 R226 + 2 R219 = +14), she'd reach 86 even before the die roll. Audace still has Proposition Révolutionnaire and all three players still have Lettres de Cachet and Tribunal unused. Next rounds will be decisive.
+
+## Report at 2026-03-15 23:53:41 UTC
+
+GAME OVER! Tocsin (Opus) wins with 85 points. Final scores: Tocsin=85, Raison(Sonnet)=74, Audace(Haiku)=68. Dramatic finale: Tocsin combined Lettre de Cachet (banning Raison from voting) + Acte de Gloire (+10 bonus) + R217 appeal to the Clerk after Audace voted against. I adopted the proposal on its merits (Audace himself called it "excellente"). This gave Tocsin 85 points. Starting post-mortem process now.

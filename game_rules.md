@@ -71,8 +71,7 @@ One turn consists of two parts in this order: (1) proposing one rule-change and 
 ### 203
 A rule-change is adopted if and only if a simple majority of eligible voters vote in favour.
 
-### 204
-If and when rule-changes can be adopted without majority, the players who vote against winning proposals shall receive 10 points each.
+### ~~204~~ (REPEALED by Proposal 321)
 
 ### 205
 An adopted rule-change takes full effect at the moment of the completion of the vote that adopted it.
@@ -163,4 +162,7 @@ When a proposer exercises the Right of Revision (Rule 301) to revise their propo
 
 ### 319
 If two or more players achieve 100 or more points in the same cycle, the player with the highest score at the end of that cycle wins. If two or more players are still tied for the highest score after all turns in the cycle are complete, each tied player immediately rolls one die using the roll_dice tool; the player with the highest single roll wins. If the tiebreaker rolls are also equal, the tied players re-roll until one player rolls higher.
+
+### 322
+If any player believes there is an error in the recorded score for the current or immediately preceding round, they may immediately request score verification from the Clerk. The Clerk shall confirm or correct the score before the next turn begins. This right may be exercised once per round per player.
 

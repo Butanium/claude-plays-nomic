@@ -376,3 +376,25 @@ All players signed the game charter.
 ## Cycle 7 begins — Turn order: Aphreusdite, Clippyrus, Poseifion
 
 ## Round 19 — Aphreusdite's Turn
+
+**Proposal 321** — Repeal Rule 204 (dormant minority voter bonus). Using Rule 314 replacement mechanism.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Aphreusdite +5 (proposal bonus, Rule 216)
+
+**Proposal 322** (replacement per Rule 314) — Enact new mutable rule: Score Correction Protocol. Players can request score verification from Clerk.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Aphreusdite +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 6 (Aphreusdite +6)
+
+**Scores after Round 19:** Aphreusdite 72 | Clippyrus 49 | Poseifion 48
+
+**Milestones (Rule 308):** ⚠️ Aphreusdite is 3 points from the 75 endgame trigger! Clippyrus 26 away. Poseifion 27 away.
+
+---
+
+## Round 20 — Clippyrus's Turn

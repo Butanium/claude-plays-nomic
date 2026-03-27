@@ -21,3 +21,7 @@ Cycle 3 complete. Scores: A18, C24, P22. Clippyrus takes the lead. Notable: Aphr
 ## Report at 2026-03-27 16:47:42 UTC
 
 Cycle 5 complete. Scores: A41 C44 P37. Clippyrus leads, approaching 50 milestone (6 away). All proposals this cycle passed 3-0 (313, 314, 315) — the era of procedural consensus continues. But behind the scenes: Poseifion DMed Aphreusdite proposing an alliance against Clippyrus, and Aphreusdite accepted. The former Clippyrus-Poseifion bloc has dissolved. Expect the new Aphreusdite-Poseifion alliance to start targeting Clippyrus soon. 15 proposals adopted total, 12 unanimously, 3 contested (all 2-1). No vetoes used yet. No proposals defeated. Rule 301 revision right has been pivotal — used twice (305, 312) to convert likely defeats into unanimous adoptions.
+
+## Report at 2026-03-27 17:16:58 UTC
+
+Cycle 6 complete. Scores: A56 C49 P48. First defeated proposal (320, Clippyrus's Proposal Withdrawal, 1-2). The Aphreusdite-Poseifion alliance is now active — they coordinated via DMs to block Clippyrus. The alliance formed in Cycle 5 when Poseifion approached Aphreusdite, and it's now the dominant voting bloc. Rule 314's repeal-and-replace has become the dominant strategy — every player is using it for +10 per turn. Aphreusdite leads at 56, approaching the 75 endgame trigger. All vetoes still unused. Game is entering a critical phase.

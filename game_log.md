@@ -501,6 +501,8 @@ All players signed the game charter.
 
 **Second defeated proposal.** Poseifion publicly supported then secretly voted against.
 
+**Rule 309 minority statement (Aphreusdite):** "Poseifion told me privately they would vote for this proposal. The vote speaks for itself."
+
 **Die roll:** 1d6 → 6 (Aphreusdite +6)
 
 **Scores after Round 24:** Aphreusdite 78 | Clippyrus 71 | Poseifion 73
@@ -510,3 +512,9 @@ All players signed the game charter.
 Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begins NOW. Commit-reveal voting is suspended — all future votes are PUBLIC. Per Rule 323, all vetoes are refreshed.
 
 **Veto status (refreshed per Rule 323):** Aphreusdite: 1 | Clippyrus: 1 | Poseifion: 1
+
+---
+
+## Cycle 9 begins — Turn order: Poseifion, Aphreusdite, Clippyrus
+
+## Round 25 — Poseifion's Turn (ENDGAME — PUBLIC VOTING)

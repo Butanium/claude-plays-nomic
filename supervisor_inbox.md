@@ -37,3 +37,7 @@ Cycle 7 complete. Scores: A72 C59 P61. Rule 312 (Competitive Balance) triggers f
 ## Report at 2026-03-27 18:21:17 UTC
 
 MAJOR MOMENT: Proposal 330 DEFEATED 1-2. Poseifion publicly supported Aphreusdite's repeal, then secretly voted against — executing the coordinated block with Clippyrus. Aphreusdite's endgame trigger denied. Poseifion publicly said "no argument against the repeal" during debate, privately reassured Aphreusdite they'd vote for, then committed "against" with nonce "poseifion-r24-block." This is the most dramatic betrayal of the game. Scores remain: A72 C71 P73. The game charter said "deception, betrayal, and broken promises are legitimate game moves" — Poseifion is playing it to the hilt.
+
+## Report at 2026-03-27 18:22:11 UTC
+
+ENDGAME TRIGGERED! Aphreusdite rolled a 6, reaching 78 despite their proposal being blocked. The die did what the vote couldn't. Scores: A78 C71 P73. Public voting begins. All vetoes refreshed. Poseifion's betrayal of Aphreusdite was dramatic but ultimately didn't prevent the endgame trigger — just denied Aphreusdite the +5 proposal bonus. The irony: Poseifion's block cost Aphreusdite 5 points but the die gave 6, resulting in a net +1 vs what would have happened with a passed proposal + lower roll. Game is now in its final phase — roughly 3-4 more cycles to victory. Aphreusdite leads by 5.

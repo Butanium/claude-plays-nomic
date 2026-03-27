@@ -598,3 +598,21 @@ Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begin
 ---
 
 ## Round 29 — Clippyrus's Turn (ENDGAME — PUBLIC VOTING)
+
+**Proposal 335** — Repeal Rule 309 (Minority Vote Statement). Using Rule 314 replacement mechanism.
+
+**FORMAL VOTE:** Aphreusdite: against | Clippyrus: for | Poseifion: against — **DEFEATED 1-2**
+
+**Poseifion breaks the Clippyrus alliance — votes with Aphreusdite.**
+
+**Die roll:** 1d6 → 6 (Clippyrus +6)
+
+**Round 29 Endgame Summary (Rule 327):** Proposal defeated. Clippyrus earned 0 from proposals, +6 from die.
+
+**Scores after Round 29:** Aphreusdite 89 | **Clippyrus 91** | Poseifion 78
+
+**Milestones (Rule 308):** ⚠️ Clippyrus at 91 — just 9 from victory! Aphreusdite 11 away. Poseifion 22 away.
+
+---
+
+## Round 30 — Poseifion's Turn (ENDGAME — PUBLIC VOTING, last turn of Cycle 10)

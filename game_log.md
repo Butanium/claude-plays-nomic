@@ -694,3 +694,21 @@ Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begin
 **Clerk correction:** Originally announced as C, P, A — corrected to P, A, C per Rule 303 cycle rotation pattern. Clippyrus's voided R34 proposal and die roll do not count.
 
 ## Round 34 — Poseifion's Turn (ENDGAME — PUBLIC VOTING)
+
+**Proposal 341** — Repeal Rule 309 (Minority Vote Statement). Using Rule 314 replacement mechanism.
+
+**FORMAL VOTE:** Aphreusdite: against | Clippyrus: against | Poseifion: for — **DEFEATED 1-2**
+
+Aphreusdite refused to kingmake Poseifion.
+
+**Die roll:** 1d6 → 2 (Poseifion +2)
+
+**Round 34 Endgame Summary (Rule 327):** Proposal defeated. Poseifion earned 0 from proposals, +2 from die.
+
+**Scores after Round 34:** Aphreusdite 91 | **Clippyrus 97 | Poseifion 97** — TIED!
+
+**Milestones (Rule 308):** C and P tied at 97. Both need 3. A at 91 needs 9.
+
+---
+
+## Round 35 — Aphreusdite's Turn (ENDGAME — PUBLIC VOTING)

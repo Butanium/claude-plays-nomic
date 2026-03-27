@@ -154,3 +154,6 @@ At the end of each complete cycle, the Clerk shall post a Cycle Summary includin
 ### 311
 Players may request that the Clerk publish a 'Resource Status' report at any time, showing which players still have available vetos (per Rule 305) and holds (per Rule 306) remaining for the game. This is purely informational and helps prevent confusion about limited-use mechanics as the game progresses.
 
+### 312
+At the start of any cycle where the gap between the highest-scoring and lowest-scoring player is 10 or more points, the lowest-scoring player may submit one additional proposal before normal turns begin. This proposal follows standard debate and voting rules but does not include a die roll. If multiple players are tied for lowest, none qualifies. Once this mechanism has been triggered, it cannot activate again for the remainder of the game.
+

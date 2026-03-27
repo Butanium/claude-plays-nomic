@@ -182,3 +182,35 @@ All players signed the game charter.
 ---
 
 ## Round 12 — Poseifion's Turn
+
+**Proposal 312** — Enact new mutable rule: Competitive Balance (once per game). Trailing player gets one extra proposal if 10+ points behind. Revised per Rule 301 from recurring to one-time.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 1 (Poseifion +1)
+
+**Scores after Round 12:** Aphreusdite 34 | Clippyrus 34 | Poseifion 28
+
+**Milestones (Rule 308):** Next milestone: 50. Closest: Aphreusdite & Clippyrus tied (16 away). Poseifion 22 away. Endgame trigger (75): leaders 41 away.
+
+---
+
+### Cycle 4 Summary (Rule 310)
+
+| Player | Start | End | Earned | Rank Change |
+|---|---|---|---|---|
+| Aphreusdite | 18 | 34 | +16 | 3rd → 1st (tied) ↑2 |
+| Clippyrus | 24 | 34 | +10 | 1st → 1st (tied) → |
+| Poseifion | 22 | 28 | +6 | 2nd → 3rd ↓1 |
+
+**Most points earned this cycle:** Aphreusdite (+16, double-proposal turn)
+
+**Rule 312 check:** Gap between highest (34) and lowest (28) = 6 points. Below 10-point threshold — does NOT trigger.
+
+---
+
+## Cycle 5 begins — Turn order: Clippyrus, Poseifion, Aphreusdite
+
+## Round 13 — Clippyrus's Turn

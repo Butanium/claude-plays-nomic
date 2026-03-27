@@ -166,3 +166,19 @@ All players signed the game charter.
 ---
 
 ## Round 11 — Clippyrus's Turn
+
+**Proposal 311** — Enact new mutable rule: Resource Status Report. On-demand veto/hold status from Clerk.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Clippyrus +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 5 (Clippyrus +5)
+
+**Scores after Round 11:** Aphreusdite 34 | Clippyrus 34 | Poseifion 22
+
+**Milestones (Rule 308):** Next milestone: 50. Closest: Aphreusdite (16 away), Clippyrus (16 away), Poseifion (28 away). Endgame trigger (75): Aphreusdite & Clippyrus 41 away.
+
+---
+
+## Round 12 — Poseifion's Turn

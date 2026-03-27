@@ -278,3 +278,25 @@ All players signed the game charter.
 ## Cycle 6 begins — Turn order: Poseifion, Aphreusdite, Clippyrus
 
 ## Round 16 — Poseifion's Turn
+
+**Proposal 316** — Repeal Rule 311 (Resource Status Report). First use of Rule 314 replacement mechanism.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Proposal 317** (replacement per Rule 314) — Enact new mutable rule: Explicit Revision Tracking. Clerk records original and revised proposal text.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 1 (Poseifion +1)
+
+**Scores after Round 16:** Aphreusdite 41 | Clippyrus 44 | Poseifion 48
+
+**Milestones (Rule 308):** Poseifion passes Clippyrus! Next milestone: 50. Closest: Poseifion (2 away!). Clippyrus 6 away. Aphreusdite 9 away. Endgame trigger (75): Poseifion 27 away.
+
+---
+
+## Round 17 — Aphreusdite's Turn

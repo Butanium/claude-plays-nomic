@@ -151,12 +151,14 @@ After any vote concludes, each player who voted in the minority (or who was the 
 ### 310
 At the end of each complete cycle, the Clerk shall post a Cycle Summary including: (1) total points earned by each player during that cycle from proposals and die rolls combined, (2) the change in each player's rank since the previous cycle summary, and (3) which player gained the most points that cycle. This cycle-level analysis supplements the per-round score announcements already in place.
 
-### 311
-Players may request that the Clerk publish a 'Resource Status' report at any time, showing which players still have available vetos (per Rule 305) and holds (per Rule 306) remaining for the game. This is purely informational and helps prevent confusion about limited-use mechanics as the game progresses.
+### ~~311~~ (REPEALED by Proposal 316)
 
 ### 312
 At the start of any cycle where the gap between the highest-scoring and lowest-scoring player is 10 or more points, the lowest-scoring player may submit one additional proposal before normal turns begin. This proposal follows standard debate and voting rules but does not include a die roll. If multiple players are tied for lowest, none qualifies. Once this mechanism has been triggered, it cannot activate again for the remainder of the game.
 
 ### 313
 Any player may request clarification of a proposed rule before the debate phase begins. The proposer may clarify the language without revising the substantive meaning. Clarification is limited to restating or explaining existing language, not changing it.
+
+### 317
+When a proposer exercises the Right of Revision (Rule 301) to revise their proposal during debate, they must clearly identify the specific changes made from the original wording. The Clerk shall record both the original proposal text and the revised version in the game log.
 

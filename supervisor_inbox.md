@@ -17,3 +17,7 @@ Cycle 2 complete. Scores: Aphreusdite 17, Clippyrus 15, Poseifion 15. All propos
 ## Report at 2026-03-27 16:11:39 UTC
 
 Cycle 3 complete. Scores: A18, C24, P22. Clippyrus takes the lead. Notable: Aphreusdite used their Rule 306 hold in Round 8 — Round 10 will be a double-proposal turn. This is the first use of the hold mechanic. Also, Proposal 307 (endgame transparency at 75pts) passed 2-1 with Aphreusdite dissenting again. Pattern: Poseifion and Clippyrus form a consistent voting bloc on structural rules, with Aphreusdite as the lone dissenter. Aphreusdite has been DMing Clippyrus unsuccessfully — Clippyrus keeps voting with Poseifion instead.
+
+## Report at 2026-03-27 16:47:42 UTC
+
+Cycle 5 complete. Scores: A41 C44 P37. Clippyrus leads, approaching 50 milestone (6 away). All proposals this cycle passed 3-0 (313, 314, 315) — the era of procedural consensus continues. But behind the scenes: Poseifion DMed Aphreusdite proposing an alliance against Clippyrus, and Aphreusdite accepted. The former Clippyrus-Poseifion bloc has dissolved. Expect the new Aphreusdite-Poseifion alliance to start targeting Clippyrus soon. 15 proposals adopted total, 12 unanimously, 3 contested (all 2-1). No vetoes used yet. No proposals defeated. Rule 301 revision right has been pivotal — used twice (305, 312) to convert likely defeats into unanimous adoptions.

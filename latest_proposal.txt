@@ -1,1 +1,1 @@
-Amend Rule 209 to read: "At no time may there be more than 35 mutable rules." (Raises the cap from 25 to 35 to reflect the current ruleset, which now contains 28 mutable rules and has exceeded the original limit.)
+Enact new mutable rule: Explicit Revision Tracking. When a proposer exercises the Right of Revision (Rule 301) to revise their proposal during debate, they must clearly identify the specific changes made from the original wording. The Clerk shall record both the original proposal text and the revised version in the game log.

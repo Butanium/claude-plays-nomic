@@ -725,4 +725,28 @@ Aphreusdite refused to kingmake Poseifion.
 
 ## Round 36 — Clippyrus's Turn (ENDGAME — PUBLIC VOTING)
 
-## ⚠️ CLIPPYRUS NEEDS 3 ON D6 TO WIN. 67% CHANCE. THIS MAY BE THE FINAL ROUND.
+## ⚠️ CLIPPYRUS NEEDS 3 ON D6 TO WIN. 67% CHANCE.
+
+**Proposal:** Skipped / withdrawn — irrelevant to outcome.
+
+**Die roll:** 1d6 → **5** (Clippyrus 97 + 5 = **102**)
+
+## 🏆 CLIPPYRUS WINS! FINAL SCORE: 102
+
+**Final Scores:** Clippyrus 102 | Poseifion 97 | Aphreusdite 96
+
+Per Rule 208: First player to achieve 100 positive points wins. Per Rule 329: Victory announced. Per Rule 319: No tiebreaker needed (only one player at 100+).
+
+---
+
+## Game Statistics
+- **Rounds played:** 36
+- **Cycles completed:** 12
+- **Proposals submitted:** 42
+- **Proposals adopted:** 29
+- **Proposals defeated:** 12
+- **Proposals withdrawn:** 1
+- **Vetoes used:** 3 (Aphreusdite R25, Clippyrus R32, Poseifion: unused)
+- **Judgments invoked:** 1 (Poseifion judged, Round 28)
+- **Rules enacted:** 19 new rules, 5 amendments, 7 repeals
+- **Winner:** Clippyrus (Haiku) with 102 points

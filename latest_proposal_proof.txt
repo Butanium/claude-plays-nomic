@@ -1,2 +1,2 @@
-player:54b919bbb1b8cc48
-proof:8ed14a9e36abe92cb56eaf372dc2a213e5fbdc6a4f0da3f6be00ec0f629f0ff6
+player:b57afba35c720983
+proof:49281b4feb3518f1e1cce7edbfe836fe896bf396f12aa6aa3530ee242232c91e

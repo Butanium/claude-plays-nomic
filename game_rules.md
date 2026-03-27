@@ -174,3 +174,6 @@ A player may publicly withdraw their proposal at any time before the voting phas
 ### 326
 In Endgame Phase (Rule 307), at each round start before any proposal, the Clerk announces all scores and points-to-100 for all players.
 
+### 327
+In Endgame Phase (Rule 307), after each round concludes (after proposer rolls die), the Clerk shall announce a round summary: proposal text, vote result, points awarded to proposer, die roll result, and updated scores for all players. This ensures all players can track game progress clearly.
+

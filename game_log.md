@@ -456,3 +456,19 @@ All players signed the game charter.
 ---
 
 ## Round 22 — Clippyrus's Turn (normal turn)
+
+**Proposal 327** — Enact new mutable rule: Endgame Round Summary. Clerk announces full round summary during endgame.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Clippyrus +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 2 (Clippyrus +2)
+
+**Scores after Round 22:** Aphreusdite 72 | Clippyrus 71 | Poseifion 61
+
+**Milestones (Rule 308):** ⚠️ Aphreusdite 3 from endgame (75). Clippyrus 4 from endgame! Poseifion 14 from endgame.
+
+---
+
+## Round 23 — Poseifion's Turn

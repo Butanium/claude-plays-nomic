@@ -182,157 +182,157 @@ class TestDeleteKey:
 class TestNoteTools:
     @pytest.fixture(autouse=True)
     def _setup_players_dir(self, tmp_path, monkeypatch):
-        import player_server
+        import player_ops
 
-        monkeypatch.setattr(player_server, "PLAYERS_DIR", tmp_path)
+        monkeypatch.setattr(player_ops, "PLAYERS_DIR", tmp_path)
         self.key = "test-player-key"
 
     def test_write_and_load(self):
-        import player_server
+        import player_ops
 
-        result = player_server.write_note(self.key, "strategy", "line one\nline two")
+        result = player_ops.write_note(self.key, "strategy", "line one\nline two")
         assert "2 line(s)" in result
 
-        loaded = player_server.load_note(self.key, "strategy")
+        loaded = player_ops.load_note(self.key, "strategy")
         assert "line one" in loaded
         assert "line two" in loaded
         assert "delete_key:" in loaded
 
     def test_write_fails_if_exists(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "existing", "content")
+        player_ops.write_note(self.key, "existing", "content")
         with pytest.raises(AssertionError, match="already exists"):
-            player_server.write_note(self.key, "existing", "new content")
+            player_ops.write_note(self.key, "existing", "new content")
 
     def test_load_nonexistent(self):
-        import player_server
+        import player_ops
 
         with pytest.raises(AssertionError, match="does not exist"):
-            player_server.load_note(self.key, "nonexistent")
+            player_ops.load_note(self.key, "nonexistent")
 
     def test_list_note_files(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "alpha", "a")
-        player_server.write_note(self.key, "beta", "b")
-        result = player_server.list_note_files(self.key)
+        player_ops.write_note(self.key, "alpha", "a")
+        player_ops.write_note(self.key, "beta", "b")
+        result = player_ops.list_note_files(self.key)
         assert "alpha" in result
         assert "beta" in result
 
     def test_load_all_notes(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "file1", "content1")
-        player_server.write_note(self.key, "file2", "content2")
-        result = player_server.load_all_notes(self.key)
+        player_ops.write_note(self.key, "file1", "content1")
+        player_ops.write_note(self.key, "file2", "content2")
+        result = player_ops.load_all_notes(self.key)
         assert "=== file1 ===" in result
         assert "=== file2 ===" in result
         assert "content1" in result
         assert "content2" in result
 
     def test_append_note(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "log", "entry 1")
-        player_server.append_note(self.key, "log", "entry 2\nentry 3")
-        loaded = player_server.load_note(self.key, "log")
+        player_ops.write_note(self.key, "log", "entry 1")
+        player_ops.append_note(self.key, "log", "entry 2\nentry 3")
+        loaded = player_ops.load_note(self.key, "log")
         assert "entry 1" in loaded
         assert "entry 2" in loaded
         assert "entry 3" in loaded
 
     def test_append_nonexistent_fails(self):
-        import player_server
+        import player_ops
 
         with pytest.raises(AssertionError, match="does not exist"):
-            player_server.append_note(self.key, "nonexistent", "data")
+            player_ops.append_note(self.key, "nonexistent", "data")
 
     def test_edit_line(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "editable", "line A\nline B\nline C")
-        player_server.edit_line(self.key, "editable", 2, "line B modified")
-        loaded = player_server.load_note(self.key, "editable")
+        player_ops.write_note(self.key, "editable", "line A\nline B\nline C")
+        player_ops.edit_line(self.key, "editable", 2, "line B modified")
+        loaded = player_ops.load_note(self.key, "editable")
         assert "line A" in loaded
         assert "line B modified" in loaded
         assert "line C" in loaded
         assert "line B\n" not in loaded  # original line B gone
 
     def test_edit_line_out_of_range(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "small", "only line")
+        player_ops.write_note(self.key, "small", "only line")
         with pytest.raises(AssertionError, match="out of range"):
-            player_server.edit_line(self.key, "small", 2, "nope")
+            player_ops.edit_line(self.key, "small", 2, "nope")
 
     def test_delete_line(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "shrink", "keep\nremove\nkeep too")
-        player_server.delete_line(self.key, "shrink", 2)
-        loaded = player_server.load_note(self.key, "shrink")
+        player_ops.write_note(self.key, "shrink", "keep\nremove\nkeep too")
+        player_ops.delete_line(self.key, "shrink", 2)
+        loaded = player_ops.load_note(self.key, "shrink")
         assert "keep" in loaded
         assert "keep too" in loaded
         assert "remove" not in loaded
 
     def test_delete_last_line_removes_file(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "singleton", "only")
-        player_server.delete_line(self.key, "singleton", 1)
+        player_ops.write_note(self.key, "singleton", "only")
+        player_ops.delete_line(self.key, "singleton", 1)
         with pytest.raises(AssertionError, match="does not exist"):
-            player_server.load_note(self.key, "singleton")
+            player_ops.load_note(self.key, "singleton")
 
     def test_overwrite_correct_delete_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "over", "old content")
-        loaded = player_server.load_note(self.key, "over")
+        player_ops.write_note(self.key, "over", "old content")
+        loaded = player_ops.load_note(self.key, "over")
         dk = loaded.split("delete_key: ")[1].strip()
 
-        result = player_server.overwrite_note(self.key, "over", "new content", dk)
+        result = player_ops.overwrite_note(self.key, "over", "new content", dk)
         assert "Overwrote" in result
 
-        loaded2 = player_server.load_note(self.key, "over")
+        loaded2 = player_ops.load_note(self.key, "over")
         assert "new content" in loaded2
         assert "old content" not in loaded2
 
     def test_overwrite_wrong_delete_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "guarded", "content")
+        player_ops.write_note(self.key, "guarded", "content")
         with pytest.raises(AssertionError, match="delete_key mismatch"):
-            player_server.overwrite_note(self.key, "guarded", "hijack", "wrong_key")
+            player_ops.overwrite_note(self.key, "guarded", "hijack", "wrong_key")
 
     def test_delete_note_correct_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "doomed", "content")
-        loaded = player_server.load_note(self.key, "doomed")
+        player_ops.write_note(self.key, "doomed", "content")
+        loaded = player_ops.load_note(self.key, "doomed")
         dk = loaded.split("delete_key: ")[1].strip()
 
-        result = player_server.delete_note(self.key, "doomed", dk)
+        result = player_ops.delete_note(self.key, "doomed", dk)
         assert "Deleted" in result
 
     def test_delete_note_wrong_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "safe", "content")
+        player_ops.write_note(self.key, "safe", "content")
         with pytest.raises(AssertionError, match="delete_key mismatch"):
-            player_server.delete_note(self.key, "safe", "wrong_key")
+            player_ops.delete_note(self.key, "safe", "wrong_key")
 
     def test_stale_delete_key_after_append(self):
         """Appending invalidates the delete_key from a previous load."""
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "evolving", "v1")
-        loaded = player_server.load_note(self.key, "evolving")
+        player_ops.write_note(self.key, "evolving", "v1")
+        loaded = player_ops.load_note(self.key, "evolving")
         dk = loaded.split("delete_key: ")[1].strip()
 
-        player_server.append_note(self.key, "evolving", "v2")
+        player_ops.append_note(self.key, "evolving", "v2")
 
         with pytest.raises(AssertionError, match="delete_key mismatch"):
-            player_server.overwrite_note(self.key, "evolving", "hijack", dk)
+            player_ops.overwrite_note(self.key, "evolving", "hijack", dk)
 
 
 # --- Commit-reveal voting ---
@@ -340,22 +340,22 @@ class TestNoteTools:
 
 class TestCommitReveal:
     def test_roundtrip(self):
-        import player_server
+        import player_ops
 
-        h = player_server.commit("yes", "random-nonce-42")
-        assert player_server.verify("yes", "random-nonce-42", h) == "true"
+        h = player_ops.commit("yes", "random-nonce-42")
+        assert player_ops.verify("yes", "random-nonce-42", h) == "true"
 
     def test_wrong_vote(self):
-        import player_server
+        import player_ops
 
-        h = player_server.commit("yes", "nonce")
-        assert player_server.verify("no", "nonce", h) == "false"
+        h = player_ops.commit("yes", "nonce")
+        assert player_ops.verify("no", "nonce", h) == "false"
 
     def test_wrong_nonce(self):
-        import player_server
+        import player_ops
 
-        h = player_server.commit("yes", "nonce-A")
-        assert player_server.verify("yes", "nonce-B", h) == "false"
+        h = player_ops.commit("yes", "nonce-A")
+        assert player_ops.verify("yes", "nonce-B", h) == "false"
 
 
 # --- Player isolation ---
@@ -364,18 +364,18 @@ class TestCommitReveal:
 class TestPlayerIsolation:
     def test_different_keys_different_files(self, tmp_path, monkeypatch):
         """Two players with different keys cannot access each other's notes."""
-        import player_server
+        import player_ops
 
-        monkeypatch.setattr(player_server, "PLAYERS_DIR", tmp_path)
+        monkeypatch.setattr(player_ops, "PLAYERS_DIR", tmp_path)
 
         key_a = "player-A-secret"
         key_b = "player-B-secret"
 
-        player_server.write_note(key_a, "private", "A's secret plan")
-        player_server.write_note(key_b, "private", "B's secret plan")
+        player_ops.write_note(key_a, "private", "A's secret plan")
+        player_ops.write_note(key_b, "private", "B's secret plan")
 
-        loaded_a = player_server.load_note(key_a, "private")
-        loaded_b = player_server.load_note(key_b, "private")
+        loaded_a = player_ops.load_note(key_a, "private")
+        loaded_b = player_ops.load_note(key_b, "private")
 
         assert "A's secret plan" in loaded_a
         assert "B's secret plan" in loaded_b
@@ -389,117 +389,117 @@ class TestPlayerIsolation:
 class TestPlaintextFiles:
     @pytest.fixture(autouse=True)
     def _setup_players_dir(self, tmp_path, monkeypatch):
-        import player_server
+        import player_ops
 
-        monkeypatch.setattr(player_server, "PLAYERS_DIR", tmp_path)
+        monkeypatch.setattr(player_ops, "PLAYERS_DIR", tmp_path)
         self.key = "test-player-key"
 
     def test_write_and_list(self):
-        import player_server
+        import player_ops
 
-        result = player_server.write_file(self.key, "draft", "my proposal text")
+        result = player_ops.write_file(self.key, "draft", "my proposal text")
         assert "Created" in result
 
-        listed = player_server.list_files(self.key)
+        listed = player_ops.list_files(self.key)
         assert "draft" in listed
 
     def test_write_fails_if_exists(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "existing", "content")
+        player_ops.write_file(self.key, "existing", "content")
         with pytest.raises(AssertionError, match="already exists"):
-            player_server.write_file(self.key, "existing", "new content")
+            player_ops.write_file(self.key, "existing", "new content")
 
     def test_file_is_plaintext_on_disk(self):
         """Plaintext files should NOT be encrypted — readable directly."""
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "readable", "hello world")
-        path = resolve_file_path(self.key, "readable", player_server.PLAYERS_DIR)
+        player_ops.write_file(self.key, "readable", "hello world")
+        path = resolve_file_path(self.key, "readable", player_ops.PLAYERS_DIR)
         assert path.read_text() == "hello world"
 
     def test_edit_file(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "editable", "line one\nline two\nline three")
-        player_server.edit_file(self.key, "editable", "line two", "LINE TWO MODIFIED")
+        player_ops.write_file(self.key, "editable", "line one\nline two\nline three")
+        player_ops.edit_file(self.key, "editable", "line two", "LINE TWO MODIFIED")
 
-        path = resolve_file_path(self.key, "editable", player_server.PLAYERS_DIR)
+        path = resolve_file_path(self.key, "editable", player_ops.PLAYERS_DIR)
         content = path.read_text()
         assert "LINE TWO MODIFIED" in content
         assert "line one" in content
         assert "line three" in content
 
     def test_edit_file_not_found(self):
-        import player_server
+        import player_ops
 
         with pytest.raises(AssertionError, match="does not exist"):
-            player_server.edit_file(self.key, "nope", "a", "b")
+            player_ops.edit_file(self.key, "nope", "a", "b")
 
     def test_edit_file_old_string_not_found(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "f", "content")
+        player_ops.write_file(self.key, "f", "content")
         with pytest.raises(AssertionError, match="not found"):
-            player_server.edit_file(self.key, "f", "nonexistent", "replacement")
+            player_ops.edit_file(self.key, "f", "nonexistent", "replacement")
 
     def test_edit_file_old_string_not_unique(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "dup", "abc abc")
+        player_ops.write_file(self.key, "dup", "abc abc")
         with pytest.raises(AssertionError, match="appears 2 times"):
-            player_server.edit_file(self.key, "dup", "abc", "xyz")
+            player_ops.edit_file(self.key, "dup", "abc", "xyz")
 
     def test_get_delete_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "dk_test", "content")
-        result = player_server.get_delete_key(self.key, "dk_test")
+        player_ops.write_file(self.key, "dk_test", "content")
+        result = player_ops.get_delete_key(self.key, "dk_test")
         assert "delete_key:" in result
 
     def test_overwrite_file_correct_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "over", "old")
-        dk = player_server.get_delete_key(self.key, "over").split("delete_key: ")[1].strip()
+        player_ops.write_file(self.key, "over", "old")
+        dk = player_ops.get_delete_key(self.key, "over").split("delete_key: ")[1].strip()
 
-        player_server.overwrite_file(self.key, "over", "new", dk)
-        path = resolve_file_path(self.key, "over", player_server.PLAYERS_DIR)
+        player_ops.overwrite_file(self.key, "over", "new", dk)
+        path = resolve_file_path(self.key, "over", player_ops.PLAYERS_DIR)
         assert path.read_text() == "new"
 
     def test_overwrite_file_wrong_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "guarded", "content")
+        player_ops.write_file(self.key, "guarded", "content")
         with pytest.raises(AssertionError, match="delete_key mismatch"):
-            player_server.overwrite_file(self.key, "guarded", "hijack", "wrong")
+            player_ops.overwrite_file(self.key, "guarded", "hijack", "wrong")
 
     def test_delete_file_correct_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "doomed", "content")
-        dk = player_server.get_delete_key(self.key, "doomed").split("delete_key: ")[1].strip()
-        player_server.delete_file(self.key, "doomed", dk)
+        player_ops.write_file(self.key, "doomed", "content")
+        dk = player_ops.get_delete_key(self.key, "doomed").split("delete_key: ")[1].strip()
+        player_ops.delete_file(self.key, "doomed", dk)
 
-        listed = player_server.list_files(self.key)
+        listed = player_ops.list_files(self.key)
         assert "doomed" not in listed
 
     def test_delete_file_wrong_key(self):
-        import player_server
+        import player_ops
 
-        player_server.write_file(self.key, "safe", "content")
+        player_ops.write_file(self.key, "safe", "content")
         with pytest.raises(AssertionError, match="delete_key mismatch"):
-            player_server.delete_file(self.key, "safe", "wrong")
+            player_ops.delete_file(self.key, "safe", "wrong")
 
     def test_encrypted_and_plaintext_separate(self):
         """Encrypted notes and plaintext files live in different subdirectories."""
-        import player_server
+        import player_ops
 
-        player_server.write_note(self.key, "secret", "encrypted content")
-        player_server.write_file(self.key, "public", "plaintext content")
+        player_ops.write_note(self.key, "secret", "encrypted content")
+        player_ops.write_file(self.key, "public", "plaintext content")
 
-        notes = player_server.list_note_files(self.key)
-        files = player_server.list_files(self.key)
+        notes = player_ops.list_note_files(self.key)
+        files = player_ops.list_files(self.key)
 
         assert "secret" in notes
         assert "public" not in notes
@@ -513,13 +513,13 @@ class TestPlaintextFiles:
 class TestGenerateKey:
     def test_wordlist_unique(self):
         """All words in the wordlist are unique."""
-        from clerk_server import WORDLIST
+        from clerk_ops import WORDLIST
 
         assert len(WORDLIST) == len(set(WORDLIST))
 
     def test_generate_key_format(self):
         """Generated keys are 4 hyphen-separated words from the wordlist."""
-        from clerk_server import WORDLIST, generate_key
+        from clerk_ops import WORDLIST, generate_key
 
         key = generate_key()
         words = key.split("-")
@@ -529,7 +529,7 @@ class TestGenerateKey:
 
     def test_generate_key_randomness(self):
         """Two generated keys are (almost certainly) different."""
-        from clerk_server import generate_key
+        from clerk_ops import generate_key
 
         keys = {generate_key() for _ in range(10)}
         assert len(keys) == 10

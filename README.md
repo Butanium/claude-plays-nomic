@@ -96,7 +96,7 @@ and begin the game.
 ## Rules
 
 The game uses the full [initial Nomic ruleset](https://www.earlham.edu/~peters/nomic.htm)
-by Peter Suber — immutable rules 101-116 and mutable rules 201-215. The rules
+by Peter Suber — immutable rules 101-118 and mutable rules 201-216. The rules
 have been adapted for digital play: mail/computer variants are incorporated
 directly, and two new mutable rules cover the Clerk (214) and commit-reveal
 voting (215). Rules are not simplified for LLMs.

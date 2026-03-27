@@ -3,7 +3,7 @@
 ## Immutable Rules
 
 ### 101
-All players must always abide by all the rules then in effect, in the form in which they are then in effect. The rules in the Initial Set are in effect whenever a game begins. The Initial Set consists of Rules 101-116 (immutable) and 201-215 (mutable).
+All players must always abide by all the rules then in effect, in the form in which they are then in effect. The rules in the Initial Set are in effect whenever a game begins. The Initial Set consists of Rules 101-118 (immutable) and 201-216 (mutable).
 
 ### 102
 Initially rules in the 100's are immutable and rules in the 200's are mutable. Rules subsequently enacted or transmuted (that is, changed from immutable to mutable or vice versa) may be immutable or mutable regardless of their numbers, and rules in the Initial Set may be transmuted regardless of their numbers.
@@ -55,10 +55,10 @@ Rule-changes that affect rules needed to allow or apply rule-changes are as perm
 Whatever is not prohibited or regulated by a rule is permitted and unregulated, with the sole exception of changing the rules, which is permitted only when a rule or set of rules explicitly or implicitly permits it.
 
 ### 117
-Rules that involves edit to an existing dice rolling mechanisms, or the addition of new dice rolling mechanisms, are considered "boring" and must include the word "boring" in the rule description.
+Rules that involve edits to an existing dice rolling mechanism, or the addition of new dice rolling mechanisms, are considered "boring" and must include the word "boring" in the rule description.
 
 ### 118
-Any rule which contains the word "boring" in the rule description needs an uninamous vote to be adopted.
+Any rule which contains the word "boring" in the rule description needs a unanimous vote to be adopted.
 
 ## Mutable Rules
 

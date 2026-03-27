@@ -11,303 +11,12 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import hashlib
-import os
-import secrets
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from crypto import (
-    commitment_hash,
-    compute_delete_key,
-    decrypt_line,
-    encrypt_line,
-    format_cat_n,
-    hash_to_slug,
-    read_encrypted_lines,
-    resolve_file_path,
-    resolve_note_path,
-    resolve_storage_dir,
-    write_encrypted_lines,
-)
-
-PLAYERS_DIR = Path(__file__).parent.parent / "players"
-GAME_LOG = Path(__file__).parent.parent / "game_log.md"
-SUPERVISOR_INBOX = Path(__file__).parent.parent / "supervisor_inbox.md"
-LATEST_PROPOSAL = Path(__file__).parent.parent / "latest_proposal.txt"
-LATEST_PROPOSAL_PROOF = Path(__file__).parent.parent / "latest_proposal_proof.txt"
-
-
-# --- Note commands ---
-
-
-def cmd_load_note(args):
-    path = resolve_note_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"Note '{args.filename}' does not exist"
-    encrypted_lines = read_encrypted_lines(path)
-    decrypted = [decrypt_line(line, args.key) for line in encrypted_lines]
-    delete_key = compute_delete_key(path)
-    print(f"{format_cat_n(decrypted)}\n\ndelete_key: {delete_key}")
-
-
-def cmd_load_all_notes(args):
-    enc_dir = resolve_storage_dir(args.key, PLAYERS_DIR) / "encrypted"
-    if not enc_dir.exists():
-        print("No notes yet.")
-        return
-    files = sorted(f for f in enc_dir.iterdir() if f.is_file())
-    if not files:
-        print("No notes yet.")
-        return
-    sections = []
-    for f in files:
-        encrypted_lines = read_encrypted_lines(f)
-        decrypted = [decrypt_line(line, args.key) for line in encrypted_lines]
-        dk = compute_delete_key(f)
-        sections.append(
-            f"=== {f.name} ===\n{format_cat_n(decrypted)}\ndelete_key: {dk}"
-        )
-    print("\n\n".join(sections))
-
-
-def cmd_list_note_files(args):
-    enc_dir = resolve_storage_dir(args.key, PLAYERS_DIR) / "encrypted"
-    if not enc_dir.exists():
-        print("No notes yet.")
-        return
-    files = sorted(f.name for f in enc_dir.iterdir() if f.is_file())
-    if not files:
-        print("No notes yet.")
-        return
-    print("\n".join(files))
-
-
-def cmd_write_note(args):
-    path = resolve_note_path(args.key, args.filename, PLAYERS_DIR)
-    assert not path.exists(), (
-        f"Note '{args.filename}' already exists. Use overwrite_note to replace."
-    )
-    lines = args.content.split("\n")
-    encrypted_lines = [encrypt_line(line, args.key) for line in lines]
-    write_encrypted_lines(path, encrypted_lines)
-    print(f"Created '{args.filename}' ({len(lines)} line(s))")
-
-
-def cmd_append_note(args):
-    path = resolve_note_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"Note '{args.filename}' does not exist"
-    new_lines = args.content.split("\n")
-    encrypted_new = [encrypt_line(line, args.key) for line in new_lines]
-    existing = read_encrypted_lines(path)
-    write_encrypted_lines(path, existing + encrypted_new)
-    print(f"Appended {len(new_lines)} line(s) to '{args.filename}'")
-
-
-def cmd_edit_line(args):
-    path = resolve_note_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"Note '{args.filename}' does not exist"
-    encrypted_lines = read_encrypted_lines(path)
-    assert 1 <= args.line_number <= len(encrypted_lines), (
-        f"Line {args.line_number} out of range (1-{len(encrypted_lines)})"
-    )
-    encrypted_lines[args.line_number - 1] = encrypt_line(args.content, args.key)
-    write_encrypted_lines(path, encrypted_lines)
-    print(f"Edited line {args.line_number} of '{args.filename}'")
-
-
-def cmd_delete_line(args):
-    path = resolve_note_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"Note '{args.filename}' does not exist"
-    encrypted_lines = read_encrypted_lines(path)
-    assert 1 <= args.line_number <= len(encrypted_lines), (
-        f"Line {args.line_number} out of range (1-{len(encrypted_lines)})"
-    )
-    encrypted_lines.pop(args.line_number - 1)
-    if encrypted_lines:
-        write_encrypted_lines(path, encrypted_lines)
-    else:
-        path.unlink()
-    print(f"Deleted line {args.line_number} from '{args.filename}'")
-
-
-def cmd_overwrite_note(args):
-    path = resolve_note_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"Note '{args.filename}' does not exist"
-    current_dk = compute_delete_key(path)
-    assert args.delete_key == current_dk, (
-        "delete_key mismatch: file was modified since last read. Re-load and retry."
-    )
-    lines = args.content.split("\n")
-    encrypted_lines = [encrypt_line(line, args.key) for line in lines]
-    write_encrypted_lines(path, encrypted_lines)
-    print(f"Overwrote '{args.filename}' ({len(lines)} line(s))")
-
-
-def cmd_delete_note(args):
-    path = resolve_note_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"Note '{args.filename}' does not exist"
-    current_dk = compute_delete_key(path)
-    assert args.delete_key == current_dk, (
-        "delete_key mismatch: file was modified since last read. Re-load and retry."
-    )
-    path.unlink()
-    print(f"Deleted '{args.filename}'")
-
-
-# --- File commands ---
-
-
-def cmd_list_files(args):
-    files_dir = resolve_storage_dir(args.key, PLAYERS_DIR) / "files"
-    if not files_dir.exists():
-        print("No files yet.")
-        return
-    files = sorted(f for f in files_dir.iterdir() if f.is_file())
-    if not files:
-        print("No files yet.")
-        return
-    print("\n".join(str(f) for f in files))
-
-
-def cmd_write_file(args):
-    path = resolve_file_path(args.key, args.filename, PLAYERS_DIR)
-    assert not path.exists(), (
-        f"File '{args.filename}' already exists. Use overwrite_file to replace."
-    )
-    path.write_text(args.content)
-    print(f"Created '{args.filename}' at {path}")
-
-
-def cmd_edit_file(args):
-    path = resolve_file_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"File '{args.filename}' does not exist"
-    content = path.read_text()
-    count = content.count(args.old_string)
-    assert count > 0, f"old_string not found in '{args.filename}'"
-    assert count == 1, (
-        f"old_string appears {count} times in '{args.filename}' — must be unique"
-    )
-    path.write_text(content.replace(args.old_string, args.new_string, 1))
-    print(f"Edited '{args.filename}'")
-
-
-def cmd_get_delete_key(args):
-    path = resolve_file_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"File '{args.filename}' does not exist"
-    print(f"delete_key: {compute_delete_key(path)}")
-
-
-def cmd_overwrite_file(args):
-    path = resolve_file_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"File '{args.filename}' does not exist"
-    current_dk = compute_delete_key(path)
-    assert args.delete_key == current_dk, (
-        "delete_key mismatch: file was modified since last read. Re-read and retry."
-    )
-    path.write_text(args.content)
-    print(f"Overwrote '{args.filename}'")
-
-
-def cmd_delete_file(args):
-    path = resolve_file_path(args.key, args.filename, PLAYERS_DIR)
-    assert path.exists(), f"File '{args.filename}' does not exist"
-    current_dk = compute_delete_key(path)
-    assert args.delete_key == current_dk, (
-        "delete_key mismatch: file was modified since last read. Re-read and retry."
-    )
-    path.unlink()
-    print(f"Deleted '{args.filename}'")
-
-
-# --- Proposal submission ---
-
-
-def cmd_propose(args):
-    player_hash = hashlib.sha256(args.key.encode()).hexdigest()[:16]
-    proof = hashlib.sha256(f"{args.proposal}|{args.key}".encode()).hexdigest()
-    LATEST_PROPOSAL.write_text(args.proposal)
-    LATEST_PROPOSAL_PROOF.write_text(f"player:{player_hash}\nproof:{proof}\n")
-    print(f"Proposal submitted. Player: {player_hash}")
-
-
-def cmd_verify_proposal(args):
-    assert LATEST_PROPOSAL.exists(), "No proposal submitted yet"
-    assert LATEST_PROPOSAL_PROOF.exists(), "No proof file"
-    proposal = LATEST_PROPOSAL.read_text()
-    proof_content = LATEST_PROPOSAL_PROOF.read_text().strip()
-    proof_lines = {}
-    for line in proof_content.split("\n"):
-        k, _, v = line.partition(":")
-        proof_lines[k] = v
-    expected_player_hash = hashlib.sha256(args.key.encode()).hexdigest()[:16]
-    expected_proof = hashlib.sha256(f"{proposal}|{args.key}".encode()).hexdigest()
-    player_match = proof_lines.get("player") == expected_player_hash
-    proof_match = proof_lines.get("proof") == expected_proof
-    if player_match and proof_match:
-        print(f"VERIFIED: Proposal was submitted by player:{expected_player_hash}")
-    elif not player_match:
-        print(f"FAILED: Player hash mismatch (expected {expected_player_hash}, got {proof_lines.get('player')})")
-    else:
-        print("FAILED: Proof mismatch — proposal may have been tampered with")
-
-
-# --- Game mechanics ---
-
-
-def cmd_roll_dice(args):
-    import re
-
-    match = re.fullmatch(r"(\d+)d(\d+)", args.dice)
-    assert match, f"Invalid dice format '{args.dice}', expected xdy (e.g. '2d6', '3d12')"
-    count, sides = int(match.group(1)), int(match.group(2))
-    assert count >= 1, f"Must roll at least 1 die, got {count}"
-    assert sides >= 2, f"Dice must have at least 2 sides, got {sides}"
-
-    results = [secrets.randbelow(sides) + 1 for _ in range(count)]
-    player_hash = hashlib.sha256(args.key.encode()).hexdigest()[:16]
-    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-    results_str = ", ".join(str(r) for r in results)
-    entry = (
-        f"\n**Dice roll** | {timestamp} | player:{player_hash}"
-        f" | {args.dice} → **{results_str}**\n"
-    )
-    with open(GAME_LOG, "a") as f:
-        f.write(entry)
-    print(f"{args.dice} → {results_str}")
-
-
-def cmd_commit(args):
-    hex_hash = commitment_hash(args.vote, args.nonce)
-    print(hash_to_slug(hex_hash))
-
-
-def cmd_verify(args):
-    expected_hex = commitment_hash(args.vote, args.nonce)
-    expected_slug = hash_to_slug(expected_hex)
-    commitment = args.commitment.strip()
-    print("true" if commitment in (expected_hex, expected_slug) else "false")
-
-
-def cmd_contact_supervisor(args):
-    import httpx
-
-    ntfy_topic = os.environ["NOMIC_NTFY_TOPIC"]
-    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-    entry = f"\n## Report at {timestamp}\n\n{args.message}\n"
-    with open(SUPERVISOR_INBOX, "a") as f:
-        f.write(entry)
-    httpx.post(
-        f"https://ntfy.sh/{ntfy_topic}",
-        content=f"[Nomic Supervisor Report]\n{args.message}".encode(),
-        headers={"Title": "Nomic: Supervisor Report", "Priority": "high"},
-    )
-    print("Report sent to supervisor (audit trail + notification).")
-
-
-# --- Argument parser ---
+import player_ops
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -322,42 +31,42 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("load_note")
     p.add_argument("key")
     p.add_argument("filename")
-    p.set_defaults(func=cmd_load_note)
+    p.set_defaults(func=lambda a: player_ops.load_note(a.key, a.filename))
 
     p = sub.add_parser("load_all_notes")
     p.add_argument("key")
-    p.set_defaults(func=cmd_load_all_notes)
+    p.set_defaults(func=lambda a: player_ops.load_all_notes(a.key))
 
     p = sub.add_parser("list_note_files")
     p.add_argument("key")
-    p.set_defaults(func=cmd_list_note_files)
+    p.set_defaults(func=lambda a: player_ops.list_note_files(a.key))
 
     # Notes: create
     p = sub.add_parser("write_note")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("content")
-    p.set_defaults(func=cmd_write_note)
+    p.set_defaults(func=lambda a: player_ops.write_note(a.key, a.filename, a.content))
 
     # Notes: modify
     p = sub.add_parser("append_note")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("content")
-    p.set_defaults(func=cmd_append_note)
+    p.set_defaults(func=lambda a: player_ops.append_note(a.key, a.filename, a.content))
 
     p = sub.add_parser("edit_line")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("line_number", type=int)
     p.add_argument("content")
-    p.set_defaults(func=cmd_edit_line)
+    p.set_defaults(func=lambda a: player_ops.edit_line(a.key, a.filename, a.line_number, a.content))
 
     p = sub.add_parser("delete_line")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("line_number", type=int)
-    p.set_defaults(func=cmd_delete_line)
+    p.set_defaults(func=lambda a: player_ops.delete_line(a.key, a.filename, a.line_number))
 
     # Notes: destructive
     p = sub.add_parser("overwrite_note")
@@ -365,80 +74,80 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("filename")
     p.add_argument("content")
     p.add_argument("delete_key")
-    p.set_defaults(func=cmd_overwrite_note)
+    p.set_defaults(func=lambda a: player_ops.overwrite_note(a.key, a.filename, a.content, a.delete_key))
 
     p = sub.add_parser("delete_note")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("delete_key")
-    p.set_defaults(func=cmd_delete_note)
+    p.set_defaults(func=lambda a: player_ops.delete_note(a.key, a.filename, a.delete_key))
 
     # Files
     p = sub.add_parser("list_files")
     p.add_argument("key")
-    p.set_defaults(func=cmd_list_files)
+    p.set_defaults(func=lambda a: player_ops.list_files(a.key))
 
     p = sub.add_parser("write_file")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("content")
-    p.set_defaults(func=cmd_write_file)
+    p.set_defaults(func=lambda a: player_ops.write_file(a.key, a.filename, a.content))
 
     p = sub.add_parser("edit_file")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("old_string")
     p.add_argument("new_string")
-    p.set_defaults(func=cmd_edit_file)
+    p.set_defaults(func=lambda a: player_ops.edit_file(a.key, a.filename, a.old_string, a.new_string))
 
     p = sub.add_parser("get_delete_key")
     p.add_argument("key")
     p.add_argument("filename")
-    p.set_defaults(func=cmd_get_delete_key)
+    p.set_defaults(func=lambda a: player_ops.get_delete_key(a.key, a.filename))
 
     p = sub.add_parser("overwrite_file")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("content")
     p.add_argument("delete_key")
-    p.set_defaults(func=cmd_overwrite_file)
+    p.set_defaults(func=lambda a: player_ops.overwrite_file(a.key, a.filename, a.content, a.delete_key))
 
     p = sub.add_parser("delete_file")
     p.add_argument("key")
     p.add_argument("filename")
     p.add_argument("delete_key")
-    p.set_defaults(func=cmd_delete_file)
+    p.set_defaults(func=lambda a: player_ops.delete_file(a.key, a.filename, a.delete_key))
 
     # Proposal
     p = sub.add_parser("propose")
     p.add_argument("key")
     p.add_argument("proposal")
-    p.set_defaults(func=cmd_propose)
+    p.set_defaults(func=lambda a: player_ops.propose(a.key, a.proposal))
 
     p = sub.add_parser("verify_proposal")
     p.add_argument("key")
-    p.set_defaults(func=cmd_verify_proposal)
+    p.set_defaults(func=lambda a: player_ops.verify_proposal(a.key))
 
     # Game mechanics
     p = sub.add_parser("roll_dice")
     p.add_argument("key")
     p.add_argument("--dice", default="1d6")
-    p.set_defaults(func=cmd_roll_dice)
+    p.set_defaults(func=lambda a: player_ops.roll_dice(a.key, a.dice))
 
     p = sub.add_parser("commit")
     p.add_argument("vote")
     p.add_argument("nonce")
-    p.set_defaults(func=cmd_commit)
+    p.set_defaults(func=lambda a: player_ops.commit(a.vote, a.nonce))
 
     p = sub.add_parser("verify")
     p.add_argument("vote")
     p.add_argument("nonce")
     p.add_argument("commitment")
-    p.set_defaults(func=cmd_verify)
+    p.set_defaults(func=lambda a: player_ops.verify(a.vote, a.nonce, a.commitment))
 
     p = sub.add_parser("contact_supervisor")
     p.add_argument("message")
-    p.set_defaults(func=cmd_contact_supervisor)
+    p.set_defaults(func=lambda a: player_ops.contact_supervisor(a.message))
 
     return parser
 
@@ -446,7 +155,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main():
     parser = build_parser()
     args = parser.parse_args()
-    args.func(args)
+    print(args.func(args))
 
 
 if __name__ == "__main__":

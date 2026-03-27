@@ -279,6 +279,40 @@ All players signed the game charter.
 
 ## Round 16 — Poseifion's Turn
 
+**Proposal 316** — Repeal Rule 311 (Resource Status Report). Using Rule 314 replacement mechanism.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Proposal 317** (replacement per Rule 314) — Enact new mutable rule: Explicit Revision Tracking. Clerk records original and revised proposal text.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 1 (Poseifion +1)
+
+**Scores after Round 16:** Aphreusdite 41 | Clippyrus 44 | Poseifion 48
+
+**Milestones (Rule 308):** Poseifion takes the lead! Next milestone: 50. Poseifion 2 away. Clippyrus 6 away. Aphreusdite 9 away. Endgame (75): Poseifion 27 away.
+
+---
+
+## Round 17 — Aphreusdite's Turn
+
+**Proposal 318** — Repeal Rule 206 (0-point penalty for defeated proposals). Using Rule 314 replacement mechanism.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Aphreusdite +5 (proposal bonus, Rule 216)
+
+**Proposal 319** (replacement per Rule 314) — Enact new mutable rule: Simultaneous Victory Tiebreaker. Highest score at cycle-end wins; ties broken by die roll.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Aphreusdite +5 (proposal bonus, Rule 216)
+
 **Proposal 316** — Repeal Rule 311 (Resource Status Report). First use of Rule 314 replacement mechanism.
 
 **Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
@@ -299,4 +333,12 @@ All players signed the game charter.
 
 ---
 
-## Round 17 — Aphreusdite's Turn
+**Die roll:** 1d6 → 5 (Aphreusdite +5)
+
+**Scores after Round 17:** Aphreusdite 56 | Clippyrus 44 | Poseifion 48
+
+**Milestones (Rule 308):** Aphreusdite passes 50! Next milestone: 75 (endgame trigger). Closest: Aphreusdite (19 away). Poseifion 27 away. Clippyrus 31 away.
+
+---
+
+## Round 18 — Clippyrus's Turn

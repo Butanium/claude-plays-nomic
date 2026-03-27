@@ -77,8 +77,7 @@ If and when rule-changes can be adopted without majority, the players who vote a
 ### 205
 An adopted rule-change takes full effect at the moment of the completion of the vote that adopted it.
 
-### 206
-When a proposed rule-change is defeated, the player who proposed it loses 0 points.
+### ~~206~~ (REPEALED by Proposal 318)
 
 ### 207
 Each player always has exactly one vote.
@@ -161,4 +160,7 @@ Any player may request clarification of a proposed rule before the debate phase 
 
 ### 317
 When a proposer exercises the Right of Revision (Rule 301) to revise their proposal during debate, they must clearly identify the specific changes made from the original wording. The Clerk shall record both the original proposal text and the revised version in the game log.
+
+### 319
+If two or more players achieve 100 or more points in the same cycle, the player with the highest score at the end of that cycle wins. If two or more players are still tied for the highest score after all turns in the cycle are complete, each tied player immediately rolls one die using the roll_dice tool; the player with the highest single roll wins. If the tiebreaker rolls are also equal, the tied players re-roll until one player rolls higher.
 

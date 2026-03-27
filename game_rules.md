@@ -145,3 +145,9 @@ When any player's score reaches 75 or more points, the Clerk shall announce that
 ### 308
 At the end of each round after scores are announced, the Clerk shall identify which player(s) are closest to reaching the next milestone points (50, 75, and 100). This helps all players understand game progress, strategic urgency, and how far each player is from the endgame trigger. The information is posted with the score announcement.
 
+### 309
+After any vote concludes, each player who voted in the minority (or who was the sole dissenter) may make a brief public statement explaining their vote rationale before the next phase begins. This statement is informational only and has no effect on any game outcome. The Clerk shall note in the game log that the option was offered, whether it was used, and by whom.
+
+### 310
+At the end of each complete cycle, the Clerk shall post a Cycle Summary including: (1) total points earned by each player during that cycle from proposals and die rolls combined, (2) the change in each player's rank since the previous cycle summary, and (3) which player gained the most points that cycle. This cycle-level analysis supplements the per-round score announcements already in place.
+

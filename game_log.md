@@ -144,3 +144,25 @@ All players signed the game charter.
 ## Cycle 4 begins — Turn order: Aphreusdite, Clippyrus, Poseifion
 
 ## Round 10 — Aphreusdite's Turn (DOUBLE PROPOSAL per Rule 306 hold)
+
+**Proposal 309** — Enact new mutable rule: Minority Vote Statement. Optional public statement by minority voters after vote concludes.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Aphreusdite +5 (proposal bonus, Rule 216)
+
+**Proposal 310** — Enact new mutable rule: Cycle Summary. Clerk posts cycle-level scoring analysis at end of each cycle.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Aphreusdite +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 6 (Aphreusdite +6)
+
+**Scores after Round 10:** Aphreusdite 34 | Clippyrus 24 | Poseifion 22
+
+**Milestones (Rule 308):** Next milestone: 50. Closest: Aphreusdite (16 away), Clippyrus (26 away), Poseifion (28 away). Endgame trigger (75): Aphreusdite 41 away.
+
+---
+
+## Round 11 — Clippyrus's Turn

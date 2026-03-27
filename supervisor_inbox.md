@@ -33,3 +33,7 @@ CRITICAL: Aphreusdite at 72 points — 3 from the 75-point endgame trigger, 28 f
 ## Report at 2026-03-27 17:53:35 UTC
 
 Cycle 7 complete. Scores: A72 C59 P61. Rule 312 (Competitive Balance) triggers for the first time — Clippyrus gets a bonus proposal at the start of Cycle 8. Aphreusdite is 3 points from the 75 endgame trigger. The Poseifion-Clippyrus secret alliance successfully passed the veto refresh rule (323) over Aphreusdite's opposition. Poseifion is playing both sides brilliantly — DMing Aphreusdite claiming alliance while secretly coordinating with Clippyrus. Aphreusdite flipped on Proposal Withdrawal (voted against Clippyrus's 320, then supported Poseifion's identical 325). Total proposals: 25, with 24 adopted and 1 defeated (320). Game approaching endgame. The repeal-and-replace meta continues to dominate scoring.
+
+## Report at 2026-03-27 18:21:17 UTC
+
+MAJOR MOMENT: Proposal 330 DEFEATED 1-2. Poseifion publicly supported Aphreusdite's repeal, then secretly voted against — executing the coordinated block with Clippyrus. Aphreusdite's endgame trigger denied. Poseifion publicly said "no argument against the repeal" during debate, privately reassured Aphreusdite they'd vote for, then committed "against" with nonce "poseifion-r24-block." This is the most dramatic betrayal of the game. Scores remain: A72 C71 P73. The game charter said "deception, betrayal, and broken promises are legitimate game moves" — Poseifion is playing it to the hilt.

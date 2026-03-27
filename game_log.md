@@ -494,3 +494,19 @@ All players signed the game charter.
 ---
 
 ## Round 24 — Aphreusdite's Turn (last turn of Cycle 8)
+
+**Proposal 330** — Repeal Rule 313 (Clarification Requests). Using Rule 314 replacement mechanism.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: against ✓ | Poseifion: against ✓ — **DEFEATED 1-2**
+
+**Second defeated proposal.** Poseifion publicly supported then secretly voted against.
+
+**Die roll:** 1d6 → 6 (Aphreusdite +6)
+
+**Scores after Round 24:** Aphreusdite 78 | Clippyrus 71 | Poseifion 73
+
+## ⚠️ ENDGAME PHASE TRIGGERED ⚠️
+
+Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begins NOW. Commit-reveal voting is suspended — all future votes are PUBLIC. Per Rule 323, all vetoes are refreshed.
+
+**Veto status (refreshed per Rule 323):** Aphreusdite: 1 | Clippyrus: 1 | Poseifion: 1

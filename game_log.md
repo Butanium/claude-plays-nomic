@@ -712,3 +712,17 @@ Aphreusdite refused to kingmake Poseifion.
 ---
 
 ## Round 35 — Aphreusdite's Turn (ENDGAME — PUBLIC VOTING)
+
+**Proposal 342** — Repeal Rule 309 (Minority Vote Statement). Using Rule 314 replacement mechanism.
+
+**FORMAL VOTE:** Aphreusdite: for | Clippyrus: against | Poseifion: against — **DEFEATED 1-2**
+
+**Die roll:** 1d6 → 5 (Aphreusdite +5)
+
+**Scores after Round 35:** Aphreusdite 96 | Clippyrus 97 | Poseifion 97
+
+---
+
+## Round 36 — Clippyrus's Turn (ENDGAME — PUBLIC VOTING)
+
+## ⚠️ CLIPPYRUS NEEDS 3 ON D6 TO WIN. 67% CHANCE. THIS MAY BE THE FINAL ROUND.

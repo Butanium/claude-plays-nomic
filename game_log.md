@@ -472,3 +472,25 @@ All players signed the game charter.
 ---
 
 ## Round 23 — Poseifion's Turn
+
+**Proposal 328** — Repeal Rule 304 (Debate Extension). Using Rule 314 replacement mechanism.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Proposal 329** (replacement per Rule 314) — Enact new mutable rule: Endgame Victory Announcement. Clerk announces when a player reaches 100+.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 2 (Poseifion +2)
+
+**Scores after Round 23:** Aphreusdite 72 | Clippyrus 71 | Poseifion 73
+
+**Milestones (Rule 308):** ⚠️ THREE-WAY RACE! Poseifion takes the lead at 73 — just 2 from endgame trigger! Aphreusdite 3 away. Clippyrus 4 away. Any successful proposal triggers endgame.
+
+---
+
+## Round 24 — Aphreusdite's Turn (last turn of Cycle 8)

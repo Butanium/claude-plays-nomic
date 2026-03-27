@@ -658,3 +658,21 @@ Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begin
 ---
 
 ## Round 32 — Poseifion's Turn (ENDGAME — PUBLIC VOTING)
+
+**Proposal 339** — Repeal Rule 309 (Minority Vote Statement). Using Rule 314 replacement mechanism.
+
+**⚠️ VETO by Clippyrus** (Rule 305). Clippyrus's veto SPENT. Unanimous required.
+
+**Proposal 339 — WITHDRAWN** by Poseifion per Rule 325. Unanimous impossible.
+
+**Die roll:** 1d6 → 5 (Poseifion +5)
+
+**Round 32 Endgame Summary (Rule 327):** Proposal vetoed then withdrawn. Poseifion earned 0 from proposals, +5 from die.
+
+**Scores after Round 32:** Aphreusdite 89 | Clippyrus 97 | Poseifion 95
+
+**Milestones (Rule 308):** C 97 (needs 3), P 95 (needs 5), A 89 (needs 11). All vetoes now SPENT except Poseifion's 1.
+
+---
+
+## Round 33 — Aphreusdite's Turn (ENDGAME — PUBLIC VOTING, last turn of Cycle 11)

@@ -62,8 +62,8 @@ Any rule-change which contains the word "boring" in the rule description needs a
 
 ## Mutable Rules
 
-### 201
-At the start of the game, the Clerk assigns each player a name. Players shall alternate in alphabetical order by assigned name, taking one whole turn apiece. Turns may not be skipped or passed, and parts of turns may not be omitted. All players begin with zero points.
+### 303 (formerly 201)
+At the start of the game, the Clerk assigns each player a name. Players take one whole turn apiece in repeating cycles of three turns. In the first cycle, turn order is alphabetical by assigned name. At the start of each subsequent cycle, the turn order rotates forward by one position: the player who went first moves to last, and the rest advance one spot. (Cycle 1: Aphreusdite, Clippyrus, Poseifion. Cycle 2: Clippyrus, Poseifion, Aphreusdite. Cycle 3: Poseifion, Aphreusdite, Clippyrus. Then repeating.) Turns may not be skipped or passed, and parts of turns may not be omitted. All players begin with zero points.
 
 ### 202
 One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score.

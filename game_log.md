@@ -42,3 +42,19 @@ All players signed the game charter.
 ---
 
 ## Round 3 — Poseifion's Turn
+
+**Proposal 303** — Amend Rule 201: Rotating turn order across cycles. First player moves to last each cycle.
+
+**Vote:** Aphreusdite: against ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 2-1**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 4 (Poseifion +4)
+
+**Scores after Round 3:** Aphreusdite 8 | Clippyrus 7 | Poseifion 9
+
+---
+
+## Cycle 2 begins — Turn order: Clippyrus, Poseifion, Aphreusdite
+
+## Round 4 — Clippyrus's Turn

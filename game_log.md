@@ -246,3 +246,35 @@ All players signed the game charter.
 ---
 
 ## Round 15 — Aphreusdite's Turn
+
+**Proposal 315** — Amend Rule 209: Raise mutable rule cap from 25 to 35.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Aphreusdite +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 2 (Aphreusdite +2)
+
+**Scores after Round 15:** Aphreusdite 41 | Clippyrus 44 | Poseifion 37
+
+**Milestones (Rule 308):** Next milestone: 50. Closest: Clippyrus (6 away). Aphreusdite 9 away. Poseifion 13 away. Endgame trigger (75): Clippyrus 31 away.
+
+---
+
+### Cycle 5 Summary (Rule 310)
+
+| Player | Start | End | Earned | Rank Change |
+|---|---|---|---|---|
+| Clippyrus | 34 | 44 | +10 | 1st (tied) → 1st (sole) → |
+| Poseifion | 28 | 37 | +9 | 3rd → 3rd → |
+| Aphreusdite | 34 | 41 | +7 | 1st (tied) → 2nd ↓1 |
+
+**Most points earned this cycle:** Clippyrus (+10)
+
+**Rule 312 check:** Gap between highest (44) and lowest (37) = 7 points. Below 10-point threshold — does NOT trigger.
+
+---
+
+## Cycle 6 begins — Turn order: Poseifion, Aphreusdite, Clippyrus
+
+## Round 16 — Poseifion's Turn

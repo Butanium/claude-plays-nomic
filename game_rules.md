@@ -86,8 +86,8 @@ Each player always has exactly one vote.
 ### 208
 The winner is the first player to achieve 100 (positive) points.
 
-### 209
-At no time may there be more than 25 mutable rules.
+### 315 (formerly 209)
+At no time may there be more than 35 mutable rules.
 
 ### 210
 Players may freely communicate with each other, both publicly and privately. Private consultations, alliances, and negotiations on future rule-changes are permitted.

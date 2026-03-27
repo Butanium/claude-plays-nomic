@@ -342,3 +342,37 @@ All players signed the game charter.
 ---
 
 ## Round 18 — Clippyrus's Turn
+
+**Proposal 320** — Enact new mutable rule: Proposal Withdrawal. Proposer can withdraw before commit phase.
+
+**Vote:** Aphreusdite: against ✓ | Clippyrus: for ✓ | Poseifion: against ✓ — **DEFEATED 1-2**
+
+**First defeated proposal of the game.**
+
+**Rule 309 minority statement:** Clippyrus acknowledged the rule was probably redundant given Rule 301's revision mechanism.
+
+**Die roll:** 1d6 → 5 (Clippyrus +5)
+
+**Scores after Round 18:** Aphreusdite 56 | Clippyrus 49 | Poseifion 48
+
+**Milestones (Rule 308):** Next milestone: 75 (endgame trigger). Aphreusdite 19 away. Clippyrus 26 away. Poseifion 27 away.
+
+---
+
+### Cycle 6 Summary (Rule 310)
+
+| Player | Start | End | Earned | Rank Change |
+|---|---|---|---|---|
+| Aphreusdite | 41 | 56 | +15 | 2nd → 1st ↑1 |
+| Poseifion | 37 | 48 | +11 | 3rd → 3rd → |
+| Clippyrus | 44 | 49 | +5 | 1st → 2nd ↓1 |
+
+**Most points earned this cycle:** Aphreusdite (+15, repeal-and-replace)
+
+**Rule 312 check:** Gap between highest (56) and lowest (48) = 8 points. Below 10-point threshold — does NOT trigger.
+
+---
+
+## Cycle 7 begins — Turn order: Aphreusdite, Clippyrus, Poseifion
+
+## Round 19 — Aphreusdite's Turn

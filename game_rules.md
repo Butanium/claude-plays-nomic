@@ -149,8 +149,7 @@ After any vote concludes, each player who voted in the minority (or who was the 
 
 ### ~~311~~ (REPEALED by Proposal 316)
 
-### 312
-At the start of any cycle where the gap between the highest-scoring and lowest-scoring player is 10 or more points, the lowest-scoring player may submit one additional proposal before normal turns begin. This proposal follows standard debate and voting rules but does not include a die roll. If multiple players are tied for lowest, none qualifies. Once this mechanism has been triggered, it cannot activate again for the remainder of the game.
+### ~~312~~ (REPEALED by Proposal 336)
 
 ### ~~313~~ (REPEALED by Proposal 332)
 
@@ -180,5 +179,8 @@ In Endgame Phase (Rule 307), after each round concludes (after proposer rolls di
 
 ### 329
 When a player achieves 100 or more points, the Clerk shall immediately announce this to all players before any further game actions occur. The announcement shall include the final score and confirm whether any same-cycle tiebreaker under Rule 319 is needed.
+
+### 337
+Upon the conclusion of the game, the Clerk shall compile and preserve the complete game log, including all proposals, votes, scores, and procedural rulings, as a permanent record of the game.
 
 

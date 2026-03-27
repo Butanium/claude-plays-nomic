@@ -689,6 +689,8 @@ Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begin
 
 ---
 
-## Cycle 12 begins — Turn order: Clippyrus, Poseifion, Aphreusdite
+## Cycle 12 begins — Turn order: Poseifion, Aphreusdite, Clippyrus
 
-## ⚠️ CLIPPYRUS NEEDS 3 ON A DIE ROLL TO WIN. 67% CHANCE.
+**Clerk correction:** Originally announced as C, P, A — corrected to P, A, C per Rule 303 cycle rotation pattern. Clippyrus's voided R34 proposal and die roll do not count.
+
+## Round 34 — Poseifion's Turn (ENDGAME — PUBLIC VOTING)

@@ -523,4 +523,18 @@ Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begin
 
 **⚠️ VETO DECLARED by Aphreusdite** (Rule 305). Proposal now requires UNANIMOUS approval.
 
-**Supervisor correction:** The Clerk initially conducted a vote and ruled Aphreusdite's veto invalid. The human supervisor overruled — the Clerk moved to voting before all players confirmed readiness, and should not have adjudicated the dispute. The previous vote is voided. Aphreusdite's veto is VALID and SPENT. Debate and voting resume with the unanimous threshold in effect.
+**Supervisor correction:** The Clerk initially conducted a vote and ruled Aphreusdite's veto invalid. The human supervisor overruled — the Clerk moved to voting before all players confirmed readiness, and should not have adjudicated the dispute. The previous vote is voided. Aphreusdite's veto is VALID and SPENT. Debate resumed with unanimous threshold.
+
+**Proposal 331 — WITHDRAWN** by Poseifion per Rule 325. No vote, no bonus points.
+
+**Die roll:** 1d6 → 5 (Poseifion +5)
+
+**Round 25 Endgame Summary (Rule 327):** Proposal 331 vetoed then withdrawn. Poseifion earned 0 from proposals, +5 from die.
+
+**Scores after Round 25:** Aphreusdite 78 | Clippyrus 71 | Poseifion 78
+
+**Milestones (Rule 308):** Aphreusdite and Poseifion tied at 78. Points to 100: A 22, P 22, C 29.
+
+---
+
+## Round 26 — Aphreusdite's Turn (ENDGAME — PUBLIC VOTING)

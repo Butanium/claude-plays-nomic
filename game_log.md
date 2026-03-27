@@ -116,3 +116,13 @@ All players signed the game charter.
 ---
 
 ## Round 8 — Aphreusdite's Turn
+
+**Hold declared** per Rule 306. No proposal this turn. Held slot carries to Round 10 (Cycle 4).
+
+**Die roll:** 1d6 → 1 (Aphreusdite +1)
+
+**Scores after Round 8:** Aphreusdite 18 | Clippyrus 15 | Poseifion 22
+
+---
+
+## Round 9 — Clippyrus's Turn

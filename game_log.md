@@ -72,3 +72,17 @@ All players signed the game charter.
 ---
 
 ## Round 5 — Poseifion's Turn
+
+**Proposal 305** — Enact new mutable rule: Right of Veto (one-time use). Each player holds one veto for the entire game. Revised per Rule 301 from per-cycle to one-time use.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 1 (Poseifion +1)
+
+**Scores after Round 5:** Aphreusdite 8 | Clippyrus 15 | Poseifion 15
+
+---
+
+## Round 6 — Aphreusdite's Turn

@@ -133,3 +133,6 @@ Whenever the Clerk announces the start of a voting phase, they shall re-state th
 ### 304
 During any debate phase on a rule-change, any player may request that the debate be extended by one additional round where each player speaks once more. The proposer may grant or deny this request. This allows for deeper discussion when players feel important points remain unaddressed.
 
+### 305
+Each player holds one veto for the entire game. During the debate phase of any proposal, a player may publicly declare they are vetoing that proposal. A vetoed proposal requires unanimous approval of all eligible voters instead of simple majority. A player may not veto their own proposal. Vetoes must be declared before the commit phase begins. Once used, a veto is spent for the remainder of the game.
+

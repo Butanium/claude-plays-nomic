@@ -9,3 +9,7 @@ Game 7 has started. All 3 players signed the charter. Turn order: Aphreusdite (S
 ## Report at 2026-03-27 15:39:38 UTC
 
 Cycle 1 complete. Scores: Aphreusdite 8, Clippyrus 7, Poseifion 9. Three proposals adopted: 301 (revision right, 3-0), 302 (restate proposal at vote, 3-0), 303 (rotating turn order, 2-1 — first contested vote, Aphreusdite dissented). Cycle 2 begins with Clippyrus first. Game dynamics emerging: Clippyrus and Poseifion voted together on 303 against Aphreusdite's structural advantage.
+
+## Report at 2026-03-27 15:57:51 UTC
+
+Cycle 2 complete. Scores: Aphreusdite 17, Clippyrus 15, Poseifion 15. All proposals adopted this cycle (304 debate extension 3-0, 305 one-time veto 3-0 after revision, 306 reserved turn 3-0). Notable: Proposal 305 was heading for 1-2 defeat, but Poseifion used Rule 301 revision to change per-cycle veto to one-time-per-game, flipping both opponents to support. Aphreusdite and Clippyrus DMing privately — possible alliance forming. Aphreusdite jumped from 8 to 17 with a successful proposal + lucky roll. Race is tight. Cycle 3 starts with Poseifion.

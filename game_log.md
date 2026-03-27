@@ -102,3 +102,17 @@ All players signed the game charter.
 ## Cycle 3 begins — Turn order: Poseifion, Aphreusdite, Clippyrus
 
 ## Round 7 — Poseifion's Turn
+
+**Proposal 307** — Enact new mutable rule: Endgame Transparency. At 75+ points, commit-reveal suspended; all votes become public.
+
+**Vote:** Aphreusdite: against ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 2-1**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 2 (Poseifion +2)
+
+**Scores after Round 7:** Aphreusdite 17 | Clippyrus 15 | Poseifion 22
+
+---
+
+## Round 8 — Aphreusdite's Turn

@@ -139,3 +139,6 @@ Each player holds one veto for the entire game. During the debate phase of any p
 ### 306
 Once per game, a player may 'hold' their proposal: instead of proposing a rule-change on their turn, they declare a hold publicly. They still roll the die normally that turn. On their immediately following turn, they may propose two rule-changes, voted on sequentially using normal procedure. The standard adoption bonus under Rule 216 applies to each if adopted. If the player does not use the held proposal slot on their immediately following turn, it expires unused.
 
+### 307
+When any player's score reaches 75 or more points, the Clerk shall announce that the game has entered the Endgame Phase. For the remainder of the game, the commit-reveal voting process under Rule 215 is suspended. Instead, all players announce their votes publicly during the voting phase. The Clerk collects and records votes openly. All other voting rules remain in effect.
+

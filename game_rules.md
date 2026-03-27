@@ -130,3 +130,6 @@ Before the voting phase on a rule-change begins, the proposer may revise their p
 ### 302
 Whenever the Clerk announces the start of a voting phase, they shall re-state the full text of the proposal being voted on to ensure all players are voting on exactly the same wording.
 
+### 304
+During any debate phase on a rule-change, any player may request that the debate be extended by one additional round where each player speaks once more. The proposer may grant or deny this request. This allows for deeper discussion when players feel important points remain unaddressed.
+

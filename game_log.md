@@ -58,3 +58,17 @@ All players signed the game charter.
 ## Cycle 2 begins — Turn order: Clippyrus, Poseifion, Aphreusdite
 
 ## Round 4 — Clippyrus's Turn
+
+**Proposal 304** — Enact new mutable rule: Extended debate option. Any player may request debate extension; proposer grants or denies.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Clippyrus +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 3 (Clippyrus +3)
+
+**Scores after Round 4:** Aphreusdite 8 | Clippyrus 15 | Poseifion 9
+
+---
+
+## Round 5 — Poseifion's Turn

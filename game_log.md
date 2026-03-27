@@ -416,3 +416,29 @@ All players signed the game charter.
 ---
 
 ## Round 21 — Poseifion's Turn
+
+**Proposal 324** — Repeal Rule 310 (Cycle Summaries). Using Rule 314 replacement mechanism.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Proposal 325** (replacement per Rule 314) — Enact new mutable rule: Proposal Withdrawal. Proposer can withdraw before voting phase.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ (commitment corrected due to tool syntax error) | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 3 (Poseifion +3)
+
+**Scores after Round 21:** Aphreusdite 72 | Clippyrus 59 | Poseifion 61
+
+**Milestones (Rule 308):** Aphreusdite still 3 from endgame trigger (75). Clippyrus 16 away. Poseifion 14 away.
+
+**Rule 312 check:** Gap between highest (72) and lowest (59) = 13 points. ⚠️ ABOVE 10-point threshold — Rule 312 TRIGGERS at the start of Cycle 8. Clippyrus (sole lowest scorer) earns one additional proposal before normal turns begin. This is the one-time use; Rule 312 cannot activate again.
+
+---
+
+## Cycle 8 begins — Turn order: Clippyrus, Poseifion, Aphreusdite
+
+### Rule 312 Bonus Proposal — Clippyrus

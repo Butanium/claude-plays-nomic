@@ -146,8 +146,7 @@ At the end of each round after scores are announced, the Clerk shall identify wh
 ### 309
 After any vote concludes, each player who voted in the minority (or who was the sole dissenter) may make a brief public statement explaining their vote rationale before the next phase begins. This statement is informational only and has no effect on any game outcome. The Clerk shall note in the game log that the option was offered, whether it was used, and by whom.
 
-### 310
-At the end of each complete cycle, the Clerk shall post a Cycle Summary including: (1) total points earned by each player during that cycle from proposals and die rolls combined, (2) the change in each player's rank since the previous cycle summary, and (3) which player gained the most points that cycle. This cycle-level analysis supplements the per-round score announcements already in place.
+### ~~310~~ (REPEALED by Proposal 324)
 
 ### ~~311~~ (REPEALED by Proposal 316)
 
@@ -168,4 +167,7 @@ If any player believes there is an error in the recorded score for the current o
 
 ### 323
 When the Endgame Phase begins (Rule 307), each player shall recover one use of their veto (if they have already used it). This allows for more dynamic endgame play where trailing players can defend against final pushes to 100 points.
+
+### 325
+A player may publicly withdraw their proposal at any time before the voting phase begins. If withdrawn, the proposal does not receive a vote, no adoption bonus is earned, and the player proceeds directly to the die roll. The withdrawal counts as the proposal for that turn.
 

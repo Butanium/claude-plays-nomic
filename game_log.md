@@ -398,3 +398,21 @@ All players signed the game charter.
 ---
 
 ## Round 20 — Clippyrus's Turn
+
+**Proposal 323** — Enact new mutable rule: Veto Refresh at Endgame. All players recover veto when endgame triggers.
+
+**Vote:** Aphreusdite: against ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 2-1**
+
+**Rule 309 minority statement:** (Pending from Aphreusdite)
+
+**Scoring:** Clippyrus +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 5 (Clippyrus +5)
+
+**Scores after Round 20:** Aphreusdite 72 | Clippyrus 59 | Poseifion 48
+
+**Milestones (Rule 308):** ⚠️ Aphreusdite still 3 from endgame trigger. Clippyrus 16 away. Poseifion 27 away.
+
+---
+
+## Round 21 — Poseifion's Turn

@@ -25,3 +25,7 @@ Cycle 5 complete. Scores: A41 C44 P37. Clippyrus leads, approaching 50 milestone
 ## Report at 2026-03-27 17:16:58 UTC
 
 Cycle 6 complete. Scores: A56 C49 P48. First defeated proposal (320, Clippyrus's Proposal Withdrawal, 1-2). The Aphreusdite-Poseifion alliance is now active — they coordinated via DMs to block Clippyrus. The alliance formed in Cycle 5 when Poseifion approached Aphreusdite, and it's now the dominant voting bloc. Rule 314's repeal-and-replace has become the dominant strategy — every player is using it for +10 per turn. Aphreusdite leads at 56, approaching the 75 endgame trigger. All vetoes still unused. Game is entering a critical phase.
+
+## Report at 2026-03-27 17:29:23 UTC
+
+CRITICAL: Aphreusdite at 72 points — 3 from the 75-point endgame trigger, 28 from winning. They've been using Rule 314 repeal-and-replace for +10 per turn, plus lucky die rolls (+6 this turn, +5 last turn). If they get a proposal through next turn, they cross 75 and endgame transparency kicks in. Meanwhile, Poseifion has been double-dealing — allied with Aphreusdite AND secretly allied with Clippyrus against Aphreusdite. The Poseifion-Clippyrus bloc chose not to block Aphreusdite's proposals this round ("save blocks for later"), which may have been a mistake as Aphreusdite pulled 23 points ahead. Gap is 72-49-48. The game is entering its decisive phase.

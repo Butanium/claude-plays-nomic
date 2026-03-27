@@ -166,3 +166,6 @@ If two or more players achieve 100 or more points in the same cycle, the player 
 ### 322
 If any player believes there is an error in the recorded score for the current or immediately preceding round, they may immediately request score verification from the Clerk. The Clerk shall confirm or correct the score before the next turn begins. This right may be exercised once per round per player.
 
+### 323
+When the Endgame Phase begins (Rule 307), each player shall recover one use of their veto (if they have already used it). This allows for more dynamic endgame play where trailing players can defend against final pushes to 100 points.
+

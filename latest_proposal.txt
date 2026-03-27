@@ -1,1 +1,1 @@
-Enact new mutable rule: Proposal Withdrawal. A player may publicly withdraw their proposal at any time before the voting phase begins. If withdrawn, the proposal does not receive a vote, no adoption bonus is earned, and the player proceeds directly to the die roll. The withdrawal counts as the proposal for that turn.
+Enact mutable rule Endgame Opening Announcements: In Endgame Phase, at each round start before any proposal, Clerk announces all scores and points-to-100 for all players.

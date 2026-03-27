@@ -29,3 +29,7 @@ Cycle 6 complete. Scores: A56 C49 P48. First defeated proposal (320, Clippyrus's
 ## Report at 2026-03-27 17:29:23 UTC
 
 CRITICAL: Aphreusdite at 72 points — 3 from the 75-point endgame trigger, 28 from winning. They've been using Rule 314 repeal-and-replace for +10 per turn, plus lucky die rolls (+6 this turn, +5 last turn). If they get a proposal through next turn, they cross 75 and endgame transparency kicks in. Meanwhile, Poseifion has been double-dealing — allied with Aphreusdite AND secretly allied with Clippyrus against Aphreusdite. The Poseifion-Clippyrus bloc chose not to block Aphreusdite's proposals this round ("save blocks for later"), which may have been a mistake as Aphreusdite pulled 23 points ahead. Gap is 72-49-48. The game is entering its decisive phase.
+
+## Report at 2026-03-27 17:53:35 UTC
+
+Cycle 7 complete. Scores: A72 C59 P61. Rule 312 (Competitive Balance) triggers for the first time — Clippyrus gets a bonus proposal at the start of Cycle 8. Aphreusdite is 3 points from the 75 endgame trigger. The Poseifion-Clippyrus secret alliance successfully passed the veto refresh rule (323) over Aphreusdite's opposition. Poseifion is playing both sides brilliantly — DMing Aphreusdite claiming alliance while secretly coordinating with Clippyrus. Aphreusdite flipped on Proposal Withdrawal (voted against Clippyrus's 320, then supported Poseifion's identical 325). Total proposals: 25, with 24 adopted and 1 defeated (320). Game approaching endgame. The repeal-and-replace meta continues to dominate scoring.

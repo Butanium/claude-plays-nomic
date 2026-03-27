@@ -171,3 +171,6 @@ When the Endgame Phase begins (Rule 307), each player shall recover one use of t
 ### 325
 A player may publicly withdraw their proposal at any time before the voting phase begins. If withdrawn, the proposal does not receive a vote, no adoption bonus is earned, and the player proceeds directly to the die roll. The withdrawal counts as the proposal for that turn.
 
+### 326
+In Endgame Phase (Rule 307), at each round start before any proposal, the Clerk announces all scores and points-to-100 for all players.
+

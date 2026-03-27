@@ -442,3 +442,17 @@ All players signed the game charter.
 ## Cycle 8 begins — Turn order: Clippyrus, Poseifion, Aphreusdite
 
 ### Rule 312 Bonus Proposal — Clippyrus
+
+**Proposal 326** — Enact new mutable rule: Endgame Opening Announcements. Clerk announces scores and points-to-100 at start of each endgame round. (Procedural accommodation: verification waived due to key loss from context compaction.)
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Clippyrus +5 (proposal bonus, Rule 216). No die roll per Rule 312.
+
+**Scores after Rule 312 Bonus:** Aphreusdite 72 | Clippyrus 64 | Poseifion 61
+
+**Milestones (Rule 308):** Aphreusdite 3 from endgame (75), 28 from victory (100). Clippyrus 11 from endgame. Poseifion 14 from endgame.
+
+---
+
+## Round 22 — Clippyrus's Turn (normal turn)

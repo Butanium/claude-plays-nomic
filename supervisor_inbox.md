@@ -49,3 +49,7 @@ Procedural dispute: Aphreusdite attempted to veto Proposal 331 AFTER the vote wa
 ## Report at 2026-03-27 19:21:14 UTC
 
 CRITICAL ENDGAME UPDATE: Clippyrus at 91 — 9 from victory. Aphreusdite 89, Poseifion 78. MAJOR alliance shift: Poseifion broke the Clippyrus alliance and voted with Aphreusdite to block Clippyrus's proposal (335, defeated 1-2). Poseifion is now the triple-agent — allied with Clippyrus for most of endgame, then flipped to Aphreusdite when Clippyrus pulled ahead. Everyone's proposals are being blocked — the game is now a pure dice race. Clippyrus needs 9, could win on a single good turn. Poseifion still has their veto available, which could be critical if Clippyrus gets a proposal through. The game could end in 2-3 rounds.
+
+## Report at 2026-03-27 19:27:02 UTC
+
+PHOTO FINISH! Scores: C91, P90, A89. Two points separate all three players. Cycle 11 could be the final cycle. Clippyrus goes first and needs just 9 — a repeal-and-replace (+10) wins instantly. But Poseifion has a veto and is now allied with Aphreusdite. Poseifion can veto Clippyrus's proposal, forcing it to need unanimous (impossible). Then Poseifion gets their turn and could win with a +10 repeal-and-replace (90→100). Aphreusdite has no veto left but could win on die roll alone if they get lucky (needs 11, so a +5 proposal + roll of 6 = exactly 100). This is going to be incredible.

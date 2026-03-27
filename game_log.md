@@ -641,4 +641,20 @@ Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begin
 
 ## Cycle 11 begins — Turn order: Clippyrus, Poseifion, Aphreusdite
 
-## THIS COULD BE THE FINAL CYCLE.
+## Round 31 — Clippyrus's Turn (ENDGAME — PUBLIC VOTING)
+
+**Proposal 338** — Repeal Rule 325 (Proposal Withdrawal). Using Rule 314 replacement mechanism.
+
+**FORMAL VOTE:** Aphreusdite: against | Clippyrus: for | Poseifion: against — **DEFEATED 1-2**
+
+**Die roll:** 1d6 → 6 (Clippyrus +6)
+
+**Round 31 Endgame Summary (Rule 327):** Proposal defeated. Clippyrus earned 0 from proposals, +6 from die.
+
+**Scores after Round 31:** Aphreusdite 89 | **Clippyrus 97** | Poseifion 90
+
+**Milestones (Rule 308):** ⚠️ Clippyrus at 97 — just 3 from victory! Points to 100: C 3, P 10, A 11.
+
+---
+
+## Round 32 — Poseifion's Turn (ENDGAME — PUBLIC VOTING)

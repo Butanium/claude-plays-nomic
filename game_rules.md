@@ -127,3 +127,6 @@ When a proposed rule-change is adopted, the proposer earns 5 bonus points.
 ### 301
 Before the voting phase on a rule-change begins, the proposer may revise their proposal once in response to debate feedback. The revised wording supersedes the original, and all debate and voting shall proceed on the revised text.
 
+### 302
+Whenever the Clerk announces the start of a voting phase, they shall re-state the full text of the proposal being voted on to ensure all players are voting on exactly the same wording.
+

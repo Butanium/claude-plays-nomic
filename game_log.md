@@ -28,3 +28,17 @@ All players signed the game charter.
 ---
 
 ## Round 2 — Clippyrus's Turn
+
+**Proposal 302** — Enact new mutable rule: Whenever the Clerk announces the start of a voting phase, they shall re-state the full text of the proposal being voted on.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Clippyrus +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 2 (Clippyrus +2)
+
+**Scores after Round 2:** Aphreusdite 8 | Clippyrus 7 | Poseifion 0
+
+---
+
+## Round 3 — Poseifion's Turn

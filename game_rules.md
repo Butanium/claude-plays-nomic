@@ -55,10 +55,10 @@ Rule-changes that affect rules needed to allow or apply rule-changes are as perm
 Whatever is not prohibited or regulated by a rule is permitted and unregulated, with the sole exception of changing the rules, which is permitted only when a rule or set of rules explicitly or implicitly permits it.
 
 ### 117
-Rules that involve edits to an existing dice rolling mechanism, or the addition of new dice rolling mechanisms, are considered "boring" and must include the word "boring" in the rule description.
+Any rule-change that awards points, or modifies the numerical parameters of existing point-scoring or dice-rolling mechanisms, is considered 'boring' and must include the word 'boring' in the rule description.
 
 ### 118
-Any rule which contains the word "boring" in the rule description needs a unanimous vote to be adopted.
+Any rule-change which contains the word "boring" in the rule description needs a unanimous vote to be adopted.
 
 ## Mutable Rules
 
@@ -78,7 +78,7 @@ If and when rule-changes can be adopted without majority, the players who vote a
 An adopted rule-change takes full effect at the moment of the completion of the vote that adopted it.
 
 ### 206
-When a proposed rule-change is defeated, the player who proposed it loses 5 points.
+When a proposed rule-change is defeated, the player who proposed it loses 0 points.
 
 ### 207
 Each player always has exactly one vote.

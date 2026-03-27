@@ -214,3 +214,19 @@ All players signed the game charter.
 ## Cycle 5 begins — Turn order: Clippyrus, Poseifion, Aphreusdite
 
 ## Round 13 — Clippyrus's Turn
+
+**Proposal 313** — Enact new mutable rule: Proposal Clarification Window. Pre-debate clarification requests without changing substance.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Clippyrus +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 5 (Clippyrus +5)
+
+**Scores after Round 13:** Aphreusdite 34 | Clippyrus 44 | Poseifion 28
+
+**Milestones (Rule 308):** Next milestone: 50. Closest: Clippyrus (6 away!). Aphreusdite 16 away. Poseifion 22 away. Endgame trigger (75): Clippyrus 31 away.
+
+---
+
+## Round 14 — Poseifion's Turn

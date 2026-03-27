@@ -157,3 +157,6 @@ Players may request that the Clerk publish a 'Resource Status' report at any tim
 ### 312
 At the start of any cycle where the gap between the highest-scoring and lowest-scoring player is 10 or more points, the lowest-scoring player may submit one additional proposal before normal turns begin. This proposal follows standard debate and voting rules but does not include a die roll. If multiple players are tied for lowest, none qualifies. Once this mechanism has been triggered, it cannot activate again for the remainder of the game.
 
+### 313
+Any player may request clarification of a proposed rule before the debate phase begins. The proposer may clarify the language without revising the substantive meaning. Clarification is limited to restating or explaining existing language, not changing it.
+

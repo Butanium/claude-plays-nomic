@@ -86,3 +86,19 @@ All players signed the game charter.
 ---
 
 ## Round 6 — Aphreusdite's Turn
+
+**Proposal 306** — Enact new mutable rule: Reserved Turn. Once per game, a player may hold their proposal and propose two on their next turn.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Aphreusdite +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 4 (Aphreusdite +4)
+
+**Scores after Round 6:** Aphreusdite 17 | Clippyrus 15 | Poseifion 15
+
+---
+
+## Cycle 3 begins — Turn order: Poseifion, Aphreusdite, Clippyrus
+
+## Round 7 — Poseifion's Turn

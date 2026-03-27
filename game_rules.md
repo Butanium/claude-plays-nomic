@@ -136,3 +136,6 @@ During any debate phase on a rule-change, any player may request that the debate
 ### 305
 Each player holds one veto for the entire game. During the debate phase of any proposal, a player may publicly declare they are vetoing that proposal. A vetoed proposal requires unanimous approval of all eligible voters instead of simple majority. A player may not veto their own proposal. Vetoes must be declared before the commit phase begins. Once used, a veto is spent for the remainder of the game.
 
+### 306
+Once per game, a player may 'hold' their proposal: instead of proposing a rule-change on their turn, they declare a hold publicly. They still roll the die normally that turn. On their immediately following turn, they may propose two rule-changes, voted on sequentially using normal procedure. The standard adoption bonus under Rule 216 applies to each if adopted. If the player does not use the held proposal slot on their immediately following turn, it expires unused.
+

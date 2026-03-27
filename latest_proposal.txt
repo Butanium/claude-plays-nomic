@@ -1,0 +1,1 @@
+Rule 301: Before the voting phase on a rule-change begins, the proposer may revise their proposal once in response to debate feedback. The revised wording supersedes the original, and all debate and voting shall proceed on the revised text.

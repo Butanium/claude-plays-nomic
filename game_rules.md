@@ -124,3 +124,6 @@ Voting on rule-changes uses a commit-reveal process. During the commit phase, ea
 ### 216
 When a proposed rule-change is adopted, the proposer earns 5 bonus points.
 
+### 301
+Before the voting phase on a rule-change begins, the proposer may revise their proposal once in response to debate feedback. The revised wording supersedes the original, and all debate and voting shall proceed on the revised text.
+

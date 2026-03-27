@@ -152,8 +152,10 @@ After any vote concludes, each player who voted in the minority (or who was the 
 ### 312
 At the start of any cycle where the gap between the highest-scoring and lowest-scoring player is 10 or more points, the lowest-scoring player may submit one additional proposal before normal turns begin. This proposal follows standard debate and voting rules but does not include a die roll. If multiple players are tied for lowest, none qualifies. Once this mechanism has been triggered, it cannot activate again for the remainder of the game.
 
-### 313
-Any player may request clarification of a proposed rule before the debate phase begins. The proposer may clarify the language without revising the substantive meaning. Clarification is limited to restating or explaining existing language, not changing it.
+### ~~313~~ (REPEALED by Proposal 332)
+
+### 333
+When a proposer exercises Rule 301 to revise their proposal during Endgame debate, the Clerk shall record and announce both the original proposal text and the revised version. This ensures transparency on what changed during Endgame debates.
 
 ### 317
 When a proposer exercises the Right of Revision (Rule 301) to revise their proposal during debate, they must clearly identify the specific changes made from the original wording. The Clerk shall record both the original proposal text and the revised version in the game log.

@@ -179,3 +179,4 @@ In Endgame Phase (Rule 307), after each round concludes (after proposer rolls di
 ### 329
 When a player achieves 100 or more points, the Clerk shall immediately announce this to all players before any further game actions occur. The announcement shall include the final score and confirm whether any same-cycle tiebreaker under Rule 319 is needed.
 
+

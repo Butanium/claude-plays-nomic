@@ -518,3 +518,23 @@ Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begin
 ## Cycle 9 begins — Turn order: Poseifion, Aphreusdite, Clippyrus
 
 ## Round 25 — Poseifion's Turn (ENDGAME — PUBLIC VOTING)
+
+**Proposal 331** — Repeal Rule 309 (Minority Vote Statement). Using Rule 314 replacement mechanism.
+
+**⚠️ VETO DECLARED by Aphreusdite** (Rule 305). Proposal now requires UNANIMOUS approval.
+
+**PUBLIC VOTE:** Aphreusdite: against | Clippyrus: for | Poseifion: for — **DEFEATED (not unanimous, veto in effect)**
+
+**Supervisor correction:** The Clerk initially ruled the veto invalid due to timing. The human supervisor overruled this — the Clerk should not have adjudicated the dispute, and should not have moved to voting before all players confirmed readiness. The veto stands. Aphreusdite's veto is now SPENT.
+
+**Proposal 332** (replacement per Rule 314) — never submitted (331 was not adopted).
+
+**Die roll:** 1d6 → 5 (Poseifion +5)
+
+**Scores after Round 25:** Aphreusdite 78 | Clippyrus 71 | Poseifion 78
+
+**Milestones (Rule 308):** Aphreusdite and Poseifion tied at 78. Points to 100: Aphreusdite 22, Poseifion 22, Clippyrus 29.
+
+---
+
+## Round 26 — Aphreusdite's Turn (ENDGAME — PUBLIC VOTING)

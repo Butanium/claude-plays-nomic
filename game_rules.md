@@ -65,8 +65,8 @@ Any rule-change which contains the word "boring" in the rule description needs a
 ### 303 (formerly 201)
 At the start of the game, the Clerk assigns each player a name. Players take one whole turn apiece in repeating cycles of three turns. In the first cycle, turn order is alphabetical by assigned name. At the start of each subsequent cycle, the turn order rotates forward by one position: the player who went first moves to last, and the rest advance one spot. (Cycle 1: Aphreusdite, Clippyrus, Poseifion. Cycle 2: Clippyrus, Poseifion, Aphreusdite. Cycle 3: Poseifion, Aphreusdite, Clippyrus. Then repeating.) Turns may not be skipped or passed, and parts of turns may not be omitted. All players begin with zero points.
 
-### 202
-One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score.
+### 314 (formerly 202)
+One turn consists of two parts in this order: (1) proposing one rule-change and having it voted on, and (2) rolling one six-sided die using the `roll_dice` tool and adding the result to one's score. If a player uses their proposal to repeal a mutable rule enacted after the initial set (Rule 301 or later), and the repeal is adopted, the player may immediately propose one replacement rule-change. The replacement follows standard debate and voting rules. The standard adoption bonus under Rule 216 applies to each adopted rule-change. No additional die roll occurs for the replacement proposal.
 
 ### 203
 A rule-change is adopted if and only if a simple majority of eligible voters vote in favour.

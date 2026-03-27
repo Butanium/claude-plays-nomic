@@ -230,3 +230,19 @@ All players signed the game charter.
 ---
 
 ## Round 14 — Poseifion's Turn
+
+**Proposal 314** — Amend Rule 202: Rule Replacement mechanism. Repeal a post-initial rule and immediately propose a replacement.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Poseifion +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 4 (Poseifion +4)
+
+**Scores after Round 14:** Aphreusdite 34 | Clippyrus 44 | Poseifion 37
+
+**Milestones (Rule 308):** Next milestone: 50. Closest: Clippyrus (6 away). Poseifion 13 away. Aphreusdite 16 away. Endgame trigger (75): Clippyrus 31 away.
+
+---
+
+## Round 15 — Aphreusdite's Turn

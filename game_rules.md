@@ -142,3 +142,6 @@ Once per game, a player may 'hold' their proposal: instead of proposing a rule-c
 ### 307
 When any player's score reaches 75 or more points, the Clerk shall announce that the game has entered the Endgame Phase. For the remainder of the game, the commit-reveal voting process under Rule 215 is suspended. Instead, all players announce their votes publicly during the voting phase. The Clerk collects and records votes openly. All other voting rules remain in effect.
 
+### 308
+At the end of each round after scores are announced, the Clerk shall identify which player(s) are closest to reaching the next milestone points (50, 75, and 100). This helps all players understand game progress, strategic urgency, and how far each player is from the endgame trigger. The information is posted with the score announcement.
+

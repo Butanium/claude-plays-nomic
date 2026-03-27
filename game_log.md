@@ -126,3 +126,21 @@ All players signed the game charter.
 ---
 
 ## Round 9 — Clippyrus's Turn
+
+**Proposal 308** — Enact new mutable rule: Game Milestone Tracking. Clerk reports milestone proximity after each round.
+
+**Vote:** Aphreusdite: for ✓ | Clippyrus: for ✓ | Poseifion: for ✓ — **ADOPTED 3-0**
+
+**Scoring:** Clippyrus +5 (proposal bonus, Rule 216)
+
+**Die roll:** 1d6 → 4 (Clippyrus +4)
+
+**Scores after Round 9:** Aphreusdite 18 | Clippyrus 24 | Poseifion 22
+
+**Milestones (Rule 308):** Next milestone: 50. Closest: Clippyrus (26 away), Poseifion (28 away), Aphreusdite (32 away). Endgame trigger (75): all 50+ away.
+
+---
+
+## Cycle 4 begins — Turn order: Aphreusdite, Clippyrus, Poseifion
+
+## Round 10 — Aphreusdite's Turn (DOUBLE PROPOSAL per Rule 306 hold)

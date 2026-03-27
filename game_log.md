@@ -578,3 +578,23 @@ Aphreusdite has reached 78 points (≥75). Per Rule 307, the Endgame Phase begin
 ---
 
 ## Cycle 10 begins — Turn order: Aphreusdite, Clippyrus, Poseifion
+
+## Round 28 — Aphreusdite's Turn (ENDGAME — PUBLIC VOTING)
+
+**Proposal 334** — Enact new mutable rule: Endgame Rule 314 Suspension.
+
+**Judgment invoked (Rule 212):** Aphreusdite attempted Rule 301 revision after formal vote opened. Poseifion (Judge) ruled revision untimely. Original proposal stood.
+
+**FORMAL VOTE:** Aphreusdite: for | Clippyrus: against | Poseifion: against — **DEFEATED 1-2**
+
+**Die roll:** 1d6 → 6 (Aphreusdite +6)
+
+**Round 28 Endgame Summary (Rule 327):** Proposal defeated. First Judgment of the game (ruled against Aphreusdite). Aphreusdite earned 0 from proposals, +6 from die.
+
+**Scores after Round 28:** Aphreusdite 89 | Clippyrus 85 | Poseifion 78
+
+**Milestones (Rule 308):** Aphreusdite 11 from victory. Clippyrus 15 from victory. Poseifion 22 from victory.
+
+---
+
+## Round 29 — Clippyrus's Turn (ENDGAME — PUBLIC VOTING)

@@ -148,8 +148,11 @@ def _append_round(
     """Append a round entry to game_state.yaml."""
     import yaml
 
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+
     entry = {
         "round": round_number,
+        "timestamp": timestamp,
         "result": result,
         "scores": scores,
     }

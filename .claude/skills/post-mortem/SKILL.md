@@ -95,3 +95,26 @@ This branch represents a finished game. Update the README to:
    project structure — including transcripts, decrypted notes, post-mortem files,
    and any other game artifacts. Read the current README and do a file listing
    to find gaps.
+
+## Step 7: Publish to viewer
+
+Publish this game to the web replay viewer at
+https://butanium.github.io/nomic-viewer/
+
+The viewer repo is at `/mnt/nw/home/c.dumas/claude-playground/nomic-games/nomic-viewer`.
+
+1. **Parse and publish** — run from the viewer repo:
+   ```bash
+   cd /mnt/nw/home/c.dumas/claude-playground/nomic-games/nomic-viewer
+   python parse_transcripts.py <game-dir> svelte-app/public/data/<game-id>.json
+   ```
+   where `<game-dir>` is the current project root and `<game-id>` is e.g. `game-8`.
+   This parses the transcripts AND auto-regenerates `games.json`.
+
+2. **Commit and push** to the viewer repo:
+   ```bash
+   git add svelte-app/public/data/
+   git commit -m "Add <game-id> to viewer"
+   git push
+   ```
+   GitHub Actions will automatically build and deploy to Pages.

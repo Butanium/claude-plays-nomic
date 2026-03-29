@@ -71,7 +71,7 @@ Each round, re-read `game_rules.md` to check for rule changes, then follow the c
 4. **Voting** — Only begin voting when all players have confirmed they're ready. **CRITICAL: Before opening the commit phase, verify that ALL players are idle.** Players who are still active (debating, sending DMs, or mid-action) cannot see your messages — if you open the commit phase while someone is active, they will miss the announcement and important debate may be cut short. Send a message to each player and wait until all have responded or gone idle before proceeding. If you realize a player was not idle when you announced, pause the vote and re-announce once everyone is truly idle. **Explicitly announce that the commit phase is now open** — players are instructed not to submit vote commitments until you announce this. Then conduct the vote according to the current voting rules. Check `game_rules.md` for the voting procedure in effect.
 5. **Tally & Update** — Count votes, determine if the proposal passes per the current adoption rule, apply scoring per the current scoring rules, apply any point penalties, update `game_rules.md` if the proposal passed, append results to `game_log.md`, and check the win condition.
 6. **Next Turn** — Move to the next player per the current turn order rule.
-7. **Commit** — At the end of each turn, call `commit_all` (MCP or CLI) to snapshot all game state changes to git. If it fails because the branch name doesn't start with "game", contact the supervisor immediately.
+7. **Commit** — At the end of each turn, call `commit_all` (MCP or CLI) to snapshot all game state changes to git. You **must** pass `scores` (current cumulative scores for ALL players as a dict) and `result` (the vote outcome, e.g. "adopted" or "defeated"). If a player wins this turn, also pass `winner` with their name. Example: `commit_all(message="Round 3: Rule 303 adopted", scores={"alice": 23, "bob": 15, "carol": 11}, result="adopted")`. If it fails because the branch name doesn't start with "game", contact the supervisor immediately.
 
 ## Debate Pacing
 
@@ -107,7 +107,7 @@ uv run python mcp/clerk_cli.py <command> [args...]
 | `load_state` | `KEY FILENAME` | Load and decrypt state |
 | `list_state_files` | `KEY` | List state filenames |
 | `contact_supervisor` | `MESSAGE` | Escalate to human supervisor |
-| `commit_all` | `[MESSAGE]` | Commit all game files to git (branch must start with "game") |
+| `commit_all` | `[MESSAGE] --scores JSON --result STR [--round N] [--winner NAME]` | Commit game files + log round data. `--scores` and `--result` are required. |
 
 ### Player Crypto Tools (MCP or Bash CLI)
 

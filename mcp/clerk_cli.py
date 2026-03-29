@@ -47,7 +47,19 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("commit_all")
     p.add_argument("message", nargs="?", default="end of turn")
-    p.set_defaults(func=lambda args: clerk_ops.commit_all(args.message))
+    p.add_argument("--scores", type=str, required=True, help='JSON dict, e.g. \'{"alice": 42}\'')
+    p.add_argument("--result", type=str, required=True, help='Vote outcome, e.g. "adopted"')
+    p.add_argument("--round", type=int, default=None, dest="round_number")
+    p.add_argument("--winner", type=str, default=None)
+    def _commit_all(args):
+        import json
+        scores = json.loads(args.scores)
+        winner = args.winner
+        # Support comma-separated winners
+        if winner and "," in winner:
+            winner = [w.strip() for w in winner.split(",")]
+        return clerk_ops.commit_all(args.message, scores, args.result, args.round_number, winner)
+    p.set_defaults(func=_commit_all)
 
     p = sub.add_parser("contact_supervisor")
     p.add_argument("message")

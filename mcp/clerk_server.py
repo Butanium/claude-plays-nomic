@@ -48,14 +48,26 @@ def list_state_files(key: str) -> str:
 
 
 @mcp.tool()
-def commit_all(message: str = "end of turn") -> str:
-    """Commit all changed files in the game repository.
+def commit_all(
+    message: str = "end of turn",
+    scores: dict[str, int] = None,
+    result: str = None,
+    round_number: int | None = None,
+    winner: str | list[str] | None = None,
+) -> str:
+    """Commit all changed files and log structured round data.
 
-    Stages all changes (git add -A) and commits with the given message.
-    Fails if the current branch does not start with 'game' — contact the
-    supervisor if this happens.
+    Call this at the end of each round. Appends round data to game_state.yaml
+    before committing.
+
+    Args:
+        message: Git commit message.
+        scores: Current cumulative scores for ALL players. Required.
+        result: Outcome of this round's proposal vote (e.g. "adopted", "defeated"). Required.
+        round_number: Round number. If omitted, auto-increments from last round.
+        winner: Player name(s) if someone won this round, or None.
     """
-    return clerk_ops.commit_all(message)
+    return clerk_ops.commit_all(message, scores, result, round_number, winner)
 
 
 @mcp.tool()

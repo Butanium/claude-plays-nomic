@@ -63,9 +63,37 @@ def list_state_files(key: str) -> str:
     return "\n".join(files)
 
 
-def commit_all(message: str = "end of turn") -> str:
-    """Commit all changed files in the game repository."""
+def commit_all(
+    message: str = "end of turn",
+    scores: dict[str, int] = None,
+    result: str = None,
+    round_number: int | None = None,
+    winner: str | list[str] | None = None,
+) -> str:
+    """Commit all changed files and log structured round data.
+
+    Args:
+        message: Git commit message.
+        scores: Current scores for all players, e.g. {"alice": 42, "bob": 17}.
+            Required — the viewer uses this to display score progression.
+        result: Outcome of this round's proposal vote, e.g. "adopted", "defeated".
+            Required — use whatever term fits the current rules.
+        round_number: Round number. If None, auto-increments from the last
+            entry in game_state.yaml (or starts at 1).
+        winner: Player name(s) if someone won this round. None if no winner yet.
+    """
+    assert scores is not None, "scores is required"
+    assert result is not None, "result is required"
+
     project_root = Path(__file__).parent.parent
+    game_state_path = project_root / "game_state.yaml"
+
+    # Determine round number
+    if round_number is None:
+        round_number = _next_round_number(game_state_path)
+
+    # Append round entry to game_state.yaml
+    _append_round(game_state_path, round_number, scores, result, winner)
 
     branch = subprocess.run(
         ["git", "rev-parse", "--abbrev-ref", "HEAD"],
@@ -83,19 +111,64 @@ def commit_all(message: str = "end of turn") -> str:
 
     subprocess.run(["git", "add", "-A"], cwd=project_root, check=True)
 
-    result = subprocess.run(
+    git_result = subprocess.run(
         ["git", "commit", "-m", message],
         cwd=project_root,
         capture_output=True,
         text=True,
     )
 
-    if result.returncode != 0:
-        if "nothing to commit" in result.stdout:
+    if git_result.returncode != 0:
+        if "nothing to commit" in git_result.stdout:
             return "Nothing to commit — working tree clean."
-        return f"Git commit failed: {result.stdout}\n{result.stderr}"
+        return f"Git commit failed: {git_result.stdout}\n{git_result.stderr}"
 
     return f"Committed all changes on branch '{branch}': {message}"
+
+
+def _next_round_number(game_state_path: Path) -> int:
+    """Read game_state.yaml and return the next round number."""
+    if not game_state_path.exists():
+        return 1
+    import yaml
+    with open(game_state_path) as f:
+        state = yaml.safe_load(f)
+    if not state or "rounds" not in state or not state["rounds"]:
+        return 1
+    return state["rounds"][-1]["round"] + 1
+
+
+def _append_round(
+    game_state_path: Path,
+    round_number: int,
+    scores: dict[str, int],
+    result: str,
+    winner: str | list[str] | None,
+) -> None:
+    """Append a round entry to game_state.yaml."""
+    import yaml
+
+    entry = {
+        "round": round_number,
+        "result": result,
+        "scores": scores,
+    }
+    if winner is not None:
+        entry["winner"] = winner
+
+    if game_state_path.exists():
+        with open(game_state_path) as f:
+            state = yaml.safe_load(f) or {}
+    else:
+        state = {}
+
+    if "rounds" not in state:
+        state["rounds"] = []
+
+    state["rounds"].append(entry)
+
+    with open(game_state_path, "w") as f:
+        yaml.dump(state, f, default_flow_style=False, sort_keys=False)
 
 
 def contact_supervisor(message: str) -> str:

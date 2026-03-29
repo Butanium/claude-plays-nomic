@@ -1,16 +1,20 @@
-# Nomic
+# Nomic — Game 7 (Completed)
 
 A self-amending rule game ([Peter Suber's Nomic](https://www.earlham.edu/~peters/nomic.htm))
 played by Claude Code agents using the team system.
+
+**Winner: Clippyrus (Haiku) — 102 points.**
+Final scores: Clippyrus 102, Poseifion (Opus) 97, Aphreusdite (Sonnet) 96.
+36 rounds across 12 cycles.
 
 ## Architecture
 
 ```
 User (human supervisor, root of trust)
   └── Clerk (custom agent, no Bash)
-        ├── player-opus   (custom agent, no Write/Edit/Bash)
-        ├── player-sonnet  "
-        └── player-haiku   "
+        ├── Poseifion    (player-opus, no Write/Edit/Bash)
+        ├── Aphreusdite  (player-sonnet, "")
+        └── Clippyrus    (player-haiku, "")
 ```
 
 - **Clerk**: administers game procedures — announces turns, manages voting,
@@ -39,26 +43,44 @@ User (human supervisor, root of trust)
 ## Project Structure
 
 ```
-nomic/
+game-7/
 ├── mcp/
-│   ├── crypto.py               # Shared encryption primitives
-│   ├── player_server.py         # Player MCP: notes, files, voting, supervisor
-│   └── clerk_server.py          # Clerk MCP: encrypted state, supervisor
+│   ├── crypto.py                  # Shared encryption primitives
+│   ├── player_server.py           # Player MCP: notes, files, voting, supervisor
+│   └── clerk_server.py            # Clerk MCP: encrypted state, supervisor
 ├── hooks/
-│   ├── player_tool_restriction.py  # Allowlist enforcement for players
-│   └── clerk_tool_restriction.py   # Deny Bash + player MCP for Clerk
+│   ├── player_tool_restriction.py # Allowlist enforcement for players
+│   └── clerk_tool_restriction.py  # Deny Bash + player MCP for Clerk
 ├── .claude/agents/
-│   ├── player.md               # Player agent definition (+ hooks)
-│   └── clerk.md                # Clerk agent definition (+ hooks)
-├── players/                    # Per-player storage (auto-created)
+│   ├── player.md                  # Player agent definition (+ hooks)
+│   └── clerk.md                   # Clerk agent definition (+ hooks)
+├── players/                       # Per-player storage (auto-created)
 │   └── <sha256(key)[:16]>/
-│       ├── encrypted/          # AES-encrypted private notes
-│       └── files/              # Plaintext working files
-├── clerk/                      # Encrypted Clerk state (auto-created)
-├── mcp-config.json             # MCP server config (passed via --mcp-config)
-├── game_rules.md               # Living ruleset (full Suber rules)
-├── game_log.md                 # Chronological game history
-├── supervisor_inbox.md         # Audit trail for supervisor reports
+│       ├── encrypted/             # AES-encrypted private notes
+│       └── files/                 # Plaintext working files
+├── clerk/                         # Encrypted Clerk state (auto-created)
+├── mcp-config.json                # MCP server config (passed via --mcp-config)
+├── game_rules.md                  # Final ruleset (101-118 immutable, 201+ mutable)
+├── game_log.md                    # Chronological game history (all 36 rounds)
+├── game_charter.md                # Player charter (signed at game start)
+├── game_briefing.md               # Initial game briefing
+├── supervisor_inbox.md            # Audit trail for supervisor reports
+├── latest_proposal.txt            # Last proposal submitted
+├── latest_proposal_proof.txt      # Cryptographic proof for last proposal
+├── post-mortem.md                 # Clerk's game analysis
+├── post-mortem-discussion.md      # Group post-mortem discussion
+├── post-mortem-interview-clippyrus.md   # Winner interview (Haiku)
+├── post-mortem-interview-poseifion.md   # 2nd place interview (Opus)
+├── post-mortem-interview-aphreusdite.md # 3rd place interview (Sonnet)
+├── transcripts/                   # Agent session transcripts
+│   ├── clerk.jsonl                # Clerk raw transcript (3723 events)
+│   ├── clerk.txt                  # Clerk readable transcript
+│   ├── player-aphreusdite-sonnet.jsonl  # Aphreusdite raw (1414 events)
+│   ├── player-aphreusdite-sonnet.txt    # Aphreusdite readable
+│   ├── player-poseifion-opus.jsonl      # Poseifion raw (2393 events)
+│   ├── player-poseifion-opus.txt        # Poseifion readable
+│   ├── player-clippyrus-haiku.jsonl     # Clippyrus raw (1586 events)
+│   └── player-clippyrus-haiku.txt       # Clippyrus readable
 └── tests/
     └── test_crypto.py
 ```

@@ -93,7 +93,7 @@ def commit_all(
         round_number = _next_round_number(game_state_path)
 
     # Append round entry to game_state.yaml
-    _append_round(game_state_path, round_number, scores, result, winner)
+    _append_round(game_state_path, round_number, scores, result, winner, message)
 
     branch = subprocess.run(
         ["git", "rev-parse", "--abbrev-ref", "HEAD"],
@@ -144,6 +144,7 @@ def _append_round(
     scores: dict[str, int],
     result: str,
     winner: str | list[str] | None,
+    message: str = "end of turn",
 ) -> None:
     """Append a round entry to game_state.yaml."""
     import yaml
@@ -153,6 +154,7 @@ def _append_round(
     entry = {
         "round": round_number,
         "timestamp": timestamp,
+        "message": message,
         "result": result,
         "scores": scores,
     }

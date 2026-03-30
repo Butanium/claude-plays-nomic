@@ -1,186 +1,366 @@
 rounds:
-  - round: 1
-    timestamp: "2026-03-27T15:29:24.283Z"
-    result: adopted
-    scores: {Aphreusdite: 8, Clippyrus: 0, Poseifion: 0}
-    winner: null
-  - round: 2
-    timestamp: "2026-03-27T15:34:13.929Z"
-    result: adopted
-    scores: {Aphreusdite: 8, Clippyrus: 7, Poseifion: 0}
-    winner: null
-  - round: 3
-    timestamp: "2026-03-27T15:39:22.791Z"
-    result: adopted
-    scores: {Aphreusdite: 8, Clippyrus: 7, Poseifion: 9}
-    winner: null
-  - round: 4
-    timestamp: "2026-03-27T15:42:54.096Z"
-    result: adopted
-    scores: {Aphreusdite: 8, Clippyrus: 15, Poseifion: 9}
-    winner: null
-  - round: 5
-    timestamp: "2026-03-27T15:51:00.575Z"
-    result: adopted
-    scores: {Aphreusdite: 8, Clippyrus: 15, Poseifion: 15}
-    winner: null
-  - round: 6
-    timestamp: "2026-03-27T15:57:26.739Z"
-    result: adopted
-    scores: {Aphreusdite: 17, Clippyrus: 15, Poseifion: 15}
-    winner: null
-  - round: 7
-    timestamp: "2026-03-27T16:04:34.639Z"
-    result: adopted
-    scores: {Aphreusdite: 17, Clippyrus: 15, Poseifion: 22}
-    winner: null
-  - round: 8
-    timestamp: "2026-03-27T16:07:31.216Z"
-    result: null  # Hold declared per Rule 306, no proposal
-    scores: {Aphreusdite: 18, Clippyrus: 15, Poseifion: 22}
-    winner: null
-  - round: 9
-    timestamp: "2026-03-27T16:11:17.685Z"
-    result: adopted
-    scores: {Aphreusdite: 18, Clippyrus: 24, Poseifion: 22}
-    winner: null
-  - round: 10
-    timestamp: "2026-03-27T16:20:55.359Z"
-    result: adopted  # Double proposal (309 & 310), both adopted
-    scores: {Aphreusdite: 34, Clippyrus: 24, Poseifion: 22}
-    winner: null
-  - round: 11
-    timestamp: "2026-03-27T16:24:03.287Z"
-    result: adopted
-    scores: {Aphreusdite: 34, Clippyrus: 34, Poseifion: 22}
-    winner: null
-  - round: 12
-    timestamp: "2026-03-27T16:32:30.000Z"
-    result: adopted
-    scores: {Aphreusdite: 34, Clippyrus: 34, Poseifion: 28}
-    winner: null
-  - round: 13
-    timestamp: "2026-03-27T16:36:28.716Z"
-    result: adopted
-    scores: {Aphreusdite: 34, Clippyrus: 44, Poseifion: 28}
-    winner: null
-  - round: 14
-    timestamp: "2026-03-27T16:43:22.454Z"
-    result: adopted
-    scores: {Aphreusdite: 34, Clippyrus: 44, Poseifion: 37}
-    winner: null
-  - round: 15
-    timestamp: "2026-03-27T16:47:17.596Z"
-    result: adopted
-    scores: {Aphreusdite: 41, Clippyrus: 44, Poseifion: 37}
-    winner: null
-  - round: 16
-    timestamp: "2026-03-27T17:01:13.893Z"
-    result: adopted  # Repeal 311 + replacement 317, both adopted
-    scores: {Aphreusdite: 41, Clippyrus: 44, Poseifion: 48}
-    winner: null
-  - round: 17
-    timestamp: "2026-03-27T17:10:59.470Z"
-    result: adopted  # Repeal 206 + replacement 319, both adopted
-    scores: {Aphreusdite: 56, Clippyrus: 44, Poseifion: 48}
-    winner: null
-  - round: 18
-    timestamp: "2026-03-27T17:16:32.064Z"
-    result: defeated
-    scores: {Aphreusdite: 56, Clippyrus: 49, Poseifion: 48}
-    winner: null
-  - round: 19
-    timestamp: "2026-03-27T17:28:58.111Z"
-    result: adopted  # Repeal 204 + replacement 322, both adopted
-    scores: {Aphreusdite: 72, Clippyrus: 49, Poseifion: 48}
-    winner: null
-  - round: 20
-    timestamp: "2026-03-27T17:39:29.162Z"
-    result: adopted
-    scores: {Aphreusdite: 72, Clippyrus: 59, Poseifion: 48}
-    winner: null
-  - round: 21
-    timestamp: "2026-03-27T17:53:05.979Z"
-    result: adopted  # Repeal 310 + replacement 325, both adopted
-    scores: {Aphreusdite: 72, Clippyrus: 59, Poseifion: 61}
-    winner: null
-  - round: "bonus_312"
-    timestamp: "2026-03-27T18:03:33.516Z"
-    result: adopted  # Rule 312 catch-up bonus proposal for Clippyrus
-    scores: {Aphreusdite: 72, Clippyrus: 64, Poseifion: 61}
-    winner: null
-  - round: 22
-    timestamp: "2026-03-27T18:07:50.057Z"
-    result: adopted
-    scores: {Aphreusdite: 72, Clippyrus: 71, Poseifion: 61}
-    winner: null
-  - round: 23
-    timestamp: "2026-03-27T18:16:32.366Z"
-    result: adopted  # Repeal 304 + replacement 329, both adopted
-    scores: {Aphreusdite: 72, Clippyrus: 71, Poseifion: 73}
-    winner: null
-  - round: 24
-    timestamp: "2026-03-27T18:21:44.499Z"
-    result: defeated
-    scores: {Aphreusdite: 78, Clippyrus: 71, Poseifion: 73}
-    winner: null
-  - round: 25
-    timestamp: "2026-03-27T18:42:39.126Z"
-    result: withdrawn  # Vetoed by Aphreusdite, then withdrawn by Poseifion
-    scores: {Aphreusdite: 78, Clippyrus: 71, Poseifion: 78}
-    winner: null
-  - round: 26
-    timestamp: "2026-03-27T18:47:24.611Z"
-    result: defeated
-    scores: {Aphreusdite: 83, Clippyrus: 71, Poseifion: 78}
-    winner: null
-  - round: 27
-    timestamp: "2026-03-27T18:59:02.836Z"
-    result: adopted  # Repeal 313 + replacement 333, both adopted 2-1
-    scores: {Aphreusdite: 83, Clippyrus: 85, Poseifion: 78}
-    winner: null
-  - round: 28
-    timestamp: "2026-03-27T19:16:43.684Z"
-    result: defeated
-    scores: {Aphreusdite: 89, Clippyrus: 85, Poseifion: 78}
-    winner: null
-  - round: 29
-    timestamp: "2026-03-27T19:20:43.463Z"
-    result: defeated
-    scores: {Aphreusdite: 89, Clippyrus: 91, Poseifion: 78}
-    winner: null
-  - round: 30
-    timestamp: "2026-03-27T19:26:32.542Z"
-    result: adopted  # Repeal 312 + replacement 337, both adopted
-    scores: {Aphreusdite: 89, Clippyrus: 91, Poseifion: 90}
-    winner: null
-  - round: 31
-    timestamp: "2026-03-27T19:32:45.994Z"
-    result: defeated
-    scores: {Aphreusdite: 89, Clippyrus: 97, Poseifion: 90}
-    winner: null
-  - round: 32
-    timestamp: "2026-03-27T19:41:25.800Z"
-    result: withdrawn  # Vetoed by Clippyrus, then withdrawn by Poseifion
-    scores: {Aphreusdite: 89, Clippyrus: 97, Poseifion: 95}
-    winner: null
-  - round: 33
-    timestamp: "2026-03-27T19:51:39.803Z"
-    result: defeated
-    scores: {Aphreusdite: 91, Clippyrus: 97, Poseifion: 95}
-    winner: null
-  - round: 34
-    timestamp: "2026-03-27T20:01:53.773Z"
-    result: defeated
-    scores: {Aphreusdite: 91, Clippyrus: 97, Poseifion: 97}
-    winner: null
-  - round: 35
-    timestamp: "2026-03-27T20:08:07.577Z"
-    result: defeated
-    scores: {Aphreusdite: 96, Clippyrus: 97, Poseifion: 97}
-    winner: null
-  - round: 36
-    timestamp: "2026-03-27T20:09:55.455Z"
-    result: withdrawn  # Proposal skipped/withdrawn, Clippyrus wins on die roll
-    scores: {Aphreusdite: 96, Clippyrus: 102, Poseifion: 97}
-    winner: Clippyrus
+- round: 1
+  timestamp: '2026-03-27T15:29:24.283Z'
+  result: adopted
+  scores:
+    Aphreusdite: 8
+    Clippyrus: 0
+    Poseifion: 0
+  winner: null
+  message: 'Round 1: Proposal 301 adopted (3-0), Aphreusdite scores 8'
+- round: 2
+  timestamp: '2026-03-27T15:34:13.929Z'
+  result: adopted
+  scores:
+    Aphreusdite: 8
+    Clippyrus: 7
+    Poseifion: 0
+  winner: null
+  message: 'Round 2: Proposal 302 adopted (3-0), Clippyrus scores 7'
+- round: 3
+  timestamp: '2026-03-27T15:39:22.791Z'
+  result: adopted
+  scores:
+    Aphreusdite: 8
+    Clippyrus: 7
+    Poseifion: 9
+  winner: null
+  message: 'Round 3: Proposal 303 adopted (2-1), rotating turn order enacted. Cycle
+    1 complete.'
+- round: 4
+  timestamp: '2026-03-27T15:42:54.096Z'
+  result: adopted
+  scores:
+    Aphreusdite: 8
+    Clippyrus: 15
+    Poseifion: 9
+  winner: null
+  message: 'Round 4: Proposal 304 adopted (3-0), Clippyrus scores 15'
+- round: 5
+  timestamp: '2026-03-27T15:51:00.575Z'
+  result: adopted
+  scores:
+    Aphreusdite: 8
+    Clippyrus: 15
+    Poseifion: 15
+  winner: null
+  message: 'Round 5: Proposal 305 adopted (3-0), veto rule enacted. Scores: A8 C15
+    P15'
+- round: 6
+  timestamp: '2026-03-27T15:57:26.739Z'
+  result: adopted
+  scores:
+    Aphreusdite: 17
+    Clippyrus: 15
+    Poseifion: 15
+  winner: null
+  message: 'Round 6: Proposal 306 adopted (3-0). Cycle 2 complete. Scores: A17 C15
+    P15'
+- round: 7
+  timestamp: '2026-03-27T16:04:34.639Z'
+  result: adopted
+  scores:
+    Aphreusdite: 17
+    Clippyrus: 15
+    Poseifion: 22
+  winner: null
+  message: 'Round 7: Proposal 307 adopted (2-1), endgame transparency enacted. Scores:
+    A17 C15 P22'
+- round: 8
+  timestamp: '2026-03-27T16:07:31.216Z'
+  result: null
+  scores:
+    Aphreusdite: 18
+    Clippyrus: 15
+    Poseifion: 22
+  winner: null
+  message: 'Round 8: Aphreusdite declares hold, rolls 1. Scores: A18 C15 P22'
+- round: 9
+  timestamp: '2026-03-27T16:11:17.685Z'
+  result: adopted
+  scores:
+    Aphreusdite: 18
+    Clippyrus: 24
+    Poseifion: 22
+  winner: null
+  message: 'Round 9: Proposal 308 adopted (3-0). Cycle 3 complete. Scores: A18 C24
+    P22'
+- round: 10
+  timestamp: '2026-03-27T16:20:55.359Z'
+  result: adopted
+  scores:
+    Aphreusdite: 34
+    Clippyrus: 24
+    Poseifion: 22
+  winner: null
+  message: 'Round 10: Double proposal (309, 310) both adopted 3-0. Aphreusdite surges
+    to 34. Scores: A34 C24 P22'
+- round: 11
+  timestamp: '2026-03-27T16:24:03.287Z'
+  result: adopted
+  scores:
+    Aphreusdite: 34
+    Clippyrus: 34
+    Poseifion: 22
+  winner: null
+  message: 'Round 11: Proposal 311 adopted (3-0). Clippyrus ties Aphreusdite at 34.
+    Scores: A34 C34 P22'
+- round: 12
+  timestamp: '2026-03-27T16:32:30.000Z'
+  result: adopted
+  scores:
+    Aphreusdite: 34
+    Clippyrus: 34
+    Poseifion: 28
+  winner: null
+  message: 'Round 12: Proposal 312 adopted (3-0). Cycle 4 complete. Scores: A34 C34
+    P28'
+- round: 13
+  timestamp: '2026-03-27T16:36:28.716Z'
+  result: adopted
+  scores:
+    Aphreusdite: 34
+    Clippyrus: 44
+    Poseifion: 28
+  winner: null
+  message: 'Round 13: Proposal 313 adopted (3-0). Clippyrus surges to 44. Scores:
+    A34 C44 P28'
+- round: 14
+  timestamp: '2026-03-27T16:43:22.454Z'
+  result: adopted
+  scores:
+    Aphreusdite: 34
+    Clippyrus: 44
+    Poseifion: 37
+  winner: null
+  message: 'Round 14: Proposal 314 adopted (3-0). Scores: A34 C44 P37'
+- round: 15
+  timestamp: '2026-03-27T16:47:17.596Z'
+  result: adopted
+  scores:
+    Aphreusdite: 41
+    Clippyrus: 44
+    Poseifion: 37
+  winner: null
+  message: 'Round 15: Proposal 315 adopted (3-0). Cycle 5 complete. Scores: A41 C44
+    P37'
+- round: 16
+  timestamp: '2026-03-27T17:01:13.893Z'
+  result: adopted
+  scores:
+    Aphreusdite: 41
+    Clippyrus: 44
+    Poseifion: 48
+  winner: null
+  message: 'Round 16: Proposals 316+317 adopted (repeal+replace). Poseifion takes
+    lead at 48. Scores: A41 C44 P48'
+- round: 17
+  timestamp: '2026-03-27T17:10:59.470Z'
+  result: adopted
+  scores:
+    Aphreusdite: 56
+    Clippyrus: 44
+    Poseifion: 48
+  winner: null
+  message: 'Rounds 16-17: 4 proposals adopted (316-319). Aphreusdite surges to 56.
+    Scores: A56 C44 P48'
+- round: 18
+  timestamp: '2026-03-27T17:16:32.064Z'
+  result: defeated
+  scores:
+    Aphreusdite: 56
+    Clippyrus: 49
+    Poseifion: 48
+  winner: null
+  message: 'Round 18: Proposal 320 DEFEATED 1-2 (first defeat). Cycle 6 complete.
+    Scores: A56 C49 P48'
+- round: 19
+  timestamp: '2026-03-27T17:28:58.111Z'
+  result: adopted
+  scores:
+    Aphreusdite: 72
+    Clippyrus: 49
+    Poseifion: 48
+  winner: null
+  message: "Round 19: Proposals 321+322 adopted (3-0). Aphreusdite surges to 72 \u2014\
+    \ 3 from endgame trigger! Scores: A72 C49 P48"
+- round: 20
+  timestamp: '2026-03-27T17:39:29.162Z'
+  result: adopted
+  scores:
+    Aphreusdite: 72
+    Clippyrus: 59
+    Poseifion: 48
+  winner: null
+  message: 'Round 20: Proposal 323 adopted (2-1). Poseifion betrays Aphreusdite alliance.
+    Scores: A72 C59 P48'
+- round: 21
+  timestamp: '2026-03-27T17:53:05.979Z'
+  result: adopted
+  scores:
+    Aphreusdite: 72
+    Clippyrus: 59
+    Poseifion: 61
+  winner: null
+  message: 'Round 21: Proposals 324+325 adopted (3-0). Cycle 7 complete. Rule 312
+    triggers! Scores: A72 C59 P61'
+- round: bonus_312
+  timestamp: '2026-03-27T18:03:33.516Z'
+  result: adopted
+  scores:
+    Aphreusdite: 72
+    Clippyrus: 64
+    Poseifion: 61
+  winner: null
+  message: 'Rule 312 bonus: Proposal 326 adopted (3-0). Clippyrus scores 64. Scores:
+    A72 C64 P61'
+- round: 22
+  timestamp: '2026-03-27T18:07:50.057Z'
+  result: adopted
+  scores:
+    Aphreusdite: 72
+    Clippyrus: 71
+    Poseifion: 61
+  winner: null
+  message: 'Round 22: Proposal 327 adopted (3-0). Clippyrus at 71, Aphreusdite 72.
+    Both near endgame. Scores: A72 C71 P61'
+- round: 23
+  timestamp: '2026-03-27T18:16:32.366Z'
+  result: adopted
+  scores:
+    Aphreusdite: 72
+    Clippyrus: 71
+    Poseifion: 73
+  winner: null
+  message: 'Round 23: Proposals 328+329 adopted (3-0). Poseifion takes lead at 73!
+    Three-way race: P73 A72 C71'
+- round: 24
+  timestamp: '2026-03-27T18:21:44.499Z'
+  result: defeated
+  scores:
+    Aphreusdite: 78
+    Clippyrus: 71
+    Poseifion: 73
+  winner: null
+  message: "Round 24: Proposal 330 DEFEATED 1-2 (Poseifion betrayal). Aphreusdite\
+    \ rolls 6 \u2192 78. ENDGAME TRIGGERED!"
+- round: 25
+  timestamp: '2026-03-27T18:42:39.126Z'
+  result: withdrawn
+  scores:
+    Aphreusdite: 78
+    Clippyrus: 71
+    Poseifion: 78
+  winner: null
+  message: 'Round 25: Proposal 331 vetoed then withdrawn. Poseifion rolls 5. Scores:
+    A78 C71 P78'
+- round: 26
+  timestamp: '2026-03-27T18:47:24.611Z'
+  result: defeated
+  scores:
+    Aphreusdite: 83
+    Clippyrus: 71
+    Poseifion: 78
+  winner: null
+  message: "Round 26: Proposal 331 defeated 1-2. Aphreusdite rolls 5 \u2192 83. Scores:\
+    \ A83 C71 P78"
+- round: 27
+  timestamp: '2026-03-27T18:59:02.836Z'
+  result: adopted
+  scores:
+    Aphreusdite: 83
+    Clippyrus: 85
+    Poseifion: 78
+  winner: null
+  message: 'Round 27: Proposals 332+333 adopted (2-1). Clippyrus takes lead at 85!
+    Cycle 9 complete. Scores: A83 C85 P78'
+- round: 28
+  timestamp: '2026-03-27T19:16:43.684Z'
+  result: defeated
+  scores:
+    Aphreusdite: 89
+    Clippyrus: 85
+    Poseifion: 78
+  winner: null
+  message: "Round 28: Proposal 334 defeated 1-2. First Judgment (revision untimely).\
+    \ Aphreusdite rolls 6 \u2192 89. Scores: A89 C85 P78"
+- round: 29
+  timestamp: '2026-03-27T19:20:43.463Z'
+  result: defeated
+  scores:
+    Aphreusdite: 89
+    Clippyrus: 91
+    Poseifion: 78
+  winner: null
+  message: "Round 29: Proposal 335 defeated 1-2 (Poseifion flips!). Clippyrus rolls\
+    \ 6 \u2192 91. Scores: A89 C91 P78"
+- round: 30
+  timestamp: '2026-03-27T19:26:32.542Z'
+  result: adopted
+  scores:
+    Aphreusdite: 89
+    Clippyrus: 91
+    Poseifion: 90
+  winner: null
+  message: 'Round 30: Proposals 336+337 adopted. Poseifion at 90. THREE-WAY PHOTO
+    FINISH: C91 P90 A89. Cycle 11 may be final.'
+- round: 31
+  timestamp: '2026-03-27T19:32:45.994Z'
+  result: defeated
+  scores:
+    Aphreusdite: 89
+    Clippyrus: 97
+    Poseifion: 90
+  winner: null
+  message: "Round 31: Proposal 338 defeated 1-2. Clippyrus rolls 6 \u2192 97! THREE\
+    \ FROM VICTORY. Scores: A89 C97 P90"
+- round: 32
+  timestamp: '2026-03-27T19:41:25.800Z'
+  result: withdrawn
+  scores:
+    Aphreusdite: 89
+    Clippyrus: 97
+    Poseifion: 95
+  winner: null
+  message: "Round 32: Proposal 339 vetoed by Clippyrus then withdrawn. Poseifion rolls\
+    \ 5 \u2192 95. Scores: A89 C97 P95"
+- round: 33
+  timestamp: '2026-03-27T19:51:39.803Z'
+  result: defeated
+  scores:
+    Aphreusdite: 91
+    Clippyrus: 97
+    Poseifion: 95
+  winner: null
+  message: "Round 33: Proposal 340 defeated 1-2. Aphreusdite rolls 2 \u2192 91. Cycle\
+    \ 11 complete. Scores: A91 C97 P95. Clippyrus 3 from victory."
+- round: 34
+  timestamp: '2026-03-27T20:01:53.773Z'
+  result: defeated
+  scores:
+    Aphreusdite: 91
+    Clippyrus: 97
+    Poseifion: 97
+  winner: null
+  message: "Round 34: Proposal 341 defeated 1-2. Poseifion rolls 2 \u2192 97. C and\
+    \ P TIED at 97! Scores: A91 C97 P97"
+- round: 35
+  timestamp: '2026-03-27T20:08:07.577Z'
+  result: defeated
+  scores:
+    Aphreusdite: 96
+    Clippyrus: 97
+    Poseifion: 97
+  winner: null
+  message: "Round 35: Proposal 342 defeated 1-2. Aphreusdite rolls 5 \u2192 96. Scores:\
+    \ A96 C97 P97. Round 36: Clippyrus needs 3 on d6."
+- round: 36
+  timestamp: '2026-03-27T20:09:55.455Z'
+  result: withdrawn
+  scores:
+    Aphreusdite: 96
+    Clippyrus: 102
+    Poseifion: 97
+  winner: Clippyrus
+  message: "\U0001F3C6 GAME OVER! Clippyrus (Haiku) wins with 102 points! Final: C102\
+    \ P97 A96"
